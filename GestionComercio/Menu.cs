@@ -16,5 +16,13 @@ namespace GestionComercio
         {
             InitializeComponent();
         }
+
+        private void tsbtnArticulos_Click(object sender, EventArgs e)
+        {
+
+            Panel panel = new Panel();
+            panel.MdiParent = this;
+            panel.Show();
+        }
     }
 }
