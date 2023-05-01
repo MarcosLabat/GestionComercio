@@ -15,8 +15,6 @@ namespace GestionComercio
     public partial class Panel : Form
     {
         private List<Articulo> listaArticulos;
-        private List<Categoria> listaCategorias;
-        private List<Marca> listaMarcas;
 
         public Panel()
         {
@@ -28,14 +26,6 @@ namespace GestionComercio
             ArticuloNegocio articulos = new ArticuloNegocio();
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
-
-            CategoriaNegocio categorias = new CategoriaNegocio();
-            listaCategorias = categorias.listar();
-            dgvCategorias.DataSource = listaCategorias;
-
-            MarcaNegocio marcas = new MarcaNegocio();
-            listaMarcas = marcas.listar();
-            dgvMarcas.DataSource = listaMarcas;
         }
 
         private void btnActualizarArticulos_Click(object sender, EventArgs e)
@@ -43,14 +33,6 @@ namespace GestionComercio
             ArticuloNegocio articulos = new ArticuloNegocio();
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
-
-            CategoriaNegocio categorias = new CategoriaNegocio();
-            listaCategorias = categorias.listar();
-            dgvCategorias.DataSource = listaCategorias;
-
-            MarcaNegocio marcas = new MarcaNegocio();
-            listaMarcas = marcas.listar();
-            dgvMarcas.DataSource = listaMarcas;
         }
 
         private void tsbtnAgregarArticulo_Click(object sender, EventArgs e)

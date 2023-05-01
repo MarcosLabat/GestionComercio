@@ -24,5 +24,19 @@ namespace GestionComercio
             panel.MdiParent = this;
             panel.Show();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaMarcas marcas = new VentanaMarcas();
+            marcas.MdiParent = this;
+            marcas.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaCategorias categorias = new VentanaCategorias();
+            categorias.MdiParent = this;
+            categorias.Show();
+        }
     }
 }

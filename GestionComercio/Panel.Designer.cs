@@ -30,16 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Panel));
             this.btnActualizarArticulos = new System.Windows.Forms.Button();
-            this.dgvCategorias = new System.Windows.Forms.DataGridView();
-            this.dgvMarcas = new System.Windows.Forms.DataGridView();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbtnAgregarArticulo = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,22 +47,6 @@
             this.btnActualizarArticulos.Text = "Actualizar";
             this.btnActualizarArticulos.UseVisualStyleBackColor = true;
             this.btnActualizarArticulos.Click += new System.EventHandler(this.btnActualizarArticulos_Click);
-            // 
-            // dgvCategorias
-            // 
-            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(506, 403);
-            this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(322, 151);
-            this.dgvCategorias.TabIndex = 7;
-            // 
-            // dgvMarcas
-            // 
-            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(79, 403);
-            this.dgvMarcas.Name = "dgvMarcas";
-            this.dgvMarcas.Size = new System.Drawing.Size(314, 151);
-            this.dgvMarcas.TabIndex = 6;
             // 
             // dgvArticulos
             // 
@@ -87,26 +65,6 @@
             this.label1.Size = new System.Drawing.Size(115, 24);
             this.label1.TabIndex = 9;
             this.label1.Text = "ARTICULOS";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(612, 370);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 16);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "CATEGORIAS";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(195, 370);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "MARCAS";
             // 
             // toolStrip1
             // 
@@ -134,19 +92,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 579);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnActualizarArticulos);
-            this.Controls.Add(this.dgvCategorias);
-            this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.dgvArticulos);
             this.MinimumSize = new System.Drawing.Size(1009, 618);
             this.Name = "Panel";
             this.Text = "Panel";
             this.Load += new System.EventHandler(this.Panel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -158,12 +110,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnActualizarArticulos;
-        private System.Windows.Forms.DataGridView dgvCategorias;
-        private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbtnAgregarArticulo;
     }
