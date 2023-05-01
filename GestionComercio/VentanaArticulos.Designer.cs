@@ -45,6 +45,10 @@
             this.btnResetArticulos = new System.Windows.Forms.Button();
             this.btnBuscarArticulo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblBuscador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -100,6 +104,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.seleccionToolStripMenuItem,
             this.agregarToolStripMenuItem});
@@ -111,6 +116,10 @@
             // 
             // seleccionToolStripMenuItem
             // 
+            this.seleccionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificarToolStripMenuItem,
+            this.eliminarToolStripMenuItem,
+            this.verDetalleToolStripMenuItem});
             this.seleccionToolStripMenuItem.Name = "seleccionToolStripMenuItem";
             this.seleccionToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.seleccionToolStripMenuItem.Text = "Seleccion";
@@ -126,8 +135,9 @@
             // nuevoArticuloToolStripMenuItem
             // 
             this.nuevoArticuloToolStripMenuItem.Name = "nuevoArticuloToolStripMenuItem";
-            this.nuevoArticuloToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.nuevoArticuloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoArticuloToolStripMenuItem.Text = "Nuevo Articulo";
+            this.nuevoArticuloToolStripMenuItem.Click += new System.EventHandler(this.nuevoArticuloToolStripMenuItem_Click);
             // 
             // tbxBuscadorArticulos
             // 
@@ -192,11 +202,42 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Buscar:";
             // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
+            // 
+            // eliminarToolStripMenuItem
+            // 
+            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            // 
+            // verDetalleToolStripMenuItem
+            // 
+            this.verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
+            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verDetalleToolStripMenuItem.Text = "Ver detalle";
+            this.verDetalleToolStripMenuItem.Click += new System.EventHandler(this.verDetalleToolStripMenuItem_Click);
+            // 
+            // lblBuscador
+            // 
+            this.lblBuscador.AutoSize = true;
+            this.lblBuscador.Location = new System.Drawing.Point(111, 169);
+            this.lblBuscador.Name = "lblBuscador";
+            this.lblBuscador.Size = new System.Drawing.Size(62, 13);
+            this.lblBuscador.TabIndex = 22;
+            this.lblBuscador.Text = "lblBuscador";
+            // 
             // VentanaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(993, 579);
+            this.Controls.Add(this.lblBuscador);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBuscarArticulo);
             this.Controls.Add(this.btnResetArticulos);
@@ -242,5 +283,9 @@
         private System.Windows.Forms.Button btnResetArticulos;
         private System.Windows.Forms.Button btnBuscarArticulo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verDetalleToolStripMenuItem;
+        private System.Windows.Forms.Label lblBuscador;
     }
 }

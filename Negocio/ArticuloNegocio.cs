@@ -90,5 +90,59 @@ namespace Negocio
             }
 
         }
+
+        public List<Articulo> buscar(string busqueda, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            ConexionDB datos = new ConexionDB();
+            string query;
+            if (filtro == "Sin Filtro" || filtro == "")
+                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Codigo = '{busqueda}' OR A.Nombre = '{busqueda}' OR A.Descripcion = '{busqueda}' OR M.Descripcion = '{busqueda}' OR C.Descripcion = '{busqueda}'";
+            else if (filtro == "Marca")
+                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE M.Descripcion = '{busqueda}'";
+            else if (filtro == "Categoria")
+                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE C.Descripcion = '{busqueda}'";
+            else
+                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.{filtro} = '{busqueda}'";
+            
+            try
+            {
+
+                datos.setearQuery(query);
+                datos.leer();
+                while (datos.Reader.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Marca = new Marca();
+                    aux.Categoria = new Categoria();
+                    //aux.Imagen = new Imagen();
+
+                    aux.Id = (int)datos.Reader["Id"];
+                    aux.Codigo = (string)datos.Reader["Codigo"];
+                    aux.Nombre = (string)datos.Reader["Nombre"];
+                    aux.Descripcion = (string)datos.Reader["Descripcion"];
+                    aux.Precio = (decimal)datos.Reader["Precio"];
+
+                    aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
+                    aux.Marca.Id = (int)datos.Reader["IdMarca"];
+
+                    aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
+                    aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
+
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrar();
+            }
+        }
     }
 }
