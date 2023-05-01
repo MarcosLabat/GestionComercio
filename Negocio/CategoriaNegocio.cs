@@ -40,6 +40,36 @@ namespace Negocio
             return listaCategorias;
         }
 
+        public List<Categoria> filtrar(string busqueda)
+        {
+            List<Categoria> listaCategorias = new List<Categoria>();
+            ConexionDB db = new ConexionDB();
+            string query = $"SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = '%{busqueda}%'";
+            try
+            {
+                db.setearQuery(query);
+                db.leer();
+                while (db.Reader.Read())
+                {
+                    Categoria aux = new Categoria();
+                    aux.Descripcion = (string)db.Reader["Descripcion"];
+                    aux.Id = (int)db.Reader["Id"];
+                    listaCategorias.Add(aux);
+                    
+                }
+
+                return listaCategorias;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+        }
+
         public Categoria buscarPorDescripcion(string descripcion)
         {
             Categoria categoria = null;

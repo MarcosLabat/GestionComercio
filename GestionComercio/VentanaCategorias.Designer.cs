@@ -113,6 +113,8 @@
             this.Controls.Add(this.tbxBuscador);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvCategorias);
+            this.MaximumSize = new System.Drawing.Size(365, 480);
+            this.MinimumSize = new System.Drawing.Size(365, 480);
             this.Name = "VentanaCategorias";
             this.Text = "VentanaCategorias";
             this.Load += new System.EventHandler(this.VentanaCategorias_Load);

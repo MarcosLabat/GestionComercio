@@ -15,6 +15,7 @@ namespace GestionComercio
     public partial class VentanaMarcas : Form
     {
         private List<Marca> listaMarcas;
+        private MarcaNegocio marcas = new MarcaNegocio();
 
         public VentanaMarcas()
         {
@@ -23,9 +24,42 @@ namespace GestionComercio
 
         private void VentanaMarcas_Load(object sender, EventArgs e)
         {
-            MarcaNegocio marcas = new MarcaNegocio();
             listaMarcas = marcas.listar();
             dgvMarcas.DataSource = listaMarcas;
+        }
+
+        private void btnBuscarMarca_Click(object sender, EventArgs e)
+        {
+            string busqueda = tbxBuscador.Text;
+            List<Marca> aux = new List<Marca>();
+            lblBusqueda.Visible = true;
+            Marca marca = marcas.buscarPorDescripcion(busqueda);
+            if(marca != null)
+            {
+                lblBusqueda.ForeColor = Color.Green;
+                lblBusqueda.Text = "Marca encontrada";
+                aux.Add(marca);
+                dgvMarcas.DataSource = aux;
+            }
+            else
+            {
+                lblBusqueda.ForeColor = Color.Red;
+                lblBusqueda.Text = "Marca no encontrada";
+            }
+        }
+
+        private void btnResetMarca_Click(object sender, EventArgs e)
+        {
+            listaMarcas = marcas.listar();
+            dgvMarcas.DataSource = listaMarcas;
+            lblBusqueda.Visible = false;
+        }
+
+        private void btnActualizarMarca_Click(object sender, EventArgs e)
+        {
+            listaMarcas = marcas.listar();
+            dgvMarcas.DataSource = listaMarcas;
+            lblBusqueda.Visible = false;
         }
     }
 }

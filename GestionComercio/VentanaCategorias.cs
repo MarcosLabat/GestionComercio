@@ -32,28 +32,29 @@ namespace GestionComercio
         {
             listaCategorias = categorias.listar();
             dgvCategorias.DataSource = listaCategorias;
+            lblBusqueda.Visible = false;
         }
 
         private void btnActualizarCategoria_Click(object sender, EventArgs e)
         {
             listaCategorias = categorias.listar();
             dgvCategorias.DataSource = listaCategorias;
+            lblBusqueda.Visible = false;
         }
 
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
             string busqueda = tbxBuscador.Text;
-            
             List<Categoria> aux = new List<Categoria>();
+
+            lblBusqueda.Visible = true;
             Categoria cat = categorias.buscarPorDescripcion(busqueda);
             if(cat != null)
             {
                 lblBusqueda.ForeColor = Color.Green;
                 lblBusqueda.Text = "Categoria encontrada";
-                listaCategorias.Clear();
                 aux.Add(cat);
-                listaCategorias = aux;
-                dgvCategorias.DataSource = listaCategorias;
+                dgvCategorias.DataSource = aux;
             }
             else
             {
