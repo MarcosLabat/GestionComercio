@@ -26,6 +26,7 @@ namespace GestionComercio
         {
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
+            dgvArticulos.Columns["Imagen"].Visible = false;
 
             lblBuscador.Visible = false;
             cbxFiltroArticulos.Items.Add("Sin Filtro");
@@ -45,13 +46,13 @@ namespace GestionComercio
 
         private void tsbtnAgregarArticulo_Click(object sender, EventArgs e)
         {
-            AgregarArticulo agregarArticulo = new AgregarArticulo();
+            VentanaArticulosAdd agregarArticulo = new VentanaArticulosAdd();
             agregarArticulo.ShowDialog();
         }
 
         private void nuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AgregarArticulo agregarArticulo = new AgregarArticulo();
+            VentanaArticulosAdd agregarArticulo = new VentanaArticulosAdd();
             agregarArticulo.ShowDialog();
         }
 
@@ -106,7 +107,29 @@ namespace GestionComercio
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            VentanaArticuloDetalle detalleArticulo = new VentanaArticuloDetalle(seleccionado);
+            detalleArticulo.ShowDialog();
+        }
 
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Imagen.UrlImagen);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+
+            }
+            catch (Exception)
+            {
+
+                pbxArticulo.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
+            }
         }
     }
 }

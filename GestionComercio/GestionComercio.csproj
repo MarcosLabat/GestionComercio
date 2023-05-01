@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarArticulo.cs">
+    <Compile Include="VentanaArticuloDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarArticulo.Designer.cs">
-      <DependentUpon>AgregarArticulo.cs</DependentUpon>
+    <Compile Include="VentanaArticuloDetalle.Designer.cs">
+      <DependentUpon>VentanaArticuloDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaArticulosAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaArticulosAdd.Designer.cs">
+      <DependentUpon>VentanaArticulosAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -90,8 +96,11 @@
     <Compile Include="VentanaMarcasAdd.Designer.cs">
       <DependentUpon>VentanaMarcasAdd.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarArticulo.resx">
-      <DependentUpon>AgregarArticulo.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaArticuloDetalle.resx">
+      <DependentUpon>VentanaArticuloDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaArticulosAdd.resx">
+      <DependentUpon>VentanaArticulosAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

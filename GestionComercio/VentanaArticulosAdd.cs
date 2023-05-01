@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace GestionComercio
 {
-    public partial class AgregarArticulo : Form
+    public partial class VentanaArticulosAdd : Form
     {
-        public AgregarArticulo()
+        public VentanaArticulosAdd()
         {
             InitializeComponent();
         }

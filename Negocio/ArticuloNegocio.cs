@@ -24,7 +24,7 @@ namespace Negocio
                     Articulo aux = new Articulo();
                     aux.Marca = new Marca();
                     aux.Categoria = new Categoria();
-                    //aux.Imagen = new Imagen();
+                    aux.Imagen = new Imagen();
 
                     aux.Id = (int)datos.Reader["Id"];
                     aux.Codigo = (string)datos.Reader["Codigo"];
@@ -38,9 +38,9 @@ namespace Negocio
                     aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
                     aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
 
-                    //aux.Imagen.Id = (int)datos.Reader["IdImagen"];
-                    //aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
-                    //aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
+                    aux.Imagen.Id = (int)datos.Reader["IdImagen"];
+                    aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
+                    aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
 
                     lista.Add(aux);
                 }

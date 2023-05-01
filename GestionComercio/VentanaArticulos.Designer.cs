@@ -49,14 +49,16 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblBuscador = new System.Windows.Forms.Label();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizarArticulos
             // 
-            this.btnActualizarArticulos.Location = new System.Drawing.Point(785, 536);
+            this.btnActualizarArticulos.Location = new System.Drawing.Point(669, 520);
             this.btnActualizarArticulos.Name = "btnActualizarArticulos";
             this.btnActualizarArticulos.Size = new System.Drawing.Size(82, 31);
             this.btnActualizarArticulos.TabIndex = 8;
@@ -67,10 +69,11 @@
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(98, 185);
+            this.dgvArticulos.Location = new System.Drawing.Point(16, 169);
             this.dgvArticulos.Name = "dgvArticulos";
-            this.dgvArticulos.Size = new System.Drawing.Size(789, 325);
+            this.dgvArticulos.Size = new System.Drawing.Size(768, 325);
             this.dgvArticulos.TabIndex = 5;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // label1
             // 
@@ -88,7 +91,7 @@
             this.tsbtnAgregarArticulo});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(993, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1037, 25);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -110,7 +113,7 @@
             this.agregarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(993, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1037, 24);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -141,7 +144,7 @@
             // 
             // tbxBuscadorArticulos
             // 
-            this.tbxBuscadorArticulos.Location = new System.Drawing.Point(225, 134);
+            this.tbxBuscadorArticulos.Location = new System.Drawing.Point(143, 118);
             this.tbxBuscadorArticulos.Name = "tbxBuscadorArticulos";
             this.tbxBuscadorArticulos.Size = new System.Drawing.Size(215, 20);
             this.tbxBuscadorArticulos.TabIndex = 15;
@@ -149,7 +152,7 @@
             // cbxFiltroArticulos
             // 
             this.cbxFiltroArticulos.FormattingEnabled = true;
-            this.cbxFiltroArticulos.Location = new System.Drawing.Point(511, 134);
+            this.cbxFiltroArticulos.Location = new System.Drawing.Point(429, 118);
             this.cbxFiltroArticulos.Name = "cbxFiltroArticulos";
             this.cbxFiltroArticulos.Size = new System.Drawing.Size(121, 21);
             this.cbxFiltroArticulos.TabIndex = 16;
@@ -157,7 +160,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(452, 137);
+            this.label2.Location = new System.Drawing.Point(370, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 17;
@@ -175,7 +178,7 @@
             // 
             // btnResetArticulos
             // 
-            this.btnResetArticulos.Location = new System.Drawing.Point(791, 131);
+            this.btnResetArticulos.Location = new System.Drawing.Point(676, 116);
             this.btnResetArticulos.Name = "btnResetArticulos";
             this.btnResetArticulos.Size = new System.Drawing.Size(75, 23);
             this.btnResetArticulos.TabIndex = 19;
@@ -185,7 +188,7 @@
             // 
             // btnBuscarArticulo
             // 
-            this.btnBuscarArticulo.Location = new System.Drawing.Point(710, 131);
+            this.btnBuscarArticulo.Location = new System.Drawing.Point(595, 116);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
             this.btnBuscarArticulo.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarArticulo.TabIndex = 20;
@@ -196,7 +199,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(176, 137);
+            this.label4.Location = new System.Drawing.Point(94, 121);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 21;
@@ -226,17 +229,27 @@
             // lblBuscador
             // 
             this.lblBuscador.AutoSize = true;
-            this.lblBuscador.Location = new System.Drawing.Point(111, 169);
+            this.lblBuscador.Location = new System.Drawing.Point(29, 153);
             this.lblBuscador.Name = "lblBuscador";
             this.lblBuscador.Size = new System.Drawing.Size(62, 13);
             this.lblBuscador.TabIndex = 22;
             this.lblBuscador.Text = "lblBuscador";
             // 
+            // pbxArticulo
+            // 
+            this.pbxArticulo.Location = new System.Drawing.Point(809, 224);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(200, 200);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 23;
+            this.pbxArticulo.TabStop = false;
+            // 
             // VentanaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(993, 579);
+            this.ClientSize = new System.Drawing.Size(1037, 579);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.lblBuscador);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBuscarArticulo);
@@ -251,7 +264,7 @@
             this.Controls.Add(this.btnActualizarArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1009, 618);
+            this.MinimumSize = new System.Drawing.Size(1053, 618);
             this.Name = "VentanaArticulos";
             this.Text = "Panel";
             this.Load += new System.EventHandler(this.Panel_Load);
@@ -260,6 +273,7 @@
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +301,6 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verDetalleToolStripMenuItem;
         private System.Windows.Forms.Label lblBuscador;
+        private System.Windows.Forms.PictureBox pbxArticulo;
     }
 }

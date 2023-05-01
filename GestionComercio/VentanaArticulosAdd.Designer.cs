@@ -1,6 +1,6 @@
 ﻿namespace GestionComercio
 {
-    partial class AgregarArticulo
+    partial class VentanaArticulosAdd
     {
         /// <summary>
         /// Required designer variable.
