@@ -62,5 +62,26 @@ namespace GestionComercio
                 lblBusqueda.Text = "Categoria no encontrada";
             }
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nuevaCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaCategoriasAdd agregarCategoria = new VentanaCategoriasAdd();
+            agregarCategoria.ShowDialog();
+        }
     }
 }

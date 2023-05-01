@@ -61,5 +61,27 @@ namespace GestionComercio
             dgvMarcas.DataSource = listaMarcas;
             lblBusqueda.Visible = false;
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nuevaMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaMarcasAdd agregarMarca = new VentanaMarcasAdd();
+            agregarMarca.ShowDialog();
+        }
+
     }
 }

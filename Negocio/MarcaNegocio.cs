@@ -66,5 +66,34 @@ namespace Negocio
                 db.cerrar();
             }
         }
+
+        public int guardar(string nuevaMarca)
+        {
+            int idMarca = -1;
+            string descripcion = nuevaMarca;
+
+            ConexionDB db = new ConexionDB();
+            try
+            {
+                db.setearQuery($"INSERT INTO MARCAS(Descripcion) VALUES('{descripcion}');" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;");
+                db.leer();
+
+                if (db.Reader.Read())
+                {
+                    idMarca = (int)db.Reader["ID"];
+                }
+
+                return idMarca;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+
+        }
     }
 }

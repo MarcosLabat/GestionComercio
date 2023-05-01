@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace GestionComercio
 {
-    public partial class Panel : Form
+    public partial class VentanaArticulos : Form
     {
         private List<Articulo> listaArticulos;
 
-        public Panel()
+        public VentanaArticulos()
         {
             InitializeComponent();
         }
@@ -26,6 +26,8 @@ namespace GestionComercio
             ArticuloNegocio articulos = new ArticuloNegocio();
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
+
+
         }
 
         private void btnActualizarArticulos_Click(object sender, EventArgs e)
@@ -40,5 +42,16 @@ namespace GestionComercio
             AgregarArticulo agregarArticulo = new AgregarArticulo();
             agregarArticulo.ShowDialog();
         }
+
+        private void btnBuscarArticulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnResetArticulos_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

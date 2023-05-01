@@ -58,11 +58,11 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel.cs">
+    <Compile Include="VentanaArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panel.Designer.cs">
-      <DependentUpon>Panel.cs</DependentUpon>
+    <Compile Include="VentanaArticulos.Designer.cs">
+      <DependentUpon>VentanaArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,11 +72,23 @@
     <Compile Include="VentanaCategorias.Designer.cs">
       <DependentUpon>VentanaCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaCategoriasAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCategoriasAdd.Designer.cs">
+      <DependentUpon>VentanaCategoriasAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VentanaMarcas.Designer.cs">
       <DependentUpon>VentanaMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaMarcasAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaMarcasAdd.Designer.cs">
+      <DependentUpon>VentanaMarcasAdd.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AgregarArticulo.resx">
       <DependentUpon>AgregarArticulo.cs</DependentUpon>
@@ -84,8 +96,8 @@
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel.resx">
-      <DependentUpon>Panel.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaArticulos.resx">
+      <DependentUpon>VentanaArticulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,8 +111,14 @@
     <EmbeddedResource Include="VentanaCategorias.resx">
       <DependentUpon>VentanaCategorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCategoriasAdd.resx">
+      <DependentUpon>VentanaCategoriasAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaMarcas.resx">
       <DependentUpon>VentanaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaMarcasAdd.resx">
+      <DependentUpon>VentanaMarcasAdd.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

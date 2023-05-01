@@ -20,7 +20,7 @@ namespace GestionComercio
         private void tsbtnArticulos_Click(object sender, EventArgs e)
         {
 
-            Panel panel = new Panel();
+            VentanaArticulos panel = new VentanaArticulos();
             panel.MdiParent = this;
             panel.Show();
         }

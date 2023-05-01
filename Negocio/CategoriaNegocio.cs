@@ -97,5 +97,34 @@ namespace Negocio
                 db.cerrar();
             }
         }
+
+        public int guardar(string nuevaCategoria)
+        {
+            int idCategoria = -1;
+            string descripcion = nuevaCategoria;
+
+            ConexionDB db = new ConexionDB();
+            try
+            {
+                db.setearQuery($"INSERT INTO CATEGORIAS(Descripcion) VALUES('{descripcion}');" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;");
+                db.leer();
+
+                if (db.Reader.Read())
+                {
+                    idCategoria = (int)db.Reader["ID"];
+                }
+
+                return idCategoria;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+
+        }
     }
 }
