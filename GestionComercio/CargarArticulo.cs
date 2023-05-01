@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GestionComercio
 {
-    public partial class Menu : Form
+    public partial class CargarArticulo : Form
     {
-        public Menu()
+        public CargarArticulo()
         {
             InitializeComponent();
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
         }
     }
 }
