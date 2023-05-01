@@ -28,52 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Opcion = new System.Windows.Forms.TextBox();
-            this.enviarOpcion = new System.Windows.Forms.Button();
-            this.labelTitutlo = new System.Windows.Forms.Label();
-            this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.txtOpcion = new System.Windows.Forms.TextBox();
+            this.labelOpcion1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Opcion
+            // btnMenu
             // 
-            this.Opcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.Opcion.Location = new System.Drawing.Point(500, 244);
-            this.Opcion.Name = "Opcion";
-            this.Opcion.Size = new System.Drawing.Size(123, 20);
-            this.Opcion.TabIndex = 0;
-            this.Opcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnMenu.Location = new System.Drawing.Point(397, 289);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(177, 37);
+            this.btnMenu.TabIndex = 11;
+            this.btnMenu.Text = "Enviar";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // enviarOpcion
+            // txtOpcion
             // 
-            this.enviarOpcion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.enviarOpcion.Location = new System.Drawing.Point(500, 286);
-            this.enviarOpcion.Name = "enviarOpcion";
-            this.enviarOpcion.Size = new System.Drawing.Size(118, 27);
-            this.enviarOpcion.TabIndex = 1;
-            this.enviarOpcion.Text = "Enviar";
-            this.enviarOpcion.UseVisualStyleBackColor = true;
-            this.enviarOpcion.Click += new System.EventHandler(this.enviarOpcion_Click);
+            this.txtOpcion.Location = new System.Drawing.Point(397, 263);
+            this.txtOpcion.Name = "txtOpcion";
+            this.txtOpcion.Size = new System.Drawing.Size(173, 20);
+            this.txtOpcion.TabIndex = 12;
             // 
-            // labelTitutlo
+            // labelOpcion1
             // 
-            this.labelTitutlo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.labelTitutlo.AutoSize = true;
-            this.labelTitutlo.BackColor = System.Drawing.Color.White;
-            this.labelTitutlo.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitutlo.Location = new System.Drawing.Point(500, 20);
-            this.labelTitutlo.Name = "labelTitutlo";
-            this.labelTitutlo.Size = new System.Drawing.Size(136, 23);
-            this.labelTitutlo.TabIndex = 3;
-            this.labelTitutlo.Text = "Menú principal";
-            // 
-            // dgvArticulos
-            // 
-            this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 115);
-            this.dgvArticulos.Name = "dgvArticulos";
-            this.dgvArticulos.Size = new System.Drawing.Size(473, 251);
-            this.dgvArticulos.TabIndex = 7;
+            this.labelOpcion1.AutoSize = true;
+            this.labelOpcion1.BackColor = System.Drawing.Color.DarkGray;
+            this.labelOpcion1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOpcion1.Location = new System.Drawing.Point(393, 225);
+            this.labelOpcion1.Name = "labelOpcion1";
+            this.labelOpcion1.Size = new System.Drawing.Size(186, 23);
+            this.labelOpcion1.TabIndex = 13;
+            this.labelOpcion1.Text = "1 - Lista de articulos ";
             // 
             // Menu
             // 
@@ -81,16 +67,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 511);
-            this.Controls.Add(this.dgvArticulos);
-            this.Controls.Add(this.labelTitutlo);
-            this.Controls.Add(this.enviarOpcion);
-            this.Controls.Add(this.Opcion);
+            this.Controls.Add(this.labelOpcion1);
+            this.Controls.Add(this.txtOpcion);
+            this.Controls.Add(this.btnMenu);
             this.IsMdiContainer = true;
             this.MinimumSize = new System.Drawing.Size(1000, 550);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion del comercio";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,10 +82,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox Opcion;
-        private System.Windows.Forms.Button enviarOpcion;
-        private System.Windows.Forms.Label labelTitutlo;
-        private System.Windows.Forms.DataGridView dgvArticulos;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.TextBox txtOpcion;
+        private System.Windows.Forms.Label labelOpcion1;
     }
 }
 
