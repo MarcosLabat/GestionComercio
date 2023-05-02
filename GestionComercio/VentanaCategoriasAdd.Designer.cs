@@ -41,7 +41,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(100, 129);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 11;
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -51,7 +51,7 @@
             this.btnAgregarCategoria.Location = new System.Drawing.Point(188, 48);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCategoria.TabIndex = 10;
+            this.btnAgregarCategoria.TabIndex = 1;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
             this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
@@ -88,7 +88,7 @@
             this.tbxNombreCategoria.Location = new System.Drawing.Point(75, 50);
             this.tbxNombreCategoria.Name = "tbxNombreCategoria";
             this.tbxNombreCategoria.Size = new System.Drawing.Size(100, 20);
-            this.tbxNombreCategoria.TabIndex = 6;
+            this.tbxNombreCategoria.TabIndex = 0;
             // 
             // VentanaCategoriasAdd
             // 

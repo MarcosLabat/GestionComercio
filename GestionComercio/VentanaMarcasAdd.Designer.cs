@@ -75,7 +75,7 @@
             this.btnAgregarMarca.Location = new System.Drawing.Point(188, 48);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarMarca.TabIndex = 4;
+            this.btnAgregarMarca.TabIndex = 1;
             this.btnAgregarMarca.Text = "Agregar";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
             this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
@@ -85,7 +85,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(100, 129);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 5;
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);

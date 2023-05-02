@@ -19,7 +19,7 @@ namespace DB
 
         public ConexionDB()
         {
-            conn = new SqlConnection("server=DESKTOP-D0T1FC1\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conn = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             cmd = new SqlCommand();
         }
 

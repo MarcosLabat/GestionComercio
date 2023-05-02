@@ -52,7 +52,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(95, 135);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 18;
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -62,7 +62,7 @@
             this.btnAgregarMarca.Location = new System.Drawing.Point(192, 69);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarMarca.TabIndex = 17;
+            this.btnAgregarMarca.TabIndex = 1;
             this.btnAgregarMarca.Text = "Aceptar";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
             this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
@@ -73,7 +73,7 @@
             this.lblNuevaMarca.Location = new System.Drawing.Point(26, 106);
             this.lblNuevaMarca.Name = "lblNuevaMarca";
             this.lblNuevaMarca.Size = new System.Drawing.Size(0, 13);
-            this.lblNuevaMarca.TabIndex = 16;
+            this.lblNuevaMarca.TabIndex = 4;
             // 
             // label2
             // 
@@ -99,7 +99,7 @@
             this.tbxNombreMarca.Location = new System.Drawing.Point(79, 71);
             this.tbxNombreMarca.Name = "tbxNombreMarca";
             this.tbxNombreMarca.Size = new System.Drawing.Size(100, 20);
-            this.tbxNombreMarca.TabIndex = 13;
+            this.tbxNombreMarca.TabIndex = 0;
             // 
             // VentanaMarcaModificar
             // 

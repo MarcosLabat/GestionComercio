@@ -56,28 +56,30 @@
             this.chbxImagen = new System.Windows.Forms.CheckBox();
             this.lblCodigoArt = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxPrecio
             // 
-            this.tbxPrecio.Location = new System.Drawing.Point(157, 306);
+            this.tbxPrecio.Location = new System.Drawing.Point(119, 153);
             this.tbxPrecio.Name = "tbxPrecio";
             this.tbxPrecio.Size = new System.Drawing.Size(188, 20);
-            this.tbxPrecio.TabIndex = 58;
+            this.tbxPrecio.TabIndex = 2;
             this.tbxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrecio_KeyPress);
             // 
             // tbxUrlImagen
             // 
-            this.tbxUrlImagen.Location = new System.Drawing.Point(157, 439);
+            this.tbxUrlImagen.Location = new System.Drawing.Point(119, 265);
             this.tbxUrlImagen.Name = "tbxUrlImagen";
             this.tbxUrlImagen.Size = new System.Drawing.Size(188, 20);
-            this.tbxUrlImagen.TabIndex = 57;
+            this.tbxUrlImagen.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(53, 440);
+            this.label9.Location = new System.Drawing.Point(15, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 16);
             this.label9.TabIndex = 56;
@@ -86,7 +88,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 15);
+            this.label8.Location = new System.Drawing.Point(4, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(246, 24);
             this.label8.TabIndex = 55;
@@ -94,10 +96,10 @@
             // 
             // btnVisualizarArticulo
             // 
-            this.btnVisualizarArticulo.Location = new System.Drawing.Point(168, 476);
+            this.btnVisualizarArticulo.Location = new System.Drawing.Point(138, 414);
             this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
             this.btnVisualizarArticulo.Size = new System.Drawing.Size(153, 48);
-            this.btnVisualizarArticulo.TabIndex = 54;
+            this.btnVisualizarArticulo.TabIndex = 7;
             this.btnVisualizarArticulo.Text = "Visualizar Articulo";
             this.btnVisualizarArticulo.UseVisualStyleBackColor = true;
             this.btnVisualizarArticulo.Click += new System.EventHandler(this.btnVisualizarArticulo_Click);
@@ -106,7 +108,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(77, 398);
+            this.label6.Location = new System.Drawing.Point(39, 230);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 16);
             this.label6.TabIndex = 53;
@@ -114,49 +116,49 @@
             // 
             // rtbxDescripcion
             // 
-            this.rtbxDescripcion.Location = new System.Drawing.Point(157, 188);
+            this.rtbxDescripcion.Location = new System.Drawing.Point(119, 303);
             this.rtbxDescripcion.Name = "rtbxDescripcion";
             this.rtbxDescripcion.Size = new System.Drawing.Size(188, 96);
-            this.rtbxDescripcion.TabIndex = 52;
+            this.rtbxDescripcion.TabIndex = 6;
             this.rtbxDescripcion.Text = "";
             // 
             // cbxMarca
             // 
             this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(157, 397);
+            this.cbxMarca.Location = new System.Drawing.Point(119, 229);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(188, 21);
-            this.cbxMarca.TabIndex = 51;
+            this.cbxMarca.TabIndex = 4;
             // 
             // cbxCategoria
             // 
             this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(157, 353);
+            this.cbxCategoria.Location = new System.Drawing.Point(119, 190);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(188, 21);
-            this.cbxCategoria.TabIndex = 50;
+            this.cbxCategoria.TabIndex = 3;
             // 
             // tbxNombre
             // 
-            this.tbxNombre.Location = new System.Drawing.Point(157, 144);
+            this.tbxNombre.Location = new System.Drawing.Point(119, 116);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(188, 20);
-            this.tbxNombre.TabIndex = 49;
+            this.tbxNombre.TabIndex = 1;
             // 
             // tbxCodigo
             // 
-            this.tbxCodigo.Location = new System.Drawing.Point(157, 99);
+            this.tbxCodigo.Location = new System.Drawing.Point(119, 79);
             this.tbxCodigo.Name = "tbxCodigo";
             this.tbxCodigo.Size = new System.Drawing.Size(188, 20);
-            this.tbxCodigo.TabIndex = 48;
+            this.tbxCodigo.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 354);
+            this.label5.Location = new System.Drawing.Point(18, 191);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 16);
             this.label5.TabIndex = 47;
@@ -166,7 +168,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(76, 307);
+            this.label4.Location = new System.Drawing.Point(38, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 16);
             this.label4.TabIndex = 46;
@@ -176,7 +178,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 189);
+            this.label3.Location = new System.Drawing.Point(5, 304);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 45;
@@ -186,7 +188,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(66, 145);
+            this.label2.Location = new System.Drawing.Point(28, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 16);
             this.label2.TabIndex = 44;
@@ -196,7 +198,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 100);
+            this.label1.Location = new System.Drawing.Point(33, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 43;
@@ -205,30 +207,30 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(469, 93);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(360, 56);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 24);
+            this.label7.Size = new System.Drawing.Size(114, 20);
             this.label7.TabIndex = 61;
-            this.label7.Text = "Previsualización";
+            this.label7.Text = "PRE-CARGA";
             // 
             // lvPrevisualizacion
             // 
             this.lvPrevisualizacion.HideSelection = false;
-            this.lvPrevisualizacion.Location = new System.Drawing.Point(414, 125);
+            this.lvPrevisualizacion.Location = new System.Drawing.Point(333, 79);
             this.lvPrevisualizacion.Name = "lvPrevisualizacion";
             this.lvPrevisualizacion.RightToLeftLayout = true;
-            this.lvPrevisualizacion.Size = new System.Drawing.Size(272, 258);
+            this.lvPrevisualizacion.Size = new System.Drawing.Size(167, 125);
             this.lvPrevisualizacion.TabIndex = 60;
             this.lvPrevisualizacion.UseCompatibleStateImageBehavior = false;
             this.lvPrevisualizacion.View = System.Windows.Forms.View.List;
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(463, 398);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(333, 416);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
             this.btnAgregarArticulo.Size = new System.Drawing.Size(167, 46);
-            this.btnAgregarArticulo.TabIndex = 59;
+            this.btnAgregarArticulo.TabIndex = 8;
             this.btnAgregarArticulo.Text = "Agregar Articulo";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
             this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
@@ -236,7 +238,7 @@
             // chbxCodigo
             // 
             this.chbxCodigo.AutoSize = true;
-            this.chbxCodigo.Location = new System.Drawing.Point(131, 102);
+            this.chbxCodigo.Location = new System.Drawing.Point(93, 82);
             this.chbxCodigo.Name = "chbxCodigo";
             this.chbxCodigo.Size = new System.Drawing.Size(15, 14);
             this.chbxCodigo.TabIndex = 62;
@@ -246,7 +248,7 @@
             // chbxNombre
             // 
             this.chbxNombre.AutoSize = true;
-            this.chbxNombre.Location = new System.Drawing.Point(131, 147);
+            this.chbxNombre.Location = new System.Drawing.Point(93, 119);
             this.chbxNombre.Name = "chbxNombre";
             this.chbxNombre.Size = new System.Drawing.Size(15, 14);
             this.chbxNombre.TabIndex = 63;
@@ -256,7 +258,7 @@
             // chbxDescripcion
             // 
             this.chbxDescripcion.AutoSize = true;
-            this.chbxDescripcion.Location = new System.Drawing.Point(131, 191);
+            this.chbxDescripcion.Location = new System.Drawing.Point(93, 306);
             this.chbxDescripcion.Name = "chbxDescripcion";
             this.chbxDescripcion.Size = new System.Drawing.Size(15, 14);
             this.chbxDescripcion.TabIndex = 64;
@@ -266,7 +268,7 @@
             // chbxPrecio
             // 
             this.chbxPrecio.AutoSize = true;
-            this.chbxPrecio.Location = new System.Drawing.Point(131, 309);
+            this.chbxPrecio.Location = new System.Drawing.Point(93, 156);
             this.chbxPrecio.Name = "chbxPrecio";
             this.chbxPrecio.Size = new System.Drawing.Size(15, 14);
             this.chbxPrecio.TabIndex = 65;
@@ -276,7 +278,7 @@
             // chbxCategoria
             // 
             this.chbxCategoria.AutoSize = true;
-            this.chbxCategoria.Location = new System.Drawing.Point(131, 356);
+            this.chbxCategoria.Location = new System.Drawing.Point(93, 193);
             this.chbxCategoria.Name = "chbxCategoria";
             this.chbxCategoria.Size = new System.Drawing.Size(15, 14);
             this.chbxCategoria.TabIndex = 66;
@@ -286,7 +288,7 @@
             // chbxMarca
             // 
             this.chbxMarca.AutoSize = true;
-            this.chbxMarca.Location = new System.Drawing.Point(131, 400);
+            this.chbxMarca.Location = new System.Drawing.Point(93, 232);
             this.chbxMarca.Name = "chbxMarca";
             this.chbxMarca.Size = new System.Drawing.Size(15, 14);
             this.chbxMarca.TabIndex = 67;
@@ -296,7 +298,7 @@
             // chbxImagen
             // 
             this.chbxImagen.AutoSize = true;
-            this.chbxImagen.Location = new System.Drawing.Point(131, 443);
+            this.chbxImagen.Location = new System.Drawing.Point(93, 269);
             this.chbxImagen.Name = "chbxImagen";
             this.chbxImagen.Size = new System.Drawing.Size(15, 14);
             this.chbxImagen.TabIndex = 68;
@@ -307,7 +309,7 @@
             // 
             this.lblCodigoArt.AutoSize = true;
             this.lblCodigoArt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoArt.Location = new System.Drawing.Point(56, 56);
+            this.lblCodigoArt.Location = new System.Drawing.Point(18, 47);
             this.lblCodigoArt.Name = "lblCodigoArt";
             this.lblCodigoArt.Size = new System.Drawing.Size(57, 18);
             this.lblCodigoArt.TabIndex = 69;
@@ -315,19 +317,28 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(575, 493);
+            this.btnCancelar.Location = new System.Drawing.Point(258, 484);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 31);
-            this.btnCancelar.TabIndex = 70;
+            this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Location = new System.Drawing.Point(354, 220);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(120, 113);
+            this.pbImagen.TabIndex = 73;
+            this.pbImagen.TabStop = false;
             // 
             // VentanaArticuloModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 559);
+            this.ClientSize = new System.Drawing.Size(546, 531);
+            this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblCodigoArt);
             this.Controls.Add(this.chbxImagen);
@@ -356,11 +367,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(733, 598);
-            this.MinimumSize = new System.Drawing.Size(733, 598);
+            this.MaximumSize = new System.Drawing.Size(562, 570);
+            this.MinimumSize = new System.Drawing.Size(562, 570);
             this.Name = "VentanaArticuloModificar";
             this.Text = "VentanaArticuloModificar";
             this.Load += new System.EventHandler(this.VentanaArticuloModificar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +408,6 @@
         private System.Windows.Forms.CheckBox chbxImagen;
         private System.Windows.Forms.Label lblCodigoArt;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pbImagen;
     }
 }
