@@ -117,6 +117,7 @@
             this.MinimumSize = new System.Drawing.Size(291, 203);
             this.Name = "VentanaCategoriaModificar";
             this.Text = "VentanaCategoriaModificar";
+            this.Load += new System.EventHandler(this.VentanaCategoriaModificar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

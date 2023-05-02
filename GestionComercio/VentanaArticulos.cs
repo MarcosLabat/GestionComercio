@@ -48,12 +48,14 @@ namespace GestionComercio
         {
             VentanaArticulosAdd agregarArticulo = new VentanaArticulosAdd();
             agregarArticulo.ShowDialog();
+            Panel_Load(sender, e);
         }
 
         private void nuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaArticulosAdd agregarArticulo = new VentanaArticulosAdd();
             agregarArticulo.ShowDialog();
+            Panel_Load(sender, e);
         }
 
         private void btnBuscarArticulo_Click(object sender, EventArgs e)
@@ -100,6 +102,7 @@ namespace GestionComercio
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloModificar modificarArticulo = new VentanaArticuloModificar(seleccionado);
             modificarArticulo.ShowDialog();
+            Panel_Load(sender, e);
         }
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,6 +110,7 @@ namespace GestionComercio
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloEliminar eliminarArticulo = new VentanaArticuloEliminar(seleccionado);
             eliminarArticulo.ShowDialog();
+            Panel_Load(sender, e);
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +118,7 @@ namespace GestionComercio
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloDetalle detalleArticulo = new VentanaArticuloDetalle(seleccionado);
             detalleArticulo.ShowDialog();
+            Panel_Load(sender, e);
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -155,5 +160,6 @@ namespace GestionComercio
                 pbxArticulo.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
             }
         }
+
     }
 }

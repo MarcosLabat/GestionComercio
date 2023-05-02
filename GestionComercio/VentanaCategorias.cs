@@ -68,6 +68,7 @@ namespace GestionComercio
             Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
             VentanaCategoriaModificar modificarCategoria = new VentanaCategoriaModificar(categoria);
             modificarCategoria.ShowDialog();
+            VentanaCategorias_Load(sender, e);
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,12 +76,14 @@ namespace GestionComercio
             Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
             VentanaCategoriaDetalle detalleCategoria = new VentanaCategoriaDetalle(categoria);
             detalleCategoria.ShowDialog();
+            VentanaCategorias_Load(sender, e);
         }
 
         private void nuevaCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaCategoriasAdd agregarCategoria = new VentanaCategoriasAdd();
             agregarCategoria.ShowDialog();
+            VentanaCategorias_Load(sender, e);
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)

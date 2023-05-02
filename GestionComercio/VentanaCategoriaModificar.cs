@@ -52,5 +52,10 @@ namespace GestionComercio
                 return;
             }
         }
+
+        private void VentanaCategoriaModificar_Load(object sender, EventArgs e)
+        {
+            lblCategoriaTitulo.Text = "ID " + categoria.Id + " " + categoria.Descripcion;
+        }
     }
 }

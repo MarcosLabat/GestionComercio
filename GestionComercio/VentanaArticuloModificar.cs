@@ -38,7 +38,7 @@ namespace GestionComercio
 
         private void VentanaArticuloModificar_Load(object sender, EventArgs e)
         {
-            lblCodigoArt.Text = articulo.Codigo;
+            lblCodigoArt.Text = "Cod: " + articulo.Codigo + " / " + articulo.Nombre;
 
             tbxCodigo.Visible = false;
             tbxNombre.Visible = false;

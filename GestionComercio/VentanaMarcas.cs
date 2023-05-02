@@ -67,6 +67,7 @@ namespace GestionComercio
             Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
             VentanaMarcaModificar modificarMarca = new VentanaMarcaModificar(marca);
             modificarMarca.ShowDialog();
+            VentanaMarcas_Load(sender, e);
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,12 +75,14 @@ namespace GestionComercio
             Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
             VentanaMarcaDetalle detalleMarca = new VentanaMarcaDetalle(marca);
             detalleMarca.ShowDialog();
+            VentanaMarcas_Load(sender, e);
         }
 
         private void nuevaMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaMarcasAdd agregarMarca = new VentanaMarcasAdd();
             agregarMarca.ShowDialog();
+            VentanaMarcas_Load(sender, e);
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)

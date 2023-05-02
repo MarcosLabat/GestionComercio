@@ -51,5 +51,10 @@ namespace GestionComercio
                 return;
             }
         }
+
+        private void VentanaMarcaModificar_Load(object sender, EventArgs e)
+        {
+            lblMarcaTitulo.Text = "ID " + marca.Id + " " + marca.Descripcion;
+        }
     }
 }

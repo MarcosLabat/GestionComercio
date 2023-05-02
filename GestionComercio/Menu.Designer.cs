@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnArticulos = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,29 +40,21 @@
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.tsbtnArticulos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.tsbtnMarcas = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.tsbtnCategorias = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnNuevaCategoria = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnNuevaMarca = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnNuevoArticulo = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbtnArticulos});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1041, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbtnArticulos
-            // 
-            this.tsbtnArticulos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbtnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnArticulos.Image")));
-            this.tsbtnArticulos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnArticulos.Name = "tsbtnArticulos";
-            this.tsbtnArticulos.Size = new System.Drawing.Size(23, 22);
-            this.tsbtnArticulos.Text = "toolStripButton1";
-            this.tsbtnArticulos.Click += new System.EventHandler(this.tsbtnArticulos_Click);
             // 
             // contextMenuStrip1
             // 
@@ -117,21 +107,21 @@
             // articulosToolStripMenuItem
             // 
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.articulosToolStripMenuItem.Text = "Articulos";
             this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
             this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
             // 
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
@@ -141,12 +131,120 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel2,
+            this.tsbtnArticulos,
+            this.tsbtnNuevoArticulo,
+            this.toolStripSeparator1,
+            this.toolStripLabel1,
+            this.tsbtnMarcas,
+            this.tsbtnNuevaMarca,
+            this.toolStripSeparator2,
+            this.toolStripLabel3,
+            this.tsbtnCategorias,
+            this.tsbtnNuevaCategoria});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(1041, 25);
+            this.toolStrip2.TabIndex = 14;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(54, 22);
+            this.toolStripLabel2.Text = "Articulos";
+            // 
+            // tsbtnArticulos
+            // 
+            this.tsbtnArticulos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnArticulos.Image")));
+            this.tsbtnArticulos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnArticulos.Name = "tsbtnArticulos";
+            this.tsbtnArticulos.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnArticulos.Text = "VentanaArticulos";
+            this.tsbtnArticulos.Click += new System.EventHandler(this.tsbtnArticulos_Click_1);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
+            this.toolStripLabel1.Text = "Marcas";
+            // 
+            // tsbtnMarcas
+            // 
+            this.tsbtnMarcas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnMarcas.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnMarcas.Image")));
+            this.tsbtnMarcas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnMarcas.Name = "tsbtnMarcas";
+            this.tsbtnMarcas.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnMarcas.Text = "VentanaMarcas";
+            this.tsbtnMarcas.Click += new System.EventHandler(this.tsbtnMarcas_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(63, 22);
+            this.toolStripLabel3.Text = "Categorias";
+            // 
+            // tsbtnCategorias
+            // 
+            this.tsbtnCategorias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnCategorias.Image")));
+            this.tsbtnCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnCategorias.Name = "tsbtnCategorias";
+            this.tsbtnCategorias.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnCategorias.Text = "VentanaCategorias";
+            this.tsbtnCategorias.Click += new System.EventHandler(this.tsbtnCategorias_Click);
+            // 
+            // tsbtnNuevaCategoria
+            // 
+            this.tsbtnNuevaCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnNuevaCategoria.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnNuevaCategoria.Image")));
+            this.tsbtnNuevaCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnNuevaCategoria.Name = "tsbtnNuevaCategoria";
+            this.tsbtnNuevaCategoria.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnNuevaCategoria.Text = "NuevaCategoria";
+            this.tsbtnNuevaCategoria.Click += new System.EventHandler(this.tsbtnNuevaCategoria_Click);
+            // 
+            // tsbtnNuevaMarca
+            // 
+            this.tsbtnNuevaMarca.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnNuevaMarca.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnNuevaMarca.Image")));
+            this.tsbtnNuevaMarca.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnNuevaMarca.Name = "tsbtnNuevaMarca";
+            this.tsbtnNuevaMarca.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnNuevaMarca.Text = "NuevaMarca";
+            this.tsbtnNuevaMarca.Click += new System.EventHandler(this.tsbtnNuevaMarca_Click);
+            // 
+            // tsbtnNuevoArticulo
+            // 
+            this.tsbtnNuevoArticulo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbtnNuevoArticulo.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnNuevoArticulo.Image")));
+            this.tsbtnNuevoArticulo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnNuevoArticulo.Name = "tsbtnNuevoArticulo";
+            this.tsbtnNuevoArticulo.Size = new System.Drawing.Size(23, 22);
+            this.tsbtnNuevoArticulo.Text = "NuevoArticulo";
+            this.tsbtnNuevoArticulo.Click += new System.EventHandler(this.tsbtnNuevoArticulo_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 581);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -154,19 +252,16 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion del comercio";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbtnArticulos;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
@@ -177,6 +272,18 @@
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton tsbtnArticulos;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton tsbtnMarcas;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripButton tsbtnCategorias;
+        private System.Windows.Forms.ToolStripButton tsbtnNuevaCategoria;
+        private System.Windows.Forms.ToolStripButton tsbtnNuevoArticulo;
+        private System.Windows.Forms.ToolStripButton tsbtnNuevaMarca;
     }
 }
 

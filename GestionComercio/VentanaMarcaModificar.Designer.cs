@@ -81,9 +81,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(7, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 18);
+            this.label2.Size = new System.Drawing.Size(162, 18);
             this.label2.TabIndex = 15;
-            this.label2.Text = "MODIFICAR CATEGORIA";
+            this.label2.Text = "MODIFICAR MARCA";
             // 
             // label1
             // 
@@ -117,6 +117,7 @@
             this.MinimumSize = new System.Drawing.Size(291, 203);
             this.Name = "VentanaMarcaModificar";
             this.Text = "VentanaMarcaModificar";
+            this.Load += new System.EventHandler(this.VentanaMarcaModificar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

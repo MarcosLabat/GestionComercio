@@ -17,13 +17,6 @@ namespace GestionComercio
             InitializeComponent();
         }
 
-        private void tsbtnArticulos_Click(object sender, EventArgs e)
-        {
-
-            VentanaArticulos panel = new VentanaArticulos();
-            panel.MdiParent = this;
-            panel.Show();
-        }
 
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -65,6 +58,39 @@ namespace GestionComercio
             VentanaArticulos articulos = new VentanaArticulos();
             articulos.MdiParent = this;
             articulos.Show();
+        }
+
+        private void tsbtnArticulos_Click_1(object sender, EventArgs e)
+        {
+            articulosToolStripMenuItem_Click(sender, e);
+        }
+
+        private void tsbtnNuevoArticulo_Click(object sender, EventArgs e)
+        {
+            VentanaArticulosAdd nuevoArticulo = new VentanaArticulosAdd();
+            nuevoArticulo.ShowDialog();
+        }
+
+        private void tsbtnMarcas_Click(object sender, EventArgs e)
+        {
+            marcasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void tsbtnNuevaMarca_Click(object sender, EventArgs e)
+        {
+            VentanaMarcasAdd nuevaMarca = new VentanaMarcasAdd();
+            nuevaMarca.ShowDialog();
+        }
+
+        private void tsbtnCategorias_Click(object sender, EventArgs e)
+        {
+            categoriasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void tsbtnNuevaCategoria_Click(object sender, EventArgs e)
+        {
+            VentanaCategoriasAdd nuevaCategoria = new VentanaCategoriasAdd();
+            nuevaCategoria.ShowDialog();
         }
     }
 }
