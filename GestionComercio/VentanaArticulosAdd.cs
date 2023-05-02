@@ -39,15 +39,21 @@ namespace GestionComercio
 
         private void tbxPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',' && !(e.KeyChar == (char)8 && tbxPrecio.Text.Length > 0))
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',' && tbxPrecio.Text.Length > 0)
             {
                 e.Handled = true;
             }
 
             if (e.KeyChar == ',' || e.KeyChar == '.')
             {
-                e.KeyChar = '.';
-                if (tbxPrecio.Text.Contains("."))
+                e.KeyChar = ',';
+                if (tbxPrecio.Text.Contains(","))
                 {
                     e.Handled = true;
                 }
@@ -134,12 +140,11 @@ namespace GestionComercio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
                 return;
             }
             
         }
-
 
     }
 }

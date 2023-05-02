@@ -55,6 +55,7 @@
             this.chbxMarca = new System.Windows.Forms.CheckBox();
             this.chbxImagen = new System.Windows.Forms.CheckBox();
             this.lblCodigoArt = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxPrecio
@@ -63,6 +64,7 @@
             this.tbxPrecio.Name = "tbxPrecio";
             this.tbxPrecio.Size = new System.Drawing.Size(188, 20);
             this.tbxPrecio.TabIndex = 58;
+            this.tbxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPrecio_KeyPress);
             // 
             // tbxUrlImagen
             // 
@@ -92,9 +94,9 @@
             // 
             // btnVisualizarArticulo
             // 
-            this.btnVisualizarArticulo.Location = new System.Drawing.Point(169, 504);
+            this.btnVisualizarArticulo.Location = new System.Drawing.Point(168, 476);
             this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
-            this.btnVisualizarArticulo.Size = new System.Drawing.Size(121, 23);
+            this.btnVisualizarArticulo.Size = new System.Drawing.Size(153, 48);
             this.btnVisualizarArticulo.TabIndex = 54;
             this.btnVisualizarArticulo.Text = "Visualizar Articulo";
             this.btnVisualizarArticulo.UseVisualStyleBackColor = true;
@@ -223,9 +225,9 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(488, 399);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(463, 398);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
-            this.btnAgregarArticulo.Size = new System.Drawing.Size(121, 23);
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(167, 46);
             this.btnAgregarArticulo.TabIndex = 59;
             this.btnAgregarArticulo.Text = "Agregar Articulo";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
@@ -311,11 +313,22 @@
             this.lblCodigoArt.TabIndex = 69;
             this.lblCodigoArt.Text = "Articulo";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(575, 493);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(111, 31);
+            this.btnCancelar.TabIndex = 70;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // VentanaArticuloModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 559);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblCodigoArt);
             this.Controls.Add(this.chbxImagen);
             this.Controls.Add(this.chbxMarca);
@@ -343,6 +356,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(733, 598);
+            this.MinimumSize = new System.Drawing.Size(733, 598);
             this.Name = "VentanaArticuloModificar";
             this.Text = "VentanaArticuloModificar";
             this.Load += new System.EventHandler(this.VentanaArticuloModificar_Load);
@@ -380,5 +395,6 @@
         private System.Windows.Forms.CheckBox chbxMarca;
         private System.Windows.Forms.CheckBox chbxImagen;
         private System.Windows.Forms.Label lblCodigoArt;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

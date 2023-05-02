@@ -48,5 +48,10 @@ namespace GestionComercio
                 pbxArt.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
             }
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

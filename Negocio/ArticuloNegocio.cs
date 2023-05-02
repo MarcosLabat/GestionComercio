@@ -23,25 +23,37 @@ namespace Negocio
                 while (datos.Reader.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Marca = new Marca();
-                    aux.Categoria = new Categoria();
-                    aux.Imagen = new Imagen();
-
-                    aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
-                    aux.Marca.Id = (int)datos.Reader["IdMarca"];
-
-                    aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
-                    aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
-
-                    aux.Imagen.Id = (int)datos.Reader["IdImagen"];
-                    aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
-                    aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
 
                     aux.Id = (int)datos.Reader["Id"];
-                    aux.Codigo = (string)datos.Reader["Codigo"];
-                    aux.Nombre = (string)datos.Reader["Nombre"];
-                    aux.Descripcion = (string)datos.Reader["Descripcion"];
-                    aux.Precio = (decimal)datos.Reader["Precio"];
+                    if (!(datos.Reader["Codigo"] is DBNull)) aux.Codigo = (string)datos.Reader["Codigo"];
+                    if (!(datos.Reader["Nombre"] is DBNull)) aux.Nombre = (string)datos.Reader["Nombre"];
+                    if (!(datos.Reader["Descripcion"] is DBNull)) aux.Descripcion = (string)datos.Reader["Descripcion"];
+                    if (!(datos.Reader["Precio"] is DBNull)) aux.Precio = (decimal)datos.Reader["Precio"];
+
+
+                    if (!(datos.Reader["IdMarca"] is DBNull))
+                    {
+                        aux.Marca = new Marca();
+                        aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
+                        aux.Marca.Id = (int)datos.Reader["IdMarca"];
+
+                    }
+
+                    if(!(datos.Reader["IdCategoria"] is DBNull))
+                    {
+                        aux.Categoria = new Categoria();
+                        aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
+                        aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
+                    }
+
+                    if(!(datos.Reader["IdImagen"] is DBNull))
+                    {
+                        aux.Imagen = new Imagen();
+                        aux.Imagen.Id = (int)datos.Reader["IdImagen"];
+                        aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
+                        aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
+                    }
+
 
                     lista.Add(aux);
                 }

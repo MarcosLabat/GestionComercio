@@ -43,17 +43,26 @@ namespace GestionComercio
         {
             if(MessageBox.Show("¿Seguro desea eliminar el articulo #" + articulo.Codigo + " " + articulo.Nombre + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int imgRows = imagenNegocio.eliminar(articulo.Id);
-                int rowsAffected = articuloNegocio.eliminar(articulo.Id);
-                if (rowsAffected == 1 && imgRows == 1)
+                try
                 {
-                    MessageBox.Show("Eliminado correctamente");
-                    this.Close();
+                    int imgRows = imagenNegocio.eliminar(articulo.Id);
+                    int rowsAffected = articuloNegocio.eliminar(articulo.Id);
+                    if (rowsAffected == 1 && imgRows == 1)
+                    {
+                        MessageBox.Show("Eliminado correctamente");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Algo ha ocurrido al intentar eliminar el articulo");
+                        this.Close();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Algo ha ocurrido al intentar eliminar el articulo");
-                    this.Close();
+
+                    MessageBox.Show(ex.Message);
+                    return;
                 }
             }
             else

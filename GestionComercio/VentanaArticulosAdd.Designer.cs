@@ -47,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxPrecio
@@ -88,7 +89,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(500, 79);
+            this.label7.Location = new System.Drawing.Point(469, 93);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(161, 24);
             this.label7.TabIndex = 38;
@@ -97,7 +98,7 @@
             // lvPrevisualizacion
             // 
             this.lvPrevisualizacion.HideSelection = false;
-            this.lvPrevisualizacion.Location = new System.Drawing.Point(445, 111);
+            this.lvPrevisualizacion.Location = new System.Drawing.Point(414, 125);
             this.lvPrevisualizacion.Name = "lvPrevisualizacion";
             this.lvPrevisualizacion.RightToLeftLayout = true;
             this.lvPrevisualizacion.Size = new System.Drawing.Size(272, 258);
@@ -107,9 +108,9 @@
             // 
             // btnAgregarArticulo
             // 
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(519, 385);
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(463, 398);
             this.btnAgregarArticulo.Name = "btnAgregarArticulo";
-            this.btnAgregarArticulo.Size = new System.Drawing.Size(121, 23);
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(167, 46);
             this.btnAgregarArticulo.TabIndex = 36;
             this.btnAgregarArticulo.Text = "Agregar Articulo";
             this.btnAgregarArticulo.UseVisualStyleBackColor = true;
@@ -117,9 +118,9 @@
             // 
             // btnVisualizarArticulo
             // 
-            this.btnVisualizarArticulo.Location = new System.Drawing.Point(163, 471);
+            this.btnVisualizarArticulo.Location = new System.Drawing.Point(168, 476);
             this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
-            this.btnVisualizarArticulo.Size = new System.Drawing.Size(121, 23);
+            this.btnVisualizarArticulo.Size = new System.Drawing.Size(167, 46);
             this.btnVisualizarArticulo.TabIndex = 35;
             this.btnVisualizarArticulo.Text = "Visualizar Articulo";
             this.btnVisualizarArticulo.UseVisualStyleBackColor = true;
@@ -225,11 +226,21 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Codigo:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(575, 493);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(111, 31);
+            this.btnCancelar.TabIndex = 71;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // VentanaArticulosAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 524);
+            this.ClientSize = new System.Drawing.Size(717, 559);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.tbxPrecio);
             this.Controls.Add(this.tbxUrlImagen);
             this.Controls.Add(this.label9);
@@ -249,7 +260,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.MinimumSize = new System.Drawing.Size(847, 563);
+            this.MaximumSize = new System.Drawing.Size(733, 598);
+            this.MinimumSize = new System.Drawing.Size(733, 598);
             this.Name = "VentanaArticulosAdd";
             this.Text = "AgregarArticulo";
             this.Load += new System.EventHandler(this.AgregarArticulo_Load);
@@ -279,5 +291,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

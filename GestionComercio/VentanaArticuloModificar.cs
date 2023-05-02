@@ -211,5 +211,41 @@ namespace GestionComercio
             if(chbxImagen.Checked) tbxUrlImagen.Visible = true;
             else tbxUrlImagen .Visible = false;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbxPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && e.KeyChar != ',' && tbxPrecio.Text.Length > 0)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == ',' || e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+                if (tbxPrecio.Text.Contains(","))
+                {
+                    e.Handled = true;
+                }
+            }
+
+
+            decimal value;
+            if (!decimal.TryParse((sender as TextBox).Text + e.KeyChar, out value))
+            {
+                MessageBox.Show("Ingrese un valor numérico válido");
+                e.Handled = true;
+            }
+        }
     }
 }

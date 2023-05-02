@@ -221,6 +221,8 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblTitulo);
+            this.MaximumSize = new System.Drawing.Size(351, 346);
+            this.MinimumSize = new System.Drawing.Size(351, 346);
             this.Name = "VentanaArticuloEliminar";
             this.Text = "VentanaArticuloEliminar";
             this.Load += new System.EventHandler(this.VentanaArticuloEliminar_Load);

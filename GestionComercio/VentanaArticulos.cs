@@ -122,6 +122,21 @@ namespace GestionComercio
             cargarImagen(seleccionado.Imagen.UrlImagen);
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarToolStripMenuItem_Click(sender, e);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            modificarToolStripMenuItem_Click(sender, e);
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            verDetalleToolStripMenuItem_Click(sender, e);
+        }
+
         private void cargarImagen(string imagen)
         {
             try
@@ -135,5 +150,7 @@ namespace GestionComercio
                 pbxArticulo.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
             }
         }
+
+
     }
 }
