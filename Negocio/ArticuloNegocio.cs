@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using DB;
+using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -143,6 +144,29 @@ namespace Negocio
             {
                 datos.cerrar();
             }
+        }
+
+        public int modificar(Articulo articulo, List<SqlParameter> parametros)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "UPDATE ARTICULOS SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Categoria = @categoria, marca = @marca WHERE id = @id";
+            int rowsAffected = 0;
+            try
+            {
+                db.setearQuery(query);
+                db.agregarParametros(parametros);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally 
+            {
+                db.cerrar();
+            }
+
         }
     }
 }

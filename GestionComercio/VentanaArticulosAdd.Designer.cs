@@ -223,7 +223,7 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Codigo:";
             // 
-            // AgregarArticulo
+            // VentanaArticulosAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,7 +248,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(847, 563);
-            this.Name = "AgregarArticulo";
+            this.Name = "VentanaArticulosAdd";
             this.Text = "AgregarArticulo";
             this.Load += new System.EventHandler(this.AgregarArticulo_Load);
             this.ResumeLayout(false);

@@ -59,6 +59,30 @@ namespace DB
             }
         }
 
+        public void agregarParametros(List<SqlParameter> paramList)
+        {
+            foreach (SqlParameter param in paramList)
+            {
+                cmd.Parameters.Add(param);
+            }
+        }
+
+        public int ejecutarQuery()
+        {
+            cmd.Connection = this.conn;
+            int rowsAffected = 0;
+            try
+            {
+                conn.Open();
+                rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void cerrar()
         {
             if (reader != null)
