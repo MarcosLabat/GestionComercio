@@ -33,6 +33,7 @@ namespace GestionComercio
             categoriaNegocio = new CategoriaNegocio();
             marcaNegocio = new MarcaNegocio();
             articuloNegocio = new ArticuloNegocio();
+            imagenNegocio = new ImagenNegocio();
         }
 
         private void VentanaArticuloModificar_Load(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace GestionComercio
 
         private void btnVisualizarArticulo_Click(object sender, EventArgs e)
         {
-
+            lvPrevisualizacion.Clear();
             previsualizado = true;
             string codigo, nombre, descripcion, marca, categoria, precio;
 
@@ -61,7 +62,7 @@ namespace GestionComercio
             if (chbxNombre.Checked) nombre = "Nombre: " + tbxNombre.Text;
             else nombre = "Nombre: " + articulo.Nombre;
 
-            if (chbxDescripcion.Checked) descripcion = "Descripcion: " + rtbxDescripcion;
+            if (chbxDescripcion.Checked) descripcion = "Descripcion: " + rtbxDescripcion.Text;
             else descripcion = "Descripcion: " + articulo.Descripcion;
 
             if (chbxMarca.Checked) marca = "Marca: " + cbxMarca.Text;
@@ -86,67 +87,59 @@ namespace GestionComercio
         {
             if (!previsualizado)
             {
-                MessageBox.Show("Previzualiza el Articulo antes de modificarlo!");
+                MessageBox.Show("Previzualiza el articulo antes de modificarlo!");
                 return;
             }
 
-            List<SqlParameter> parametros = new List<SqlParameter>();
-
-            if (chbxCodigo.Checked)
-            {
-                SqlParameter codigoParam = new SqlParameter("@codigo", tbxCodigo.Text);
-                parametros.Add(codigoParam);
-            }
-
-            if (chbxNombre.Checked)
-            {
-                SqlParameter nombreParam = new SqlParameter("@nombre", tbxNombre.Text);
-                parametros.Add(nombreParam);
-            }
-
-            if (chbxDescripcion.Checked)
-            {
-                SqlParameter descripcionParam = new SqlParameter("@descripcion", rtbxDescripcion.Text);
-                parametros.Add(descripcionParam);
-            }
-
-            if (chbxPrecio.Checked)
-            {
-                SqlParameter precioParam = new SqlParameter("@precio", tbxPrecio.Text);
-                parametros.Add(precioParam);
-            }
-
-            if (chbxCategoria.Checked)
-            {
-                Categoria cat = categoriaNegocio.buscarPorDescripcion(cbxCategoria.Text);
-                int idCategoria = cat.Id;
-                SqlParameter categoriaParam = new SqlParameter("@categoria", idCategoria);
-                parametros.Add(categoriaParam);
-            }
-
-            if (chbxMarca.Checked)
-            {
-                Marca marca = marcaNegocio.buscarPorDescripcion(cbxMarca.Text);
-                int idMarca = marca.Id;
-                SqlParameter marcaParam = new SqlParameter("@marca", idMarca);
-                parametros.Add(marcaParam);
-            }
-
-            if(chbxImagen.Checked)
-            {
-                
-                Imagen imagen = new Imagen();
-                imagen.IdArticulo = articulo.Id;
-                imagen.UrlImagen = tbxUrlImagen.Text;
-                imagenNegocio.guardar(imagen);
-            }
-
-            SqlParameter idParam = new SqlParameter("@id", articulo.Id);
-            parametros.Add(idParam);
-
             try
             {
-                int modificado = articuloNegocio.modificar(articulo, parametros);
+                if (chbxCodigo.Checked)
+                {
+                articulo.Codigo = tbxCodigo.Text;
+                }
+
+                if (chbxNombre.Checked)
+                {
+                    articulo.Nombre = tbxNombre.Text;
+                }
+
+                if (chbxDescripcion.Checked)
+                {
+                    articulo.Descripcion = (string)rtbxDescripcion.Text;
+                }
+
+                if (chbxPrecio.Checked)
+                {
+                    articulo.Precio = decimal.Parse(tbxPrecio.Text);
+                }
+
+                if (chbxCategoria.Checked)
+                {
+                    Categoria cat = categoriaNegocio.buscarPorDescripcion(cbxCategoria.Text);
+                    articulo.Categoria.Id = cat.Id;
+                    articulo.Descripcion = cat.Descripcion;
+                }
+
+                if (chbxMarca.Checked)
+                {
+                    Marca marca = marcaNegocio.buscarPorDescripcion(cbxMarca.Text);
+                    articulo.Marca.Id = marca.Id;
+                    articulo.Marca.Descripcion = marca.Descripcion;
+                }
+
+                if(chbxImagen.Checked)
+                {
+                    Imagen imagen = new Imagen();
+                    imagen.IdArticulo = articulo.Id;
+                    imagen.UrlImagen = tbxUrlImagen.Text;
+                    int idImagen = imagenNegocio.guardar(imagen);
+                    articulo.Imagen.Id = idImagen;
+                    articulo.Imagen.UrlImagen = imagen.UrlImagen;
+                    articulo.Imagen.IdArticulo = articulo.Id;
+                }
+
+           
+                int modificado = articuloNegocio.modificar(articulo);
                 if (modificado != 1)
                 {
                     MessageBox.Show("No se pudo modificar el articulo");
@@ -155,6 +148,8 @@ namespace GestionComercio
 
                 MessageBox.Show("Articulo modificado correctamente!");
                 previsualizado = false;
+                this.Close();
+
             }
             catch (Exception ex)
             {

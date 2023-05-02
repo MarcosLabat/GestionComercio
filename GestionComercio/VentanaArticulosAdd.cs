@@ -116,12 +116,8 @@ namespace GestionComercio
                 nuevoArticulo.Nombre = nombre;
                 nuevoArticulo.Descripcion = descripcion;
                 nuevoArticulo.Precio = precio;
-                nuevoArticulo.Marca = new Marca();
-                nuevoArticulo.Marca.Descripcion = marca.Descripcion;
-                nuevoArticulo.Marca.Id = marca.Id;
-                nuevoArticulo.Categoria = new Categoria();
-                nuevoArticulo.Categoria.Descripcion = categoria.Descripcion;
-                nuevoArticulo.Categoria.Id = categoria.Id;
+                nuevoArticulo.Marca = (Marca)cbxMarca.SelectedItem;
+                nuevoArticulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                 int idArticulo = articuloNegocio.guardar(nuevoArticulo);
 
                 // Guardado de Imagen
@@ -132,10 +128,11 @@ namespace GestionComercio
                 imagenNegocio.guardar(nuevaImagen);
 
                 MessageBox.Show("Guardado Correctamente");
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("error: " + ex.Message);
                 return;
             }
             

@@ -146,15 +146,14 @@ namespace Negocio
             }
         }
 
-        public int modificar(Articulo articulo, List<SqlParameter> parametros)
+        public int modificar(Articulo articulo)
         {
             ConexionDB db = new ConexionDB();
-            string query = "UPDATE ARTICULOS SET Nombre = @nombre, Descripcion = @descripcion, Precio = @precio, Categoria = @categoria, marca = @marca WHERE id = @id";
+            string query = $"UPDATE ARTICULOS SET Nombre = '{articulo.Nombre}', Codigo = '{articulo.Codigo}', Descripcion = '{articulo.Descripcion}', Precio = {articulo.Precio}, IdCategoria = {articulo.Categoria.Id}, IdMarca = {articulo.Marca.Id} WHERE id = {articulo.Id}";
             int rowsAffected = 0;
             try
             {
                 db.setearQuery(query);
-                db.agregarParametros(parametros);
                 rowsAffected = db.ejecutarQuery();
                 return rowsAffected;
             }

@@ -13,7 +13,6 @@ namespace Negocio
         public int guardar(Imagen imagen)
         {
             int idImagen = -1;
-            string url = "";
             int idArticulo = imagen.IdArticulo;
             string urlImagen = imagen.UrlImagen;
             string query = $"INSERT INTO IMAGENES(IdArticulo, ImagenUrl) VALUES('{idArticulo}', '{urlImagen}'); SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID";
@@ -25,7 +24,6 @@ namespace Negocio
 
                 if (db.Reader.Read())
                 {
-                    url = (string)db.Reader["ImagenUrl"];
                     idImagen = (int)db.Reader["ID"];
                 }
 
