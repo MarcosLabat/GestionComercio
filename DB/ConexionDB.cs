@@ -59,12 +59,9 @@ namespace DB
             }
         }
 
-        public void agregarParametros(List<SqlParameter> paramList)
+        public void setearParametro(string nombre, object valor)
         {
-            foreach (SqlParameter param in paramList)
-            {
-                cmd.Parameters.Add(param);
-            }
+            cmd.Parameters.AddWithValue(nombre, valor);
         }
 
         public int ejecutarQuery()

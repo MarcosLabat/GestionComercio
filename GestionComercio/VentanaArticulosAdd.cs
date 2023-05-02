@@ -71,6 +71,7 @@ namespace GestionComercio
             string marca = cbxMarca.Text;
             string categoria = cbxCategoria.Text;
             string urlImagen = tbxUrlImagen.Text;
+            string precio = tbxPrecio.Text;
 
             lvPrevisualizacion.Items.Add("* Codigo: " + codigo);
             lvPrevisualizacion.Items.Add("* Nombre: " + nombre);
@@ -78,6 +79,7 @@ namespace GestionComercio
             lvPrevisualizacion.Items.Add("* Marca: " + marca);
             lvPrevisualizacion.Items.Add("* Categoria: " + categoria);
             lvPrevisualizacion.Items.Add("* UrlImagen: " + urlImagen);
+            lvPrevisualizacion.Items.Add("* Pecio: $" + precio);
         }
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)

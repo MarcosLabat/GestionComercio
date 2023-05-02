@@ -27,12 +27,6 @@ namespace Negocio
                     aux.Categoria = new Categoria();
                     aux.Imagen = new Imagen();
 
-                    aux.Id = (int)datos.Reader["Id"];
-                    aux.Codigo = (string)datos.Reader["Codigo"];
-                    aux.Nombre = (string)datos.Reader["Nombre"];
-                    aux.Descripcion = (string)datos.Reader["Descripcion"];
-                    aux.Precio = (decimal)datos.Reader["Precio"];
-
                     aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
                     aux.Marca.Id = (int)datos.Reader["IdMarca"];
 
@@ -42,6 +36,12 @@ namespace Negocio
                     aux.Imagen.Id = (int)datos.Reader["IdImagen"];
                     aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
                     aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
+
+                    aux.Id = (int)datos.Reader["Id"];
+                    aux.Codigo = (string)datos.Reader["Codigo"];
+                    aux.Nombre = (string)datos.Reader["Nombre"];
+                    aux.Descripcion = (string)datos.Reader["Descripcion"];
+                    aux.Precio = (decimal)datos.Reader["Precio"];
 
                     lista.Add(aux);
                 }
@@ -68,10 +68,17 @@ namespace Negocio
             int idCategoria = nuevoArticulo.Categoria.Id;
             decimal precio = nuevoArticulo.Precio;
 
+            string query = $"INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES(@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @precio);" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;";
             ConexionDB db = new ConexionDB();
             try
             {
-                db.setearQuery($"INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES('{codigo}', '{nombre}', '{descripcion}', '{idMarca}', '{idCategoria}', '{precio}');" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;");
+                db.setearQuery(query);
+                db.setearParametro("@nombre", nombre);
+                db.setearParametro("@codigo", codigo);
+                db.setearParametro("@descripcion", descripcion);
+                db.setearParametro("@precio", precio);
+                db.setearParametro("@idCategoria", idCategoria);
+                db.setearParametro("@idMarca", idMarca);
                 db.leer();
 
                 if (db.Reader.Read())
@@ -116,19 +123,23 @@ namespace Negocio
                     Articulo aux = new Articulo();
                     aux.Marca = new Marca();
                     aux.Categoria = new Categoria();
-                    //aux.Imagen = new Imagen();
-
-                    aux.Id = (int)datos.Reader["Id"];
-                    aux.Codigo = (string)datos.Reader["Codigo"];
-                    aux.Nombre = (string)datos.Reader["Nombre"];
-                    aux.Descripcion = (string)datos.Reader["Descripcion"];
-                    aux.Precio = (decimal)datos.Reader["Precio"];
+                    aux.Imagen = new Imagen();
 
                     aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
                     aux.Marca.Id = (int)datos.Reader["IdMarca"];
 
                     aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
                     aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
+
+                    aux.Imagen.Id = (int)datos.Reader["IdImagen"];
+                    aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
+                    aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
+
+                    aux.Id = (int)datos.Reader["Id"];
+                    aux.Codigo = (string)datos.Reader["Codigo"];
+                    aux.Nombre = (string)datos.Reader["Nombre"];
+                    aux.Descripcion = (string)datos.Reader["Descripcion"];
+                    aux.Precio = (decimal)datos.Reader["Precio"];
 
 
                     lista.Add(aux);
@@ -149,11 +160,18 @@ namespace Negocio
         public int modificar(Articulo articulo)
         {
             ConexionDB db = new ConexionDB();
-            string query = $"UPDATE ARTICULOS SET Nombre = '{articulo.Nombre}', Codigo = '{articulo.Codigo}', Descripcion = '{articulo.Descripcion}', Precio = {articulo.Precio}, IdCategoria = {articulo.Categoria.Id}, IdMarca = {articulo.Marca.Id} WHERE id = {articulo.Id}";
+            string query = $"UPDATE ARTICULOS SET Nombre = @nombre, Codigo = @codigo, Descripcion = @descripcion, Precio = @precio, IdCategoria = @idCategoria, IdMarca = @idMarca WHERE id = @idArticulo";
             int rowsAffected = 0;
             try
             {
                 db.setearQuery(query);
+                db.setearParametro("@nombre", articulo.Nombre);
+                db.setearParametro("@codigo", articulo.Codigo);
+                db.setearParametro("@descripcion", articulo.Descripcion);
+                db.setearParametro("@precio", articulo.Precio);
+                db.setearParametro("@idCategoria", articulo.Categoria.Id);
+                db.setearParametro("@idMarca", articulo.Marca.Id);
+                db.setearParametro("@idArticulo", articulo.Id);
                 rowsAffected = db.ejecutarQuery();
                 return rowsAffected;
             }

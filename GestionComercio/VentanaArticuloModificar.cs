@@ -115,16 +115,12 @@ namespace GestionComercio
 
                 if (chbxCategoria.Checked)
                 {
-                    Categoria cat = categoriaNegocio.buscarPorDescripcion(cbxCategoria.Text);
-                    articulo.Categoria.Id = cat.Id;
-                    articulo.Descripcion = cat.Descripcion;
+                    articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                 }
 
                 if (chbxMarca.Checked)
                 {
-                    Marca marca = marcaNegocio.buscarPorDescripcion(cbxMarca.Text);
-                    articulo.Marca.Id = marca.Id;
-                    articulo.Marca.Descripcion = marca.Descripcion;
+                    articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 }
 
                 if(chbxImagen.Checked)
@@ -133,9 +129,8 @@ namespace GestionComercio
                     imagen.IdArticulo = articulo.Id;
                     imagen.UrlImagen = tbxUrlImagen.Text;
                     int idImagen = imagenNegocio.guardar(imagen);
-                    articulo.Imagen.Id = idImagen;
-                    articulo.Imagen.UrlImagen = imagen.UrlImagen;
-                    articulo.Imagen.IdArticulo = articulo.Id;
+                    imagen.Id = idImagen;
+                    articulo.Imagen = imagen;
                 }
 
            

@@ -44,10 +44,11 @@ namespace Negocio
         {
             List<Categoria> listaCategorias = new List<Categoria>();
             ConexionDB db = new ConexionDB();
-            string query = $"SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = '%{busqueda}%'";
+            string query = "SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = @busqueda";
             try
             {
                 db.setearQuery(query);
+                db.setearParametro("@busqueda", busqueda);
                 db.leer();
                 while (db.Reader.Read())
                 {
@@ -74,10 +75,11 @@ namespace Negocio
         {
             Categoria categoria = null;
             ConexionDB db = new ConexionDB();
-            string query = $"SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = '{descripcion}'";
+            string query = "SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = @descripcion";
             try
             {
                 db.setearQuery(query);
+                db.setearParametro("@descripcion", descripcion);
                 db.leer();
                 if (db.Reader.Read())
                 {
@@ -102,11 +104,12 @@ namespace Negocio
         {
             int idCategoria = -1;
             string descripcion = nuevaCategoria;
-
+            string query = "INSERT INTO CATEGORIAS(Descripcion) VALUES(@descripcion);" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;";
             ConexionDB db = new ConexionDB();
             try
             {
-                db.setearQuery($"INSERT INTO CATEGORIAS(Descripcion) VALUES('{descripcion}');" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;");
+                db.setearQuery(query);
+                db.setearParametro("@descripcion", descripcion);
                 db.leer();
 
                 if (db.Reader.Read())
