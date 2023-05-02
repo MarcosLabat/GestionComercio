@@ -247,5 +247,25 @@ namespace GestionComercio
                 e.Handled = true;
             }
         }
+
+        private void tbxUrlImagen_Leave(object sender, EventArgs e)
+        {
+            string url = tbxUrlImagen.Text;
+            cargarImagen(url);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbImagen.Load(imagen);
+
+            }
+            catch (Exception)
+            {
+
+                pbImagen.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
+            }
+        }
     }
 }

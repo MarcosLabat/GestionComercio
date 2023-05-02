@@ -66,6 +66,7 @@
             this.tbxUrlImagen.Name = "tbxUrlImagen";
             this.tbxUrlImagen.Size = new System.Drawing.Size(188, 20);
             this.tbxUrlImagen.TabIndex = 5;
+            this.tbxUrlImagen.Leave += new System.EventHandler(this.tbxUrlImagen_Leave);
             // 
             // label9
             // 
@@ -242,6 +243,7 @@
             this.pbImagen.Location = new System.Drawing.Point(369, 211);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(120, 113);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 72;
             this.pbImagen.TabStop = false;
             // 
