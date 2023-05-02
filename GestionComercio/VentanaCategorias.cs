@@ -66,7 +66,8 @@ namespace GestionComercio
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-
+            VentanaCategoriaModificar modificarCategoria = new VentanaCategoriaModificar(categoria);
+            modificarCategoria.ShowDialog();
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)

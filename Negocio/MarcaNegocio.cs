@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("SELECT Id, Descripcion FROM MARCAS");
+                datos.SetearQuery("SELECT Id, Descripcion FROM MARCAS");
                 datos.leer();
                 while (datos.Reader.Read())
                 {
@@ -47,7 +47,7 @@ namespace Negocio
             string query = $"SELECT Id, Descripcion FROM MARCAS WHERE Descripcion = '{descripcion}'";
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.leer();
                 if (db.Reader.Read())
                 {
@@ -75,7 +75,7 @@ namespace Negocio
             ConexionDB db = new ConexionDB();
             try
             {
-                db.setearQuery($"INSERT INTO MARCAS(Descripcion) VALUES('{descripcion}');" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;");
+                db.SetearQuery($"INSERT INTO MARCAS(Descripcion) VALUES('{descripcion}');" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;");
                 db.leer();
 
                 if (db.Reader.Read())
@@ -94,6 +94,25 @@ namespace Negocio
                 db.cerrar();
             }
 
+        }
+
+        public int modificar(string descripcion, int idMarca)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "UPDATE MARCAS SET Descripcion = @descripcion WHERE Id = @idMarca";
+            int rowsAffected = 0;
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@descripcion", descripcion);
+                db.setearParametro("@idMarca", idMarca);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

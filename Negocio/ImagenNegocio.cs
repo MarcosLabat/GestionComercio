@@ -19,7 +19,7 @@ namespace Negocio
             ConexionDB db = new ConexionDB();
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.leer();
 
                 if (db.Reader.Read())
@@ -45,7 +45,7 @@ namespace Negocio
             int rowsAffected = 0;
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@idArticuloImagen", idArticuloImagen);
                 rowsAffected = db.ejecutarQuery();
                 return rowsAffected;

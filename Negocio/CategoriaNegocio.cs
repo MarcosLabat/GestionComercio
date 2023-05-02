@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("SELECT Id, Descripcion FROM CATEGORIAS");
+                datos.SetearQuery("SELECT Id, Descripcion FROM CATEGORIAS");
                 datos.leer();
                 while (datos.Reader.Read())
                 {
@@ -47,7 +47,7 @@ namespace Negocio
             string query = "SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = @busqueda";
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@busqueda", busqueda);
                 db.leer();
                 while (db.Reader.Read())
@@ -78,7 +78,7 @@ namespace Negocio
             string query = "SELECT Id, Descripcion FROM CATEGORIAS WHERE Descripcion = @descripcion";
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@descripcion", descripcion);
                 db.leer();
                 if (db.Reader.Read())
@@ -108,7 +108,7 @@ namespace Negocio
             ConexionDB db = new ConexionDB();
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@descripcion", descripcion);
                 db.leer();
 
@@ -128,6 +128,25 @@ namespace Negocio
                 db.cerrar();
             }
 
+        }
+
+        public int modificar(string descripcion, int idCategoria)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "UPDATE CATEGORIAS SET Descripcion = @descripcion WHERE Id = @idCategoria";
+            int rowsAffected = 0;
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@descripcion", descripcion);
+                db.setearParametro("@idCategoria", idCategoria);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

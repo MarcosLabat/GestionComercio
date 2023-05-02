@@ -23,7 +23,7 @@ namespace DB
             cmd = new SqlCommand();
         }
 
-        public void setearQuery(string query)
+        public void SetearQuery(string query)
         {
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = query;

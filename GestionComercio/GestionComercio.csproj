@@ -90,6 +90,12 @@
     <Compile Include="VentanaCategoriaDetalle.Designer.cs">
       <DependentUpon>VentanaCategoriaDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaCategoriaModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCategoriaModificar.Designer.cs">
+      <DependentUpon>VentanaCategoriaModificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="VentanaMarcaDetalle.Designer.cs">
       <DependentUpon>VentanaMarcaDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaMarcaModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaMarcaModificar.Designer.cs">
+      <DependentUpon>VentanaMarcaModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaMarcas.cs">
       <SubType>Form</SubType>
@@ -150,6 +162,9 @@
     <EmbeddedResource Include="VentanaCategoriaDetalle.resx">
       <DependentUpon>VentanaCategoriaDetalle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCategoriaModificar.resx">
+      <DependentUpon>VentanaCategoriaModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaCategorias.resx">
       <DependentUpon>VentanaCategorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaMarcaDetalle.resx">
       <DependentUpon>VentanaMarcaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaMarcaModificar.resx">
+      <DependentUpon>VentanaMarcaModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaMarcas.resx">
       <DependentUpon>VentanaMarcas.cs</DependentUpon>

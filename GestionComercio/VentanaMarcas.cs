@@ -65,8 +65,8 @@ namespace GestionComercio
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-            //VentanaMarcaModificar modificarMarca = new VentanaMarcaModificar(marca);
-            //modificarMarca.ShowDialog();
+            VentanaMarcaModificar modificarMarca = new VentanaMarcaModificar(marca);
+            modificarMarca.ShowDialog();
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace Negocio
 
             try
             {
-                datos.setearQuery("SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.SetearQuery("SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo");
                 datos.leer();
                 while (datos.Reader.Read())
                 {
@@ -84,7 +84,7 @@ namespace Negocio
             ConexionDB db = new ConexionDB();
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@nombre", nombre);
                 db.setearParametro("@codigo", codigo);
                 db.setearParametro("@descripcion", descripcion);
@@ -128,7 +128,7 @@ namespace Negocio
             try
             {
 
-                datos.setearQuery(query);
+                datos.SetearQuery(query);
                 datos.leer();
                 while (datos.Reader.Read())
                 {
@@ -172,11 +172,11 @@ namespace Negocio
         public int modificar(Articulo articulo)
         {
             ConexionDB db = new ConexionDB();
-            string query = $"UPDATE ARTICULOS SET Nombre = @nombre, Codigo = @codigo, Descripcion = @descripcion, Precio = @precio, IdCategoria = @idCategoria, IdMarca = @idMarca WHERE id = @idArticulo";
+            string query = "UPDATE ARTICULOS SET Nombre = @nombre, Codigo = @codigo, Descripcion = @descripcion, Precio = @precio, IdCategoria = @idCategoria, IdMarca = @idMarca WHERE id = @idArticulo";
             int rowsAffected = 0;
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@nombre", articulo.Nombre);
                 db.setearParametro("@codigo", articulo.Codigo);
                 db.setearParametro("@descripcion", articulo.Descripcion);
@@ -205,7 +205,7 @@ namespace Negocio
             int rowsAffected = 0;
             try
             {
-                db.setearQuery(query);
+                db.SetearQuery(query);
                 db.setearParametro("@idArticulo", idArticulo);
                 rowsAffected = db.ejecutarQuery();
 

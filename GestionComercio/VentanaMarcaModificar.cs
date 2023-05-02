@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,14 @@ namespace GestionComercio
 {
     public partial class VentanaMarcaModificar : Form
     {
-        public VentanaMarcaModificar()
+        private Marca marca;
+        private MarcaNegocio marcaNegocio;
+
+        public VentanaMarcaModificar(Marca marca)
         {
             InitializeComponent();
+            this.marca = marca;
+            this.marcaNegocio = new MarcaNegocio();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -24,7 +31,25 @@ namespace GestionComercio
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string descripcion = tbxNombreMarca.Text;
+                int idMarca = marca.Id;
+                int rowsAffected = marcaNegocio.modificar(descripcion, idMarca);
+                if (rowsAffected != 1)
+                {
+                    MessageBox.Show("Algo paso al intentar modificar la marca");
+                    return;
+                }
 
+                MessageBox.Show("Marca modificada correctamente");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return;
+            }
         }
     }
 }
