@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionComercio
+namespace Dominio
 {
-    internal class Marca
+    public class Imagen
     {
-        public int IdMarca { get; set; }
-
-        public string Descripcion { get; set; }
+        public int Id { get; set; }
+        public string UrlImagen{ get; set; }
         public override string ToString()
         {
-            return Descripcion;
+            return UrlImagen;
         }
     }
 }

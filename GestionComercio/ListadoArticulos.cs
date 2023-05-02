@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Dominio;
+using Negocio;
 namespace GestionComercio
 {
     public partial class ListadoArticulos : Form
@@ -23,8 +24,10 @@ namespace GestionComercio
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             articulos = articuloNegocio.listarArticulos();
             dgvListadoArticulos.DataSource = articulos;
+            dgvListadoArticulos.Columns[6].Visible = false; //oculto la columna url imagen
+            pbxUrlImagen.Load(articulos[0].Imagen.UrlImagen); //muestro la primera imagen de la lista
 
-            pbxUrlImagen.Load(articulos[0].Imagen.UrlImagen);
+
         }
 
         private void dgvListadoArticulos_SelectionChanged(object sender, EventArgs e)
