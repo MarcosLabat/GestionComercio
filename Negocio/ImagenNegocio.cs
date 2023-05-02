@@ -38,5 +38,22 @@ namespace Negocio
                 db.cerrar();
             }
         }
+        public int eliminar(int idArticuloImagen)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "DELETE FROM IMAGENES WHERE IdArticulo = @idArticuloImagen";
+            int rowsAffected = 0;
+            try
+            {
+                db.setearQuery(query);
+                db.setearParametro("@idArticuloImagen", idArticuloImagen);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

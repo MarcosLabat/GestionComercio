@@ -104,7 +104,9 @@ namespace GestionComercio
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            VentanaArticuloEliminar eliminarArticulo = new VentanaArticuloEliminar(seleccionado);
+            eliminarArticulo.ShowDialog();
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)

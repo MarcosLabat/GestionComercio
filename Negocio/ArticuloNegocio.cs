@@ -185,5 +185,28 @@ namespace Negocio
             }
 
         }
+
+        public int eliminar(int idArticulo)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "DELETE FROM ARTICULOS WHERE Id = @idArticulo";
+            int rowsAffected = 0;
+            try
+            {
+                db.setearQuery(query);
+                db.setearParametro("@idArticulo", idArticulo);
+                rowsAffected = db.ejecutarQuery();
+
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+        }
     }
 }
