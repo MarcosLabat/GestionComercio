@@ -41,6 +41,7 @@ namespace GestionComercio
 
             lblNuevaMarca.ForeColor = Color.Green;
             lblNuevaMarca.Text = "Categoria guardada correctamente!";
+            this.Close();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

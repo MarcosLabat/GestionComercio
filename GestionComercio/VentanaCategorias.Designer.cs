@@ -38,10 +38,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.seleccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNueva = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,21 +61,22 @@
             // dgvCategorias
             // 
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(40, 118);
+            this.dgvCategorias.Location = new System.Drawing.Point(29, 118);
             this.dgvCategorias.Name = "dgvCategorias";
+            this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorias.Size = new System.Drawing.Size(260, 278);
             this.dgvCategorias.TabIndex = 12;
             // 
             // tbxBuscador
             // 
-            this.tbxBuscador.Location = new System.Drawing.Point(40, 75);
+            this.tbxBuscador.Location = new System.Drawing.Point(29, 75);
             this.tbxBuscador.Name = "tbxBuscador";
             this.tbxBuscador.Size = new System.Drawing.Size(153, 20);
             this.tbxBuscador.TabIndex = 14;
             // 
             // btnBuscarCategoria
             // 
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(199, 73);
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(188, 73);
             this.btnBuscarCategoria.Name = "btnBuscarCategoria";
             this.btnBuscarCategoria.Size = new System.Drawing.Size(48, 23);
             this.btnBuscarCategoria.TabIndex = 15;
@@ -83,7 +86,7 @@
             // 
             // btnResetCategoria
             // 
-            this.btnResetCategoria.Location = new System.Drawing.Point(252, 73);
+            this.btnResetCategoria.Location = new System.Drawing.Point(241, 73);
             this.btnResetCategoria.Name = "btnResetCategoria";
             this.btnResetCategoria.Size = new System.Drawing.Size(48, 23);
             this.btnResetCategoria.TabIndex = 16;
@@ -93,7 +96,7 @@
             // 
             // btnActualizarCategoria
             // 
-            this.btnActualizarCategoria.Location = new System.Drawing.Point(225, 406);
+            this.btnActualizarCategoria.Location = new System.Drawing.Point(214, 406);
             this.btnActualizarCategoria.Name = "btnActualizarCategoria";
             this.btnActualizarCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnActualizarCategoria.TabIndex = 17;
@@ -104,7 +107,7 @@
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(37, 98);
+            this.lblBusqueda.Location = new System.Drawing.Point(26, 98);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(0, 13);
             this.lblBusqueda.TabIndex = 18;
@@ -117,7 +120,7 @@
             this.agregarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(349, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(384, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -125,7 +128,6 @@
             // 
             this.seleccionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
             this.verDetalleToolStripMenuItem});
             this.seleccionToolStripMenuItem.Name = "seleccionToolStripMenuItem";
             this.seleccionToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
@@ -137,13 +139,6 @@
             this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // verDetalleToolStripMenuItem
             // 
@@ -163,15 +158,48 @@
             // nuevaCategoriaToolStripMenuItem
             // 
             this.nuevaCategoriaToolStripMenuItem.Name = "nuevaCategoriaToolStripMenuItem";
-            this.nuevaCategoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaCategoriaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.nuevaCategoriaToolStripMenuItem.Text = "Nueva Categoria";
             this.nuevaCategoriaToolStripMenuItem.Click += new System.EventHandler(this.nuevaCategoriaToolStripMenuItem_Click);
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(307, 118);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(65, 23);
+            this.btnDetalle.TabIndex = 30;
+            this.btnDetalle.Text = "Ver detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(307, 156);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(65, 23);
+            this.btnModificar.TabIndex = 29;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnNueva
+            // 
+            this.btnNueva.Location = new System.Drawing.Point(273, 34);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(99, 23);
+            this.btnNueva.TabIndex = 31;
+            this.btnNueva.Text = "Nueva Categoria";
+            this.btnNueva.UseVisualStyleBackColor = true;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
             // VentanaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 441);
+            this.ClientSize = new System.Drawing.Size(384, 441);
+            this.Controls.Add(this.btnNueva);
+            this.Controls.Add(this.btnDetalle);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.btnActualizarCategoria);
             this.Controls.Add(this.btnResetCategoria);
@@ -181,8 +209,8 @@
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(365, 480);
-            this.MinimumSize = new System.Drawing.Size(365, 480);
+            this.MaximumSize = new System.Drawing.Size(400, 480);
+            this.MinimumSize = new System.Drawing.Size(400, 480);
             this.Name = "VentanaCategorias";
             this.Text = "VentanaCategorias";
             this.Load += new System.EventHandler(this.VentanaCategorias_Load);
@@ -206,9 +234,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem seleccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verDetalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaCategoriaToolStripMenuItem;
+        private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnNueva;
     }
 }

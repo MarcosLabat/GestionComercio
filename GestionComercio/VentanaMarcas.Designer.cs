@@ -38,10 +38,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.seleccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnNueva = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,14 +51,14 @@
             // lblBusqueda
             // 
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Location = new System.Drawing.Point(37, 97);
+            this.lblBusqueda.Location = new System.Drawing.Point(28, 97);
             this.lblBusqueda.Name = "lblBusqueda";
             this.lblBusqueda.Size = new System.Drawing.Size(0, 13);
             this.lblBusqueda.TabIndex = 25;
             // 
             // btnActualizarMarca
             // 
-            this.btnActualizarMarca.Location = new System.Drawing.Point(225, 406);
+            this.btnActualizarMarca.Location = new System.Drawing.Point(216, 406);
             this.btnActualizarMarca.Name = "btnActualizarMarca";
             this.btnActualizarMarca.Size = new System.Drawing.Size(75, 23);
             this.btnActualizarMarca.TabIndex = 24;
@@ -66,7 +68,7 @@
             // 
             // btnResetMarca
             // 
-            this.btnResetMarca.Location = new System.Drawing.Point(252, 73);
+            this.btnResetMarca.Location = new System.Drawing.Point(243, 73);
             this.btnResetMarca.Name = "btnResetMarca";
             this.btnResetMarca.Size = new System.Drawing.Size(48, 23);
             this.btnResetMarca.TabIndex = 23;
@@ -76,7 +78,7 @@
             // 
             // btnBuscarMarca
             // 
-            this.btnBuscarMarca.Location = new System.Drawing.Point(199, 73);
+            this.btnBuscarMarca.Location = new System.Drawing.Point(190, 73);
             this.btnBuscarMarca.Name = "btnBuscarMarca";
             this.btnBuscarMarca.Size = new System.Drawing.Size(48, 23);
             this.btnBuscarMarca.TabIndex = 22;
@@ -86,7 +88,7 @@
             // 
             // tbxBuscador
             // 
-            this.tbxBuscador.Location = new System.Drawing.Point(40, 75);
+            this.tbxBuscador.Location = new System.Drawing.Point(31, 75);
             this.tbxBuscador.Name = "tbxBuscador";
             this.tbxBuscador.Size = new System.Drawing.Size(153, 20);
             this.tbxBuscador.TabIndex = 21;
@@ -104,8 +106,9 @@
             // dgvMarcas
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(40, 118);
+            this.dgvMarcas.Location = new System.Drawing.Point(31, 118);
             this.dgvMarcas.Name = "dgvMarcas";
+            this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMarcas.Size = new System.Drawing.Size(260, 278);
             this.dgvMarcas.TabIndex = 19;
             // 
@@ -117,7 +120,7 @@
             this.agregarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(349, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(384, 24);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -125,7 +128,6 @@
             // 
             this.seleccionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
             this.verDetalleToolStripMenuItem});
             this.seleccionToolStripMenuItem.Name = "seleccionToolStripMenuItem";
             this.seleccionToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
@@ -134,21 +136,14 @@
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // verDetalleToolStripMenuItem
             // 
             this.verDetalleToolStripMenuItem.Name = "verDetalleToolStripMenuItem";
-            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.verDetalleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verDetalleToolStripMenuItem.Text = "Ver detalle";
             this.verDetalleToolStripMenuItem.Click += new System.EventHandler(this.verDetalleToolStripMenuItem_Click);
             // 
@@ -163,15 +158,48 @@
             // nuevaMarcaToolStripMenuItem
             // 
             this.nuevaMarcaToolStripMenuItem.Name = "nuevaMarcaToolStripMenuItem";
-            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaMarcaToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.nuevaMarcaToolStripMenuItem.Text = "Nueva Marca";
             this.nuevaMarcaToolStripMenuItem.Click += new System.EventHandler(this.nuevaMarcaToolStripMenuItem_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(307, 156);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(65, 23);
+            this.btnModificar.TabIndex = 27;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(307, 118);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(65, 23);
+            this.btnDetalle.TabIndex = 28;
+            this.btnDetalle.Text = "Ver detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
+            // btnNueva
+            // 
+            this.btnNueva.Location = new System.Drawing.Point(289, 34);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(83, 23);
+            this.btnNueva.TabIndex = 32;
+            this.btnNueva.Text = "Nueva Marca";
+            this.btnNueva.UseVisualStyleBackColor = true;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
             // VentanaMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 441);
+            this.ClientSize = new System.Drawing.Size(384, 441);
+            this.Controls.Add(this.btnNueva);
+            this.Controls.Add(this.btnDetalle);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.btnActualizarMarca);
             this.Controls.Add(this.btnResetMarca);
@@ -181,8 +209,8 @@
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(365, 480);
-            this.MinimumSize = new System.Drawing.Size(365, 480);
+            this.MaximumSize = new System.Drawing.Size(400, 480);
+            this.MinimumSize = new System.Drawing.Size(400, 480);
             this.Name = "VentanaMarcas";
             this.Text = "VentanaMarcas";
             this.Load += new System.EventHandler(this.VentanaMarcas_Load);
@@ -206,9 +234,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem seleccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaMarcaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verDetalleToolStripMenuItem;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnDetalle;
+        private System.Windows.Forms.Button btnNueva;
     }
 }

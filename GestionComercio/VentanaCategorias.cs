@@ -65,23 +65,36 @@ namespace GestionComercio
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
 
         }
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            VentanaCategoriaDetalle detalleCategoria = new VentanaCategoriaDetalle(categoria);
+            detalleCategoria.ShowDialog();
         }
 
         private void nuevaCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaCategoriasAdd agregarCategoria = new VentanaCategoriasAdd();
             agregarCategoria.ShowDialog();
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            verDetalleToolStripMenuItem_Click(sender, e);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            modificarToolStripMenuItem_Click(sender, e);
+        }
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            nuevaCategoriaToolStripMenuItem_Click(sender, e);
         }
     }
 }

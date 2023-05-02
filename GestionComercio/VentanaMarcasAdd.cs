@@ -14,7 +14,6 @@ namespace GestionComercio
 {
     public partial class VentanaMarcasAdd : Form
     {
-        
         public VentanaMarcasAdd()
         {
             InitializeComponent();
@@ -42,6 +41,7 @@ namespace GestionComercio
 
             lblNuevaMarca.ForeColor = Color.Green;
             lblNuevaMarca.Text = "Marca guardada correctamente!";
+            this.Close();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
