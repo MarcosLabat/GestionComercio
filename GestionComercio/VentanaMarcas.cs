@@ -20,6 +20,7 @@ namespace GestionComercio
         public VentanaMarcas()
         {
             InitializeComponent();
+            Text = "Marcas";
         }
 
         private void VentanaMarcas_Load(object sender, EventArgs e)

@@ -20,6 +20,7 @@ namespace GestionComercio
         public VentanaArticulos()
         {
             InitializeComponent();
+            Text = "Articulos";
         }
 
         private void Panel_Load(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace GestionComercio
             dgvArticulos.Columns["Imagen"].Visible = false;
 
             lblBuscador.Visible = false;
+            cbxFiltroArticulos.Items.Clear();
             cbxFiltroArticulos.Items.Add("Sin Filtro");
             cbxFiltroArticulos.Items.Add("Nombre");
             cbxFiltroArticulos.Items.Add("Descripcion");
@@ -92,7 +94,7 @@ namespace GestionComercio
         {
             lblBuscador.Visible = false;
             tbxBuscadorArticulos.Text = "";
-            cbxFiltroArticulos.Text = "Sin Filtro";
+            cbxFiltroArticulos.Text = "Sin Filtro"; 
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
         }

@@ -17,6 +17,7 @@ namespace GestionComercio
         public VentanaArticulosAdd()
         {
             InitializeComponent();
+            Text = "Agregar Articulo";
         }
 
         private void AgregarArticulo_Load(object sender, EventArgs e)

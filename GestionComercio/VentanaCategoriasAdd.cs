@@ -17,6 +17,7 @@ namespace GestionComercio
         public VentanaCategoriasAdd()
         {
             InitializeComponent();
+            Text = "Agregar Categoria";
         }
 
         private void btnAgregarCategoria_Click(object sender, EventArgs e)

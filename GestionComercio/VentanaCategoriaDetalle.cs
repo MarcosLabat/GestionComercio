@@ -19,6 +19,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.categoria = categoria;
+            Text = "Detalle Categoria " + this.categoria.Descripcion;
         }
 
         private void VentanaCategoriaDetalle_Load(object sender, EventArgs e)

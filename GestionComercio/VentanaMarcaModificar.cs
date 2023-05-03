@@ -21,6 +21,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.marca = marca;
+            Text = "Modificar Marca " + marca.Descripcion;
             this.marcaNegocio = new MarcaNegocio();
         }
 

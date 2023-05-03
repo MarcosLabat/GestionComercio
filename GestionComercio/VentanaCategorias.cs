@@ -20,6 +20,7 @@ namespace GestionComercio
         public VentanaCategorias()
         {
             InitializeComponent();
+            Text = "Categorias";
         }
 
         private void VentanaCategorias_Load(object sender, EventArgs e)

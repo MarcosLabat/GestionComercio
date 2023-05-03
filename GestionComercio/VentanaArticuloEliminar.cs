@@ -22,6 +22,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Eliminar Articulo #" + this.articulo.Codigo;
             articuloNegocio = new ArticuloNegocio();
             imagenNegocio = new ImagenNegocio();
         }

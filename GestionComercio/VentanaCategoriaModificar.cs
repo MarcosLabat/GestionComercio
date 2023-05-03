@@ -22,6 +22,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.categoria = categoria;
+            Text = "Modificar Categoria " + this.categoria.Descripcion;
             this.categoriaNegocio = new CategoriaNegocio();
         }
 

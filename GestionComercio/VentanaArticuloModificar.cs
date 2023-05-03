@@ -29,6 +29,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Modificar Articulo #" + this.articulo.Codigo;
             previsualizado = false;
             categoriaNegocio = new CategoriaNegocio();
             marcaNegocio = new MarcaNegocio();
@@ -47,7 +48,30 @@ namespace GestionComercio
             cbxCategoria.Visible = false;
             cbxMarca.Visible = false;
             tbxUrlImagen.Visible = false;
+ 
+            try
+            {
+                tbxCodigo.Text = articulo.Codigo;
+                tbxNombre.Text = articulo.Nombre;
+                rtbxDescripcion.Text = articulo.Descripcion;
+                tbxPrecio.Text = articulo.Precio.ToString();
+                tbxUrlImagen.Text = articulo.Imagen.UrlImagen;
 
+                cbxCategoria.DataSource = categoriaNegocio.listar();
+                cbxCategoria.ValueMember = "Id";
+                cbxCategoria.DisplayMember = "Descripcion";
+                cbxCategoria.SelectedValue = articulo.Categoria.Id;
+
+                cbxMarca.DataSource = marcaNegocio.listar();
+                cbxMarca.ValueMember = "Id";
+                cbxMarca.DisplayMember = "Descripcion";
+                cbxMarca.SelectedValue = articulo.Marca.Id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void btnVisualizarArticulo_Click(object sender, EventArgs e)
@@ -95,7 +119,7 @@ namespace GestionComercio
             {
                 if (chbxCodigo.Checked)
                 {
-                articulo.Codigo = tbxCodigo.Text;
+                    articulo.Codigo = tbxCodigo.Text;
                 }
 
                 if (chbxNombre.Checked)
@@ -179,30 +203,14 @@ namespace GestionComercio
 
         private void chbxCategoria_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbxCategoria.Checked)
-            {
-                List<Categoria> listaCategorias = categoriaNegocio.listar();
-                foreach (var item in listaCategorias)
-                {
-                    cbxCategoria.Items.Add(item);
-                }
-                cbxCategoria.Visible = true;
-            }
+            if (chbxCategoria.Checked) cbxCategoria.Visible = true;
             else cbxCategoria.Visible = false;
         }
 
         private void chbxMarca_CheckedChanged(object sender, EventArgs e)
         {
 
-            if (chbxMarca.Checked) 
-            {
-                List<Marca> listaMarcas = marcaNegocio.listar();
-                foreach (var item in listaMarcas)
-                {
-                    cbxMarca.Items.Add(item);
-                }
-                cbxMarca.Visible = true;
-            }
+            if (chbxMarca.Checked) cbxMarca.Visible = true;
             else cbxMarca.Visible = false;
         }
 

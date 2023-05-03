@@ -18,6 +18,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Detalle Articulo #" + this.articulo.Codigo;
         }
 
         private void VentanaArticuloDetalle_Load(object sender, EventArgs e)

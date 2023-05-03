@@ -18,6 +18,7 @@ namespace GestionComercio
         public VentanaMarcasAdd()
         {
             InitializeComponent();
+            Text = "Agregar Marca";
         }
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)

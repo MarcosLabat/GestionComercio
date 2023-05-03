@@ -19,6 +19,7 @@ namespace GestionComercio
         {
             InitializeComponent();
             this.marca = marca;
+            Text = "Detalle Marca " + marca.Descripcion;
         }
 
         private void VentanaMarcaDetalle_Load(object sender, EventArgs e)
