@@ -16,18 +16,23 @@ namespace GestionComercio
     {
         private List<Articulo> listaArticulos;
         ArticuloNegocio articulos = new ArticuloNegocio();
+        Articulo seleccionado;
+        private int countPic;
 
         public VentanaArticulos()
         {
             InitializeComponent();
             Text = "Articulos";
+            this.countPic = 0;
         }
 
         private void Panel_Load(object sender, EventArgs e)
         {
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
-            dgvArticulos.Columns["Imagen"].Visible = false;
+            //dgvArticulos.Columns["Imagen"].Visible = false;
+
+            lblFotos.Text = "Foto " + "1 / " + seleccionado.Imagen.Count;
 
             lblBuscador.Visible = false;
             cbxFiltroArticulos.Items.Clear();
@@ -101,7 +106,7 @@ namespace GestionComercio
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloModificar modificarArticulo = new VentanaArticuloModificar(seleccionado);
             modificarArticulo.ShowDialog();
             Panel_Load(sender, e);
@@ -109,7 +114,7 @@ namespace GestionComercio
 
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloEliminar eliminarArticulo = new VentanaArticuloEliminar(seleccionado);
             eliminarArticulo.ShowDialog();
             Panel_Load(sender, e);
@@ -117,7 +122,7 @@ namespace GestionComercio
 
         private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloDetalle detalleArticulo = new VentanaArticuloDetalle(seleccionado);
             detalleArticulo.ShowDialog();
             Panel_Load(sender, e);
@@ -125,8 +130,11 @@ namespace GestionComercio
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen.UrlImagen);
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            countPic = 0;
+            lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+            if(seleccionado.Imagen.Count != 0)
+                cargarImagen(seleccionado.Imagen.First().UrlImagen);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -163,5 +171,25 @@ namespace GestionComercio
             }
         }
 
+        private void btnFotoDer_Click(object sender, EventArgs e)
+        {
+            int cantImagenes = seleccionado.Imagen.Count;
+            if (countPic < cantImagenes - 1)
+                countPic++;
+            else
+                countPic = 0;
+            lblFotos.Text = "Foto " + (countPic+1) + " / " + seleccionado.Imagen.Count;
+            cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+        }
+
+        private void btnFotoIzq_Click(object sender, EventArgs e)
+        {
+            if (countPic > 0)
+                countPic--;
+            else if(countPic == 0)
+                countPic = seleccionado.Imagen.Count -1;
+            lblFotos.Text = "Foto " + (countPic+1) + " / " + seleccionado.Imagen.Count;
+            cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+        }
     }
 }

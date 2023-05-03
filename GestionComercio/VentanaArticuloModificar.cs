@@ -55,7 +55,7 @@ namespace GestionComercio
                 tbxNombre.Text = articulo.Nombre;
                 rtbxDescripcion.Text = articulo.Descripcion;
                 tbxPrecio.Text = articulo.Precio.ToString();
-                tbxUrlImagen.Text = articulo.Imagen.UrlImagen;
+                tbxUrlImagen.Text = articulo.Imagen[0].UrlImagen;
 
                 cbxCategoria.DataSource = categoriaNegocio.listar();
                 cbxCategoria.ValueMember = "Id";
@@ -154,7 +154,7 @@ namespace GestionComercio
                     imagen.UrlImagen = tbxUrlImagen.Text;
                     int idImagen = imagenNegocio.guardar(imagen);
                     imagen.Id = idImagen;
-                    articulo.Imagen = imagen;
+                    articulo.Imagen.Add(imagen);
                 }
 
            

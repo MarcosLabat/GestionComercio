@@ -55,5 +55,32 @@ namespace Negocio
                 throw ex;
             }
         }
+        public List<Imagen> imagenesArticulo(int idArticulo)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "SELECT IdArticulo, ImagenUrl, Id FROM IMAGENES WHERE IdArticulo = @idArticulo";
+            List<Imagen> imagenes = new List<Imagen>();
+
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@idArticulo", idArticulo);
+                db.leer();
+                while(db.Reader.Read())
+                {
+                    Imagen imagen = new Imagen();
+                    imagen.Id = (int)db.Reader["Id"];
+                    imagen.UrlImagen = (string)db.Reader["ImagenUrl"];
+                    imagen.IdArticulo = (int)db.Reader["IdArticulo"];
+                    imagenes.Add(imagen);
+                }
+
+                return imagenes;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

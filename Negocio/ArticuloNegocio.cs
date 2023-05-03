@@ -18,17 +18,21 @@ namespace Negocio
 
             try
             {
-                datos.SetearQuery("SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.SetearQuery("SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
                 datos.leer();
                 while (datos.Reader.Read())
                 {
                     Articulo aux = new Articulo();
 
-                    aux.Id = (int)datos.Reader["Id"];
+                    int idArticulo = (int)datos.Reader["Id"];
+                    aux.Id = idArticulo;
                     if (!(datos.Reader["Codigo"] is DBNull)) aux.Codigo = (string)datos.Reader["Codigo"];
                     if (!(datos.Reader["Nombre"] is DBNull)) aux.Nombre = (string)datos.Reader["Nombre"];
                     if (!(datos.Reader["Descripcion"] is DBNull)) aux.Descripcion = (string)datos.Reader["Descripcion"];
                     if (!(datos.Reader["Precio"] is DBNull)) aux.Precio = (decimal)datos.Reader["Precio"];
+
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    aux.Imagen = imagenNegocio.imagenesArticulo(idArticulo);
 
 
                     if (!(datos.Reader["IdMarca"] is DBNull))
@@ -45,15 +49,6 @@ namespace Negocio
                         aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
                         aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
                     }
-
-                    if(!(datos.Reader["IdImagen"] is DBNull))
-                    {
-                        aux.Imagen = new Imagen();
-                        aux.Imagen.Id = (int)datos.Reader["IdImagen"];
-                        aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
-                        aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
-                    }
-
 
                     lista.Add(aux);
                 }
@@ -135,7 +130,7 @@ namespace Negocio
                     Articulo aux = new Articulo();
                     aux.Marca = new Marca();
                     aux.Categoria = new Categoria();
-                    aux.Imagen = new Imagen();
+                    aux.Imagen[0] = new Imagen();
 
                     aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
                     aux.Marca.Id = (int)datos.Reader["IdMarca"];
@@ -143,9 +138,9 @@ namespace Negocio
                     aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
                     aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
 
-                    aux.Imagen.Id = (int)datos.Reader["IdImagen"];
-                    aux.Imagen.UrlImagen = (string)datos.Reader["ImagenUrl"];
-                    aux.Imagen.IdArticulo = (int)datos.Reader["Id"];
+                    aux.Imagen[0].Id = (int)datos.Reader["IdImagen"];
+                    aux.Imagen[0].UrlImagen = (string)datos.Reader["ImagenUrl"];
+                    aux.Imagen[0].IdArticulo = (int)datos.Reader["Id"];
 
                     aux.Id = (int)datos.Reader["Id"];
                     aux.Codigo = (string)datos.Reader["Codigo"];

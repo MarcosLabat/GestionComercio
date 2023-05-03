@@ -50,6 +50,9 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnFotoIzq = new System.Windows.Forms.Button();
+            this.btnFotoDer = new System.Windows.Forms.Button();
+            this.lblFotos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
@@ -199,7 +202,7 @@
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(771, 156);
+            this.pbxArticulo.Location = new System.Drawing.Point(771, 191);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(200, 200);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -218,7 +221,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(831, 362);
+            this.btnEliminar.Location = new System.Drawing.Point(831, 397);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 25;
@@ -256,11 +259,43 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "ARTICULOS";
             // 
+            // btnFotoIzq
+            // 
+            this.btnFotoIzq.Location = new System.Drawing.Point(771, 166);
+            this.btnFotoIzq.Name = "btnFotoIzq";
+            this.btnFotoIzq.Size = new System.Drawing.Size(27, 19);
+            this.btnFotoIzq.TabIndex = 28;
+            this.btnFotoIzq.Text = "<<";
+            this.btnFotoIzq.UseVisualStyleBackColor = true;
+            this.btnFotoIzq.Click += new System.EventHandler(this.btnFotoIzq_Click);
+            // 
+            // btnFotoDer
+            // 
+            this.btnFotoDer.Location = new System.Drawing.Point(944, 166);
+            this.btnFotoDer.Name = "btnFotoDer";
+            this.btnFotoDer.Size = new System.Drawing.Size(27, 19);
+            this.btnFotoDer.TabIndex = 29;
+            this.btnFotoDer.Text = ">>";
+            this.btnFotoDer.UseVisualStyleBackColor = true;
+            this.btnFotoDer.Click += new System.EventHandler(this.btnFotoDer_Click);
+            // 
+            // lblFotos
+            // 
+            this.lblFotos.AutoSize = true;
+            this.lblFotos.Location = new System.Drawing.Point(842, 169);
+            this.lblFotos.Name = "lblFotos";
+            this.lblFotos.Size = new System.Drawing.Size(54, 13);
+            this.lblFotos.TabIndex = 30;
+            this.lblFotos.Text = "Foto 1 / 1";
+            // 
             // VentanaArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 471);
+            this.Controls.Add(this.lblFotos);
+            this.Controls.Add(this.btnFotoDer);
+            this.Controls.Add(this.btnFotoIzq);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnEliminar);
@@ -315,5 +350,8 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnFotoIzq;
+        private System.Windows.Forms.Button btnFotoDer;
+        private System.Windows.Forms.Label lblFotos;
     }
 }
