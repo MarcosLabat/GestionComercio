@@ -1,6 +1,6 @@
 ﻿namespace GestionComercio
 {
-    partial class ListadoMarcas
+    partial class ViewMarcas
     {
         /// <summary>
         /// Required designer variable.
@@ -53,15 +53,15 @@
             this.labelTituloMarcas.TabIndex = 1;
             this.labelTituloMarcas.Text = "MARCAS";
             // 
-            // ListadoMarcas
+            // ViewMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelTituloMarcas);
             this.Controls.Add(this.dgvMarcas);
-            this.Name = "ListadoMarcas";
-            this.Text = "ListadoMarcas";
+            this.Name = "ViewMarcas";
+            this.Text = "Marcas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

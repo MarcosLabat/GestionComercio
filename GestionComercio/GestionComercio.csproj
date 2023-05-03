@@ -52,23 +52,23 @@
     <Compile Include="CargarArticulo.Designer.cs">
       <DependentUpon>CargarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoArticulos.cs">
+    <Compile Include="ViewArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoArticulos.Designer.cs">
-      <DependentUpon>ListadoArticulos.cs</DependentUpon>
+    <Compile Include="ViewArticulos.Designer.cs">
+      <DependentUpon>ViewArticulos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoCategoria.cs">
+    <Compile Include="ViewCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoCategoria.Designer.cs">
-      <DependentUpon>ListadoCategoria.cs</DependentUpon>
+    <Compile Include="ViewCategoria.Designer.cs">
+      <DependentUpon>ViewCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoMarcas.cs">
+    <Compile Include="ViewMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoMarcas.Designer.cs">
-      <DependentUpon>ListadoMarcas.cs</DependentUpon>
+    <Compile Include="ViewMarcas.Designer.cs">
+      <DependentUpon>ViewMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -81,14 +81,14 @@
     <EmbeddedResource Include="CargarArticulo.resx">
       <DependentUpon>CargarArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoArticulos.resx">
-      <DependentUpon>ListadoArticulos.cs</DependentUpon>
+    <EmbeddedResource Include="ViewArticulos.resx">
+      <DependentUpon>ViewArticulos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoCategoria.resx">
-      <DependentUpon>ListadoCategoria.cs</DependentUpon>
+    <EmbeddedResource Include="ViewCategoria.resx">
+      <DependentUpon>ViewCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoMarcas.resx">
-      <DependentUpon>ListadoMarcas.cs</DependentUpon>
+    <EmbeddedResource Include="ViewMarcas.resx">
+      <DependentUpon>ViewMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

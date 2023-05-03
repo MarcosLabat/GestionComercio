@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsLabelArticulo = new System.Windows.Forms.ToolStripLabel();
-            this.tsBtnListadoArt = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnArticulos = new System.Windows.Forms.ToolStripButton();
             this.tsBtnNuevoArt = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsLabelMarca = new System.Windows.Forms.ToolStripLabel();
-            this.tsBtnListaMarcas = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnMarcas = new System.Windows.Forms.ToolStripButton();
             this.tsBtnNuevaMarca = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsLabelCategoria = new System.Windows.Forms.ToolStripLabel();
-            this.tsBtnListaCategoria = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnCategoria = new System.Windows.Forms.ToolStripButton();
             this.tsBtnNuevaCategoria = new System.Windows.Forms.ToolStripButton();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -48,15 +48,15 @@
             // 
             this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsLabelArticulo,
-            this.tsBtnListadoArt,
+            this.tsBtnArticulos,
             this.tsBtnNuevoArt,
             this.toolStripSeparator1,
             this.tsLabelMarca,
-            this.tsBtnListaMarcas,
+            this.tsBtnMarcas,
             this.tsBtnNuevaMarca,
             this.toolStripSeparator2,
             this.tsLabelCategoria,
-            this.tsBtnListaCategoria,
+            this.tsBtnCategoria,
             this.tsBtnNuevaCategoria});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
@@ -70,15 +70,15 @@
             this.tsLabelArticulo.Size = new System.Drawing.Size(54, 22);
             this.tsLabelArticulo.Text = "Articulos";
             // 
-            // tsBtnListadoArt
+            // tsBtnArticulos
             // 
-            this.tsBtnListadoArt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnListadoArt.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnListadoArt.Image")));
-            this.tsBtnListadoArt.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnListadoArt.Name = "tsBtnListadoArt";
-            this.tsBtnListadoArt.Size = new System.Drawing.Size(23, 22);
-            this.tsBtnListadoArt.Text = "Listado de Articulos";
-            this.tsBtnListadoArt.Click += new System.EventHandler(this.tsBtnListadoArt_Click);
+            this.tsBtnArticulos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnArticulos.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnArticulos.Image")));
+            this.tsBtnArticulos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnArticulos.Name = "tsBtnArticulos";
+            this.tsBtnArticulos.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnArticulos.Text = "Articulos";
+            this.tsBtnArticulos.Click += new System.EventHandler(this.tsBtnListadoArt_Click);
             // 
             // tsBtnNuevoArt
             // 
@@ -100,15 +100,15 @@
             this.tsLabelMarca.Size = new System.Drawing.Size(45, 22);
             this.tsLabelMarca.Text = "Marcas";
             // 
-            // tsBtnListaMarcas
+            // tsBtnMarcas
             // 
-            this.tsBtnListaMarcas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnListaMarcas.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnListaMarcas.Image")));
-            this.tsBtnListaMarcas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnListaMarcas.Name = "tsBtnListaMarcas";
-            this.tsBtnListaMarcas.Size = new System.Drawing.Size(23, 22);
-            this.tsBtnListaMarcas.Text = "Lista de Marcas";
-            this.tsBtnListaMarcas.Click += new System.EventHandler(this.tsBtnListaMarcas_Click);
+            this.tsBtnMarcas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnMarcas.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnMarcas.Image")));
+            this.tsBtnMarcas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnMarcas.Name = "tsBtnMarcas";
+            this.tsBtnMarcas.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnMarcas.Text = "Marcas";
+            this.tsBtnMarcas.Click += new System.EventHandler(this.tsBtnListaMarcas_Click);
             // 
             // tsBtnNuevaMarca
             // 
@@ -130,15 +130,15 @@
             this.tsLabelCategoria.Size = new System.Drawing.Size(58, 22);
             this.tsLabelCategoria.Text = "Categoria";
             // 
-            // tsBtnListaCategoria
+            // tsBtnCategoria
             // 
-            this.tsBtnListaCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnListaCategoria.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnListaCategoria.Image")));
-            this.tsBtnListaCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsBtnListaCategoria.Name = "tsBtnListaCategoria";
-            this.tsBtnListaCategoria.Size = new System.Drawing.Size(23, 22);
-            this.tsBtnListaCategoria.Text = "Lista de Categorias";
-            this.tsBtnListaCategoria.Click += new System.EventHandler(this.tsBtnListaCategoria_Click);
+            this.tsBtnCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnCategoria.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnCategoria.Image")));
+            this.tsBtnCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnCategoria.Name = "tsBtnCategoria";
+            this.tsBtnCategoria.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnCategoria.Text = "Categorias";
+            this.tsBtnCategoria.Click += new System.EventHandler(this.tsBtnListaCategoria_Click);
             // 
             // tsBtnNuevaCategoria
             // 
@@ -172,15 +172,15 @@
         #endregion
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripLabel tsLabelArticulo;
-        private System.Windows.Forms.ToolStripButton tsBtnListadoArt;
+        private System.Windows.Forms.ToolStripButton tsBtnArticulos;
         private System.Windows.Forms.ToolStripButton tsBtnNuevoArt;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel tsLabelMarca;
-        private System.Windows.Forms.ToolStripButton tsBtnListaMarcas;
+        private System.Windows.Forms.ToolStripButton tsBtnMarcas;
         private System.Windows.Forms.ToolStripButton tsBtnNuevaMarca;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel tsLabelCategoria;
-        private System.Windows.Forms.ToolStripButton tsBtnListaCategoria;
+        private System.Windows.Forms.ToolStripButton tsBtnCategoria;
         private System.Windows.Forms.ToolStripButton tsBtnNuevaCategoria;
     }
 }

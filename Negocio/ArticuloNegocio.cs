@@ -15,28 +15,46 @@ namespace Negocio
         {
             List<Articulo> listaArticulos = new List<Articulo>();
             ConexionDB consulta = new ConexionDB();
-            try
-            {
+            bool hayRegistros = false;
+            bool NuevaImagen = false;
+            try {
+
                 consulta.setQuery("select A.Id, A.Codigo, A.Nombre, A.Descripcion as AD, A.Precio, M.Descripcion as MD, C.Descripcion as CD, I.ImagenUrl from ARTICULOS as A Inner Join MARCAS as M on A.IdMarca = M.Id Inner Join CATEGORIAS as C on A.IdCategoria = C.Id Inner Join IMAGENES as I on A.Id = I.IdArticulo");
                 consulta.leerDB();
 
-                while (consulta.Lector.Read())
-                {
+                while (consulta.Lector.Read()) {
                     Articulo aux = new Articulo();
-                    aux.marca = new Marca();
-                    aux.categoria = new Categoria();
-                    aux.imagen = new Imagen();
+                    Imagen imagen = new Imagen();
+                    aux.imagenes = new List<Imagen>();
                     aux.idArticulo = (int)consulta.Lector["Id"];
-                    aux.codigoArticulo = (string)consulta.Lector["Codigo"];
-                    aux.nombre = (string)consulta.Lector["Nombre"];
-                    aux.descripcion = (string)consulta.Lector["AD"];
-                    aux.precio = (decimal)consulta.Lector["Precio"];
-                    aux.marca.nombreMarca = (string)consulta.Lector["MD"];
-                    aux.categoria.nombreCategoria = (string)consulta.Lector["CD"];
-                    aux.imagen.imagenUrl = (string)consulta.Lector["ImagenUrl"];
+                    if(hayRegistros) {
 
-                    listaArticulos.Add(aux);
+                        foreach (var item in listaArticulos){
+                            if (aux.idArticulo == item.idArticulo){
+                                imagen.imagenUrl = (string)consulta.Lector["ImagenUrl"];
+                                aux.imagenes.Add(imagen);
+                                listaArticulos[item.idArticulo - 1].imagenes.Add(imagen);
+                                NuevaImagen = true;
+                            }
+                        }
 
+                        if(NuevaImagen){
+                            NuevaImagen = false;
+                            continue;
+                        }
+                    }
+                        aux.marca = new Marca();
+                        aux.categoria = new Categoria();
+                        aux.codigoArticulo = (string)consulta.Lector["Codigo"];
+                        aux.nombre = (string)consulta.Lector["Nombre"];
+                        aux.descripcion = (string)consulta.Lector["AD"];
+                        aux.precio = (decimal)consulta.Lector["Precio"];
+                        aux.marca.nombreMarca = (string)consulta.Lector["MD"];
+                        aux.categoria.nombreCategoria = (string)consulta.Lector["CD"];
+                        imagen.imagenUrl = (string)consulta.Lector["ImagenUrl"];
+                        hayRegistros = true;
+                        aux.imagenes.Add(imagen);
+                        listaArticulos.Add(aux);
                 }
 
             }

@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace GestionComercio
 {
-    public partial class ListadoCategoria : Form
+    public partial class ViewCategorias : Form
     {
-        private List<Categoria> listadoCategorias;
+        private List<Dominio.Categoria> listadoCategorias;
         private CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
-        public ListadoCategoria()
+        public ViewCategorias()
         {
             InitializeComponent();
             dgvCategoria.Visible = true;

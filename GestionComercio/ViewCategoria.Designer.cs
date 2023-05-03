@@ -1,6 +1,6 @@
 ﻿namespace GestionComercio
 {
-    partial class ListadoCategoria
+    partial class ViewCategorias
     {
         /// <summary>
         /// Required designer variable.
@@ -53,15 +53,15 @@
             this.labelTituloCat.TabIndex = 1;
             this.labelTituloCat.Text = "CATEGORIAS";
             // 
-            // ListadoCategoria
+            // ViewCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelTituloCat);
             this.Controls.Add(this.dgvCategoria);
-            this.Name = "ListadoCategoria";
-            this.Text = "ListadoCategoria";
+            this.Name = "ViewCategorias";
+            this.Text = "Categorias";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

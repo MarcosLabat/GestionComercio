@@ -1,6 +1,6 @@
 ﻿namespace GestionComercio
 {
-    partial class ListadoArticulos
+    partial class ViewArticulos
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,7 @@
             this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.btnSig = new System.Windows.Forms.Button();
+            this.prueba = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -43,9 +44,7 @@
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.Size = new System.Drawing.Size(715, 251);
             this.dgvArticulos.TabIndex = 8;
-            this.dgvArticulos.Visible = false;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
-            this.dgvArticulos.VisibleChanged += new System.EventHandler(this.dgvArticulos_VisibleChanged);
             // 
             // pictureBoxArticulos
             // 
@@ -64,6 +63,7 @@
             this.btnAnterior.TabIndex = 11;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSig
             // 
@@ -75,20 +75,32 @@
             this.btnSig.UseVisualStyleBackColor = true;
             this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
-            // ListadoArticulos
+            // prueba
+            // 
+            this.prueba.AutoSize = true;
+            this.prueba.Location = new System.Drawing.Point(377, 43);
+            this.prueba.Name = "prueba";
+            this.prueba.Size = new System.Drawing.Size(35, 13);
+            this.prueba.TabIndex = 13;
+            this.prueba.Text = "label1";
+            // 
+            // ViewArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 450);
+            this.Controls.Add(this.prueba);
             this.Controls.Add(this.btnSig);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
-            this.Name = "ListadoArticulos";
-            this.Text = "ListadoArticulos";
+            this.Name = "ViewArticulos";
+            this.Text = "Articulos";
+            this.Load += new System.EventHandler(this.ViewArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,5 +110,6 @@
         private System.Windows.Forms.PictureBox pictureBoxArticulos;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button btnSig;
+        private System.Windows.Forms.Label prueba;
     }
 }

@@ -23,13 +23,13 @@ namespace GestionComercio
         {
             foreach (var item in Application.OpenForms)
             {
-                if (item.GetType() == typeof(ListadoArticulos))
+                if (item.GetType() == typeof(ViewArticulos))
                 {
                     return;
                 }
             }
 
-            ListadoArticulos listado = new ListadoArticulos();
+            ViewArticulos listado = new ViewArticulos();
             listado.MdiParent = this;
             listado.Show();
 
@@ -39,13 +39,13 @@ namespace GestionComercio
         {
             foreach (var item in Application.OpenForms)
             {
-                if (item.GetType() == typeof(ListadoMarcas))
+                if (item.GetType() == typeof(ViewMarcas))
                 {
                     return;
                 }
             }
 
-            ListadoMarcas listado = new ListadoMarcas();
+            ViewMarcas listado = new ViewMarcas();
             listado.MdiParent = this;
             listado.Show();
         }
@@ -54,12 +54,12 @@ namespace GestionComercio
         {
             foreach(var item in Application.OpenForms)
             {
-                if(item.GetType() == typeof(ListadoCategoria))
+                if(item.GetType() == typeof(ViewCategorias))
                 {
                     return;
                 }
             }
-            ListadoCategoria listado = new ListadoCategoria();
+            ViewCategorias listado = new ViewCategorias();
             listado.MdiParent = this;
             listado.Show();
         }

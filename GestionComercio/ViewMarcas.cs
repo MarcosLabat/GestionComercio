@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace GestionComercio
 {
-    public partial class ListadoMarcas : Form
+    public partial class ViewMarcas : Form
     {
         private List<Marca> listaMarcas;
         private MarcaNegocio marcaNegocio = new MarcaNegocio();
-        public ListadoMarcas()
+        public ViewMarcas()
         {
             InitializeComponent();
             dgvMarcas.Visible = true;
