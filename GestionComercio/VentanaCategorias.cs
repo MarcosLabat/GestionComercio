@@ -25,42 +25,55 @@ namespace GestionComercio
 
         private void VentanaCategorias_Load(object sender, EventArgs e)
         {
-            listaCategorias = categorias.listar();
-            dgvCategorias.DataSource = listaCategorias;
+            try
+            {
+                listaCategorias = categorias.listar();
+                dgvCategorias.DataSource = listaCategorias;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void btnResetCategoria_Click(object sender, EventArgs e)
         {
-            listaCategorias = categorias.listar();
-            dgvCategorias.DataSource = listaCategorias;
+            VentanaCategorias_Load(sender, e);
             lblBusqueda.Visible = false;
         }
 
         private void btnActualizarCategoria_Click(object sender, EventArgs e)
         {
-            listaCategorias = categorias.listar();
-            dgvCategorias.DataSource = listaCategorias;
+            VentanaCategorias_Load(sender, e);
             lblBusqueda.Visible = false;
         }
 
         private void btnBuscarCategoria_Click(object sender, EventArgs e)
         {
-            string busqueda = tbxBuscador.Text;
-            List<Categoria> aux = new List<Categoria>();
-
-            lblBusqueda.Visible = true;
-            Categoria cat = categorias.buscarPorDescripcion(busqueda);
-            if(cat != null)
+            try
             {
-                lblBusqueda.ForeColor = Color.Green;
-                lblBusqueda.Text = "Categoria encontrada";
-                aux.Add(cat);
-                dgvCategorias.DataSource = aux;
+                string busqueda = tbxBuscador.Text;
+                List<Categoria> aux = new List<Categoria>();
+                lblBusqueda.Visible = true;
+                Categoria cat = categorias.buscarPorDescripcion(busqueda);
+                if (cat != null)
+                {
+                    lblBusqueda.ForeColor = Color.Green;
+                    lblBusqueda.Text = "Categoria encontrada";
+                    aux.Add(cat);
+                    dgvCategorias.DataSource = aux;
+                }
+                else
+                {
+                    lblBusqueda.ForeColor = Color.Red;
+                    lblBusqueda.Text = "Categoria no encontrada";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblBusqueda.ForeColor = Color.Red;
-                lblBusqueda.Text = "Categoria no encontrada";
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
 

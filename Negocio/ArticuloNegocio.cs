@@ -122,7 +122,6 @@ namespace Negocio
             
             try
             {
-
                 datos.SetearQuery(query);
                 datos.leer();
                 while (datos.Reader.Read())
@@ -147,7 +146,6 @@ namespace Negocio
                     aux.Nombre = (string)datos.Reader["Nombre"];
                     aux.Descripcion = (string)datos.Reader["Descripcion"];
                     aux.Precio = (decimal)datos.Reader["Precio"];
-
 
                     lista.Add(aux);
                 }

@@ -30,7 +30,6 @@ namespace GestionComercio
         {
             listaArticulos = articulos.listar();
             dgvArticulos.DataSource = listaArticulos;
-            //dgvArticulos.Columns["Imagen"].Visible = false;
 
             lblFotos.Text = "Foto " + "1 / " + seleccionado.Imagen.Count;
 
@@ -47,8 +46,17 @@ namespace GestionComercio
         private void btnActualizarArticulos_Click(object sender, EventArgs e)
         {
             lblBuscador.Visible = false;
-            listaArticulos = articulos.listar();
-            dgvArticulos.DataSource = listaArticulos;
+            try
+            {
+                listaArticulos = articulos.listar();
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
         }
 
         private void tsbtnAgregarArticulo_Click(object sender, EventArgs e)
@@ -99,9 +107,17 @@ namespace GestionComercio
         {
             lblBuscador.Visible = false;
             tbxBuscadorArticulos.Text = "";
-            cbxFiltroArticulos.Text = "Sin Filtro"; 
-            listaArticulos = articulos.listar();
-            dgvArticulos.DataSource = listaArticulos;
+            cbxFiltroArticulos.Text = "Sin Filtro";
+            try
+            {
+                listaArticulos = articulos.listar();
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,6 +194,7 @@ namespace GestionComercio
                 countPic++;
             else
                 countPic = 0;
+
             lblFotos.Text = "Foto " + (countPic+1) + " / " + seleccionado.Imagen.Count;
             cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
         }
@@ -188,6 +205,7 @@ namespace GestionComercio
                 countPic--;
             else if(countPic == 0)
                 countPic = seleccionado.Imagen.Count -1;
+
             lblFotos.Text = "Foto " + (countPic+1) + " / " + seleccionado.Imagen.Count;
             cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
         }

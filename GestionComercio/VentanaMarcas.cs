@@ -25,41 +25,55 @@ namespace GestionComercio
 
         private void VentanaMarcas_Load(object sender, EventArgs e)
         {
-            listaMarcas = marcas.listar();
-            dgvMarcas.DataSource = listaMarcas;
+            try
+            {
+                listaMarcas = marcas.listar();
+                dgvMarcas.DataSource = listaMarcas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void btnBuscarMarca_Click(object sender, EventArgs e)
         {
-            string busqueda = tbxBuscador.Text;
-            List<Marca> aux = new List<Marca>();
-            lblBusqueda.Visible = true;
-            Marca marca = marcas.buscarPorDescripcion(busqueda);
-            if(marca != null)
+            try
             {
-                lblBusqueda.ForeColor = Color.Green;
-                lblBusqueda.Text = "Marca encontrada";
-                aux.Add(marca);
-                dgvMarcas.DataSource = aux;
+                string busqueda = tbxBuscador.Text;
+                List<Marca> aux = new List<Marca>();
+                lblBusqueda.Visible = true;
+                Marca marca = marcas.buscarPorDescripcion(busqueda);
+                if (marca != null)
+                {
+                    lblBusqueda.ForeColor = Color.Green;
+                    lblBusqueda.Text = "Marca encontrada";
+                    aux.Add(marca);
+                    dgvMarcas.DataSource = aux;
+                }
+                else
+                {
+                    lblBusqueda.ForeColor = Color.Red;
+                    lblBusqueda.Text = "Marca no encontrada";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblBusqueda.ForeColor = Color.Red;
-                lblBusqueda.Text = "Marca no encontrada";
+                MessageBox.Show(ex.Message);
+                return;
             }
         }
 
         private void btnResetMarca_Click(object sender, EventArgs e)
         {
-            listaMarcas = marcas.listar();
-            dgvMarcas.DataSource = listaMarcas;
+            VentanaMarcas_Load(sender, e);
             lblBusqueda.Visible = false;
         }
 
         private void btnActualizarMarca_Click(object sender, EventArgs e)
         {
-            listaMarcas = marcas.listar();
-            dgvMarcas.DataSource = listaMarcas;
+            VentanaMarcas_Load(sender, e);
             lblBusqueda.Visible = false;
         }
 
