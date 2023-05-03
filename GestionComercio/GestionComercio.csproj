@@ -58,6 +58,18 @@
     <Compile Include="ListadoArticulos.Designer.cs">
       <DependentUpon>ListadoArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListadoCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoCategoria.Designer.cs">
+      <DependentUpon>ListadoCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoMarcas.Designer.cs">
+      <DependentUpon>ListadoMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoArticulos.resx">
       <DependentUpon>ListadoArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoCategoria.resx">
+      <DependentUpon>ListadoCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoMarcas.resx">
+      <DependentUpon>ListadoMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

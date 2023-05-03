@@ -28,63 +28,160 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.txtOpcion = new System.Windows.Forms.TextBox();
-            this.labelOpcion1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            this.tsPrincipal = new System.Windows.Forms.ToolStrip();
+            this.tsLabelArticulo = new System.Windows.Forms.ToolStripLabel();
+            this.tsBtnListadoArt = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNuevoArt = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsLabelMarca = new System.Windows.Forms.ToolStripLabel();
+            this.tsBtnListaMarcas = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNuevaMarca = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsLabelCategoria = new System.Windows.Forms.ToolStripLabel();
+            this.tsBtnListaCategoria = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNuevaCategoria = new System.Windows.Forms.ToolStripButton();
+            this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnMenu
+            // tsPrincipal
             // 
-            this.btnMenu.Location = new System.Drawing.Point(397, 289);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(177, 37);
-            this.btnMenu.TabIndex = 11;
-            this.btnMenu.Text = "Enviar";
-            this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsLabelArticulo,
+            this.tsBtnListadoArt,
+            this.tsBtnNuevoArt,
+            this.toolStripSeparator1,
+            this.tsLabelMarca,
+            this.tsBtnListaMarcas,
+            this.tsBtnNuevaMarca,
+            this.toolStripSeparator2,
+            this.tsLabelCategoria,
+            this.tsBtnListaCategoria,
+            this.tsBtnNuevaCategoria});
+            this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.tsPrincipal.Name = "tsPrincipal";
+            this.tsPrincipal.Size = new System.Drawing.Size(984, 25);
+            this.tsPrincipal.TabIndex = 19;
+            this.tsPrincipal.Text = "toolStrip1";
             // 
-            // txtOpcion
+            // tsLabelArticulo
             // 
-            this.txtOpcion.Location = new System.Drawing.Point(397, 263);
-            this.txtOpcion.Name = "txtOpcion";
-            this.txtOpcion.Size = new System.Drawing.Size(173, 20);
-            this.txtOpcion.TabIndex = 12;
+            this.tsLabelArticulo.Name = "tsLabelArticulo";
+            this.tsLabelArticulo.Size = new System.Drawing.Size(54, 22);
+            this.tsLabelArticulo.Text = "Articulos";
             // 
-            // labelOpcion1
+            // tsBtnListadoArt
             // 
-            this.labelOpcion1.AutoSize = true;
-            this.labelOpcion1.BackColor = System.Drawing.Color.DarkGray;
-            this.labelOpcion1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOpcion1.Location = new System.Drawing.Point(393, 225);
-            this.labelOpcion1.Name = "labelOpcion1";
-            this.labelOpcion1.Size = new System.Drawing.Size(186, 23);
-            this.labelOpcion1.TabIndex = 13;
-            this.labelOpcion1.Text = "1 - Lista de articulos ";
+            this.tsBtnListadoArt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnListadoArt.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnListadoArt.Image")));
+            this.tsBtnListadoArt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnListadoArt.Name = "tsBtnListadoArt";
+            this.tsBtnListadoArt.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnListadoArt.Text = "Listado de Articulos";
+            this.tsBtnListadoArt.Click += new System.EventHandler(this.tsBtnListadoArt_Click);
+            // 
+            // tsBtnNuevoArt
+            // 
+            this.tsBtnNuevoArt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNuevoArt.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNuevoArt.Image")));
+            this.tsBtnNuevoArt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNuevoArt.Name = "tsBtnNuevoArt";
+            this.tsBtnNuevoArt.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnNuevoArt.Text = "Nuevo articulo";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsLabelMarca
+            // 
+            this.tsLabelMarca.Name = "tsLabelMarca";
+            this.tsLabelMarca.Size = new System.Drawing.Size(45, 22);
+            this.tsLabelMarca.Text = "Marcas";
+            // 
+            // tsBtnListaMarcas
+            // 
+            this.tsBtnListaMarcas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnListaMarcas.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnListaMarcas.Image")));
+            this.tsBtnListaMarcas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnListaMarcas.Name = "tsBtnListaMarcas";
+            this.tsBtnListaMarcas.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnListaMarcas.Text = "Lista de Marcas";
+            this.tsBtnListaMarcas.Click += new System.EventHandler(this.tsBtnListaMarcas_Click);
+            // 
+            // tsBtnNuevaMarca
+            // 
+            this.tsBtnNuevaMarca.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNuevaMarca.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNuevaMarca.Image")));
+            this.tsBtnNuevaMarca.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNuevaMarca.Name = "tsBtnNuevaMarca";
+            this.tsBtnNuevaMarca.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnNuevaMarca.Text = "Nueva Marca";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsLabelCategoria
+            // 
+            this.tsLabelCategoria.Name = "tsLabelCategoria";
+            this.tsLabelCategoria.Size = new System.Drawing.Size(58, 22);
+            this.tsLabelCategoria.Text = "Categoria";
+            // 
+            // tsBtnListaCategoria
+            // 
+            this.tsBtnListaCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnListaCategoria.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnListaCategoria.Image")));
+            this.tsBtnListaCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnListaCategoria.Name = "tsBtnListaCategoria";
+            this.tsBtnListaCategoria.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnListaCategoria.Text = "Lista de Categorias";
+            this.tsBtnListaCategoria.Click += new System.EventHandler(this.tsBtnListaCategoria_Click);
+            // 
+            // tsBtnNuevaCategoria
+            // 
+            this.tsBtnNuevaCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNuevaCategoria.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNuevaCategoria.Image")));
+            this.tsBtnNuevaCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNuevaCategoria.Name = "tsBtnNuevaCategoria";
+            this.tsBtnNuevaCategoria.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnNuevaCategoria.Text = "Nueva Categoria";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 511);
-            this.Controls.Add(this.labelOpcion1);
-            this.Controls.Add(this.txtOpcion);
-            this.Controls.Add(this.btnMenu);
+            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.tsPrincipal);
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(1000, 550);
+            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion del comercio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.tsPrincipal.ResumeLayout(false);
+            this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.TextBox txtOpcion;
-        private System.Windows.Forms.Label labelOpcion1;
+        private System.Windows.Forms.ToolStrip tsPrincipal;
+        private System.Windows.Forms.ToolStripLabel tsLabelArticulo;
+        private System.Windows.Forms.ToolStripButton tsBtnListadoArt;
+        private System.Windows.Forms.ToolStripButton tsBtnNuevoArt;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel tsLabelMarca;
+        private System.Windows.Forms.ToolStripButton tsBtnListaMarcas;
+        private System.Windows.Forms.ToolStripButton tsBtnNuevaMarca;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel tsLabelCategoria;
+        private System.Windows.Forms.ToolStripButton tsBtnListaCategoria;
+        private System.Windows.Forms.ToolStripButton tsBtnNuevaCategoria;
     }
 }
 

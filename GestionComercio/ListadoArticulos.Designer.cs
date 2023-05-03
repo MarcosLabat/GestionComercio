@@ -30,7 +30,8 @@
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
-            this.btnData = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnSig = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -40,36 +41,47 @@
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(12, 97);
             this.dgvArticulos.Name = "dgvArticulos";
-            this.dgvArticulos.Size = new System.Drawing.Size(623, 251);
+            this.dgvArticulos.Size = new System.Drawing.Size(715, 251);
             this.dgvArticulos.TabIndex = 8;
+            this.dgvArticulos.Visible = false;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
+            this.dgvArticulos.VisibleChanged += new System.EventHandler(this.dgvArticulos_VisibleChanged);
             // 
             // pictureBoxArticulos
             // 
-            this.pictureBoxArticulos.Location = new System.Drawing.Point(722, 97);
+            this.pictureBoxArticulos.Location = new System.Drawing.Point(733, 97);
             this.pictureBoxArticulos.Name = "pictureBoxArticulos";
-            this.pictureBoxArticulos.Size = new System.Drawing.Size(317, 258);
+            this.pictureBoxArticulos.Size = new System.Drawing.Size(317, 251);
             this.pictureBoxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxArticulos.TabIndex = 10;
             this.pictureBoxArticulos.TabStop = false;
             // 
-            // btnData
+            // btnAnterior
             // 
-            this.btnData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnData.Location = new System.Drawing.Point(517, 385);
-            this.btnData.Name = "btnData";
-            this.btnData.Size = new System.Drawing.Size(118, 27);
-            this.btnData.TabIndex = 11;
-            this.btnData.Text = "obtener datos";
-            this.btnData.UseVisualStyleBackColor = true;
-            this.btnData.Click += new System.EventHandler(this.btnData_Click);
+            this.btnAnterior.Location = new System.Drawing.Point(733, 366);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(88, 30);
+            this.btnAnterior.TabIndex = 11;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.UseVisualStyleBackColor = true;
+            // 
+            // btnSig
+            // 
+            this.btnSig.Location = new System.Drawing.Point(962, 366);
+            this.btnSig.Name = "btnSig";
+            this.btnSig.Size = new System.Drawing.Size(88, 30);
+            this.btnSig.TabIndex = 12;
+            this.btnSig.Text = "Siguiente";
+            this.btnSig.UseVisualStyleBackColor = true;
+            this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
             // ListadoArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 450);
-            this.Controls.Add(this.btnData);
+            this.Controls.Add(this.btnSig);
+            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "ListadoArticulos";
@@ -84,6 +96,7 @@
 
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pictureBoxArticulos;
-        private System.Windows.Forms.Button btnData;
+        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnSig;
     }
 }

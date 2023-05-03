@@ -15,23 +15,11 @@ namespace GestionComercio
     public partial class ListadoArticulos : Form
     {
         private List<Articulo> listaArticulos;
+        private ArticuloNegocio articuloNegocio = new ArticuloNegocio();
         public ListadoArticulos()
         {
             InitializeComponent();
-        }
-
-        private void btnData_Click(object sender, EventArgs e)
-        {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            listaArticulos = articuloNegocio.listar();
-            dgvArticulos.DataSource = listaArticulos;
-            pictureBoxArticulos.Load(listaArticulos[0].imagen.imagenUrl);
-        }
-
-        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
-        {
-            Articulo articuloActual = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(articuloActual.imagen.imagenUrl);
+            dgvArticulos.Visible = true;
         }
 
         private void cargarImagen(string url)
@@ -44,6 +32,25 @@ namespace GestionComercio
             {
                 pictureBoxArticulos.Load("https://www.shutterstock.com/image-vector/ui-image-placeholder-wireframes-apps-260nw-1037719204.jpg");
             }
+        }
+
+        private void dgvArticulos_VisibleChanged(object sender, EventArgs e)
+        {
+            listaArticulos = articuloNegocio.listar();
+            dgvArticulos.DataSource = listaArticulos;
+            dgvArticulos.Columns[7].Visible = false;
+            pictureBoxArticulos.Load(listaArticulos[0].imagen.imagenUrl);
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo articuloActual = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(articuloActual.imagen.imagenUrl);
+        }
+
+        private void btnSig_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

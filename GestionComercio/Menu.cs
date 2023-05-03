@@ -19,23 +19,48 @@ namespace GestionComercio
             InitializeComponent();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void tsBtnListadoArt_Click(object sender, EventArgs e)
         {
-            if(txtOpcion.Text == "" || txtOpcion.Text != "1")
-            {
-                MessageBox.Show("NO SE PUEDE DEJAR EL CAMPO VACIO O SE INGRESO UNA OPCION INCORRECTA");
-                return;
-            }
-
             foreach (var item in Application.OpenForms)
             {
-                if(item.GetType() == typeof(ListadoArticulos))
+                if (item.GetType() == typeof(ListadoArticulos))
                 {
                     return;
                 }
             }
 
             ListadoArticulos listado = new ListadoArticulos();
+            listado.MdiParent = this;
+            listado.Show();
+
+        }
+
+        private void tsBtnListaMarcas_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(ListadoMarcas))
+                {
+                    return;
+                }
+            }
+
+            ListadoMarcas listado = new ListadoMarcas();
+            listado.MdiParent = this;
+            listado.Show();
+        }
+
+        private void tsBtnListaCategoria_Click(object sender, EventArgs e)
+        {
+            foreach(var item in Application.OpenForms)
+            {
+                if(item.GetType() == typeof(ListadoCategoria))
+                {
+                    return;
+                }
+            }
+            ListadoCategoria listado = new ListadoCategoria();
+            listado.MdiParent = this;
             listado.Show();
         }
     }
