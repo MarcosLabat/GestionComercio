@@ -52,6 +52,12 @@
     <Compile Include="CargarArticulo.Designer.cs">
       <DependentUpon>CargarArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewArticuloDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewArticuloDetalle.Designer.cs">
+      <DependentUpon>ViewArticuloDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CargarArticulo.resx">
       <DependentUpon>CargarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewArticuloDetalle.resx">
+      <DependentUpon>ViewArticuloDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewArticulos.resx">
       <DependentUpon>ViewArticulos.cs</DependentUpon>

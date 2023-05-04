@@ -15,7 +15,7 @@ namespace GestionComercio
     public partial class ViewArticulos : Form
     {
         private List<Articulo> listaArticulos;
-        private List<Imagen> listaIamgenes;
+        private List<Imagen> listaImagenes;
         private ArticuloNegocio articuloNegocio = new ArticuloNegocio();
         private int indice = 1;
         private int maximo;
@@ -40,10 +40,17 @@ namespace GestionComercio
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             indice = 1;
-            prueba.Text = indice.ToString();
             Articulo articuloActual = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             cargarImagen(articuloActual.imagenes[0].ToString());
             maximo = articuloActual.imagenes.Count;
+            if(articuloActual.imagenes.Count > 1){
+                btnAnt.Visible = true;
+                btnSig.Visible = true;
+            }
+            else{
+                btnAnt.Visible = false;
+                btnSig.Visible = false;
+            }
         }
 
         private void btnSig_Click(object sender, EventArgs e)
@@ -54,12 +61,11 @@ namespace GestionComercio
                 Articulo articuloActual = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 cargarImagen(articuloActual.imagenes[indice].ToString());
                 indice++;
-                prueba.Text = indice.ToString();
 
             }
             else
             {
-                MessageBox.Show("NO SE PUEDE IR MAS ADELANTE");
+                MessageBox.Show("No hay mas imagenes");
             }
         }
 
@@ -67,8 +73,8 @@ namespace GestionComercio
         {
             listaArticulos = articuloNegocio.listar();
             dgvArticulos.DataSource = listaArticulos;
-            listaIamgenes = listaArticulos[0].imagenes;
-            pictureBoxArticulos.Load(listaIamgenes[0].ToString());
+            listaImagenes = listaArticulos[0].imagenes;
+            pictureBoxArticulos.Load(listaImagenes[0].ToString());
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -78,12 +84,26 @@ namespace GestionComercio
                 Articulo articuloActual = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 indice--;
                 cargarImagen(articuloActual.imagenes[indice - 1].ToString());
-                prueba.Text = indice.ToString();
             }
             else
             {
-                MessageBox.Show("NO SE PUEDE IR MAS ATRAS");
+                MessageBox.Show("No hay mas imagenes");
             }
+        }
+
+        private void btnDetalleArt_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if(item.GetType() == typeof(ViewArticuloDetalle))
+                {
+                    return;
+                }
+            }
+            Articulo articuloActual = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            ViewArticuloDetalle ventana = new ViewArticuloDetalle();
+            ventana.idDetalle = articuloActual.idArticulo.ToString();
+            ventana.Show();
         }
     }
 }

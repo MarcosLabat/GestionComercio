@@ -19,7 +19,7 @@ namespace Negocio
             bool NuevaImagen = false;
             try {
 
-                consulta.setQuery("select A.Id, A.Codigo, A.Nombre, A.Descripcion as AD, A.Precio, M.Descripcion as MD, C.Descripcion as CD, I.ImagenUrl from ARTICULOS as A Inner Join MARCAS as M on A.IdMarca = M.Id Inner Join CATEGORIAS as C on A.IdCategoria = C.Id Inner Join IMAGENES as I on A.Id = I.IdArticulo");
+                consulta.setQuery("select A.Id, A.Codigo, A.Nombre, A.Descripcion as AD, A.Precio, M.Descripcion as MD, C.Descripcion as CD, I.ImagenUrl, I.Id as IMGID from ARTICULOS as A Inner Join MARCAS as M on A.IdMarca = M.Id Inner Join CATEGORIAS as C on A.IdCategoria = C.Id Inner Join IMAGENES as I on A.Id = I.IdArticulo");
                 consulta.leerDB();
 
                 while (consulta.Lector.Read()) {
@@ -32,6 +32,8 @@ namespace Negocio
                         foreach (var item in listaArticulos){
                             if (aux.idArticulo == item.idArticulo){
                                 imagen.imagenUrl = (string)consulta.Lector["ImagenUrl"];
+                                imagen.id = (int)consulta.Lector["IMGID"];
+                                imagen.idArticulo = (int)consulta.Lector["Id"];
                                 aux.imagenes.Add(imagen);
                                 listaArticulos[item.idArticulo - 1].imagenes.Add(imagen);
                                 NuevaImagen = true;
@@ -69,6 +71,47 @@ namespace Negocio
             }
 
             return listaArticulos;
+        }
+
+        public Articulo detalleArticulo(string id)
+        {
+            ConexionDB consulta = new ConexionDB();
+            Articulo articulo = new Articulo();
+            articulo.marca = new Marca();
+            articulo.categoria = new Categoria();
+            
+            articulo.imagenes = new List<Imagen>();
+            try
+            {
+                consulta.setQuery("select A.Id, A.Codigo, A.Nombre, A.Descripcion as AD, A.Precio, M.Descripcion as MD, C.Descripcion as CD, IMG.Id as IMGID, IMG.ImagenUrl from Articulos as A Inner Join MARCAS as M on A.IdMarca = M.Id Inner Join CATEGORIAS as C on A.IdCategoria = C.Id Inner Join IMAGENES as IMG on IMG.IdArticulo = A.Id where A.id = " + id);
+                consulta.leerDB();
+                while (consulta.Lector.Read()){
+                    Imagen imagen = new Imagen();
+                    articulo.idArticulo = (int)consulta.Lector["Id"];
+                    articulo.nombre = (string)consulta.Lector["Nombre"];
+                    articulo.codigoArticulo = (string)consulta.Lector["Codigo"];
+                    articulo.descripcion = (string)consulta.Lector["AD"];
+                    articulo.precio = (decimal)consulta.Lector["Precio"];
+                    articulo.marca.nombreMarca = (string)consulta.Lector["MD"];
+                    articulo.categoria.nombreCategoria = (string)consulta.Lector["CD"];
+                    imagen.idArticulo = (int)consulta.Lector["Id"];
+                    imagen.imagenUrl = (string)consulta.Lector["ImagenUrl"];
+                    imagen.id = (int)consulta.Lector["IMGID"];
+                    articulo.imagenes.Add(imagen);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                consulta.cerrarConexion();
+            }
+
+            return articulo;
         }
     }
 }

@@ -30,9 +30,9 @@
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.pictureBoxArticulos = new System.Windows.Forms.PictureBox();
-            this.btnAnterior = new System.Windows.Forms.Button();
+            this.btnAnt = new System.Windows.Forms.Button();
             this.btnSig = new System.Windows.Forms.Button();
-            this.prueba = new System.Windows.Forms.Label();
+            this.btnDetalleArt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +55,16 @@
             this.pictureBoxArticulos.TabIndex = 10;
             this.pictureBoxArticulos.TabStop = false;
             // 
-            // btnAnterior
+            // btnAnt
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(733, 366);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(88, 30);
-            this.btnAnterior.TabIndex = 11;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
-            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
+            this.btnAnt.Location = new System.Drawing.Point(733, 366);
+            this.btnAnt.Name = "btnAnt";
+            this.btnAnt.Size = new System.Drawing.Size(88, 30);
+            this.btnAnt.TabIndex = 11;
+            this.btnAnt.Text = "Anterior";
+            this.btnAnt.UseVisualStyleBackColor = true;
+            this.btnAnt.Visible = false;
+            this.btnAnt.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // btnSig
             // 
@@ -73,25 +74,27 @@
             this.btnSig.TabIndex = 12;
             this.btnSig.Text = "Siguiente";
             this.btnSig.UseVisualStyleBackColor = true;
+            this.btnSig.Visible = false;
             this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
-            // prueba
+            // btnDetalleArt
             // 
-            this.prueba.AutoSize = true;
-            this.prueba.Location = new System.Drawing.Point(377, 43);
-            this.prueba.Name = "prueba";
-            this.prueba.Size = new System.Drawing.Size(35, 13);
-            this.prueba.TabIndex = 13;
-            this.prueba.Text = "label1";
+            this.btnDetalleArt.Location = new System.Drawing.Point(733, 68);
+            this.btnDetalleArt.Name = "btnDetalleArt";
+            this.btnDetalleArt.Size = new System.Drawing.Size(101, 23);
+            this.btnDetalleArt.TabIndex = 13;
+            this.btnDetalleArt.Text = "Ver Detalle";
+            this.btnDetalleArt.UseVisualStyleBackColor = true;
+            this.btnDetalleArt.Click += new System.EventHandler(this.btnDetalleArt_Click);
             // 
             // ViewArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 450);
-            this.Controls.Add(this.prueba);
+            this.Controls.Add(this.btnDetalleArt);
             this.Controls.Add(this.btnSig);
-            this.Controls.Add(this.btnAnterior);
+            this.Controls.Add(this.btnAnt);
             this.Controls.Add(this.pictureBoxArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.Name = "ViewArticulos";
@@ -100,7 +103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxArticulos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -108,8 +110,8 @@
 
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pictureBoxArticulos;
-        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.Button btnAnt;
         private System.Windows.Forms.Button btnSig;
-        private System.Windows.Forms.Label prueba;
+        private System.Windows.Forms.Button btnDetalleArt;
     }
 }
