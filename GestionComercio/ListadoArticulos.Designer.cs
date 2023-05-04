@@ -37,10 +37,13 @@
             // dgvListadoArticulos
             // 
             this.dgvListadoArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListadoArticulos.Location = new System.Drawing.Point(12, 12);
+            this.dgvListadoArticulos.MultiSelect = false;
             this.dgvListadoArticulos.Name = "dgvListadoArticulos";
             this.dgvListadoArticulos.RowHeadersWidth = 51;
             this.dgvListadoArticulos.RowTemplate.Height = 24;
+            this.dgvListadoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoArticulos.Size = new System.Drawing.Size(634, 533);
             this.dgvListadoArticulos.TabIndex = 0;
             this.dgvListadoArticulos.SelectionChanged += new System.EventHandler(this.dgvListadoArticulos_SelectionChanged);

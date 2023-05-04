@@ -1,6 +1,6 @@
 ﻿namespace GestionComercio
 {
-    partial class Ventana
+    partial class CargaArticulo
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,10 @@
             this.btnPrevisualizar = new System.Windows.Forms.Button();
             this.txtbPrevisualizar = new System.Windows.Forms.RichTextBox();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            this.pcbImagen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodigo
@@ -60,14 +64,14 @@
             this.txtCodigo.Location = new System.Drawing.Point(107, 66);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(172, 22);
-            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(107, 108);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(172, 22);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
@@ -92,7 +96,7 @@
             this.txtbDescripcion.Location = new System.Drawing.Point(107, 150);
             this.txtbDescripcion.Name = "txtbDescripcion";
             this.txtbDescripcion.Size = new System.Drawing.Size(172, 96);
-            this.txtbDescripcion.TabIndex = 6;
+            this.txtbDescripcion.TabIndex = 2;
             this.txtbDescripcion.Text = "";
             // 
             // lblMarca
@@ -127,7 +131,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(107, 375);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(172, 22);
-            this.txtPrecio.TabIndex = 12;
+            this.txtPrecio.TabIndex = 5;
             // 
             // lblTitulo
             // 
@@ -142,53 +146,85 @@
             // 
             // cboMarca
             // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(107, 280);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(172, 24);
-            this.cboMarca.TabIndex = 14;
+            this.cboMarca.TabIndex = 3;
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(107, 323);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(172, 24);
-            this.cboCategoria.TabIndex = 15;
+            this.cboCategoria.TabIndex = 4;
             // 
             // btnPrevisualizar
             // 
-            this.btnPrevisualizar.Location = new System.Drawing.Point(4, 416);
+            this.btnPrevisualizar.Location = new System.Drawing.Point(374, 66);
             this.btnPrevisualizar.Name = "btnPrevisualizar";
-            this.btnPrevisualizar.Size = new System.Drawing.Size(276, 23);
-            this.btnPrevisualizar.TabIndex = 16;
+            this.btnPrevisualizar.Size = new System.Drawing.Size(289, 23);
+            this.btnPrevisualizar.TabIndex = 7;
             this.btnPrevisualizar.Text = "Previsualizar Artículo";
             this.btnPrevisualizar.UseVisualStyleBackColor = true;
             this.btnPrevisualizar.Click += new System.EventHandler(this.btnPrevisualizar_Click);
             // 
             // txtbPrevisualizar
             // 
-            this.txtbPrevisualizar.Location = new System.Drawing.Point(374, 66);
+            this.txtbPrevisualizar.Location = new System.Drawing.Point(374, 108);
             this.txtbPrevisualizar.Name = "txtbPrevisualizar";
-            this.txtbPrevisualizar.Size = new System.Drawing.Size(280, 281);
+            this.txtbPrevisualizar.Size = new System.Drawing.Size(289, 149);
             this.txtbPrevisualizar.TabIndex = 17;
             this.txtbPrevisualizar.Text = "";
             // 
             // btnCargar
             // 
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(464, 375);
+            this.btnCargar.Location = new System.Drawing.Point(471, 422);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(96, 47);
-            this.btnCargar.TabIndex = 18;
+            this.btnCargar.TabIndex = 8;
             this.btnCargar.Text = "CARGAR";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
-            // Ventana
+            // lblUrlImagen
+            // 
+            this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Location = new System.Drawing.Point(1, 432);
+            this.lblUrlImagen.Name = "lblUrlImagen";
+            this.lblUrlImagen.Size = new System.Drawing.Size(82, 16);
+            this.lblUrlImagen.TabIndex = 19;
+            this.lblUrlImagen.Text = "URL Imagen";
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(107, 429);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(172, 22);
+            this.txtUrlImagen.TabIndex = 6;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
+            // 
+            // pcbImagen
+            // 
+            this.pcbImagen.Location = new System.Drawing.Point(374, 280);
+            this.pcbImagen.Name = "pcbImagen";
+            this.pcbImagen.Size = new System.Drawing.Size(289, 136);
+            this.pcbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbImagen.TabIndex = 20;
+            this.pcbImagen.TabStop = false;
+            // 
+            // CargaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 451);
+            this.ClientSize = new System.Drawing.Size(733, 485);
+            this.Controls.Add(this.pcbImagen);
+            this.Controls.Add(this.txtUrlImagen);
+            this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.btnCargar);
             this.Controls.Add(this.txtbPrevisualizar);
             this.Controls.Add(this.btnPrevisualizar);
@@ -205,9 +241,11 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
-            this.Name = "Ventana";
+            this.Name = "CargaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CargaArticulo";
+            this.Load += new System.EventHandler(this.Ventana_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +269,8 @@
         private System.Windows.Forms.Button btnPrevisualizar;
         private System.Windows.Forms.RichTextBox txtbPrevisualizar;
         private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.TextBox txtUrlImagen;
+        private System.Windows.Forms.PictureBox pcbImagen;
     }
 }

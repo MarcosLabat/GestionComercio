@@ -26,7 +26,7 @@ namespace GestionComercio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Ventana ventanaArticulo = new Ventana();
+            CargaArticulo ventanaArticulo = new CargaArticulo();
             ventanaArticulo.ShowDialog();
         }
     }
