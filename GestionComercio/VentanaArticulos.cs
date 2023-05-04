@@ -28,12 +28,25 @@ namespace GestionComercio
 
         private void Panel_Load(object sender, EventArgs e)
         {
-            listaArticulos = articulos.listar();
-            dgvArticulos.DataSource = listaArticulos;
+            try
+            {
+                listaArticulos = articulos.listar();
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
-            lblFotos.Text = "Foto " + "1 / " + seleccionado.Imagen.Count;
 
-            lblBuscador.Visible = false;
+            lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+
+
+            lblBuscadorRespuesta.Visible = false;
+            lblBuscadorRapido.Visible = false;
+            tbxBuscadorRapido.Visible = false;
+
             cbxFiltroArticulos.Items.Clear();
             cbxFiltroArticulos.Items.Add("Sin Filtro");
             cbxFiltroArticulos.Items.Add("Nombre");
@@ -45,7 +58,7 @@ namespace GestionComercio
 
         private void btnActualizarArticulos_Click(object sender, EventArgs e)
         {
-            lblBuscador.Visible = false;
+            lblBuscadorRespuesta.Visible = false;
             try
             {
                 listaArticulos = articulos.listar();
@@ -78,21 +91,21 @@ namespace GestionComercio
             string filtro = cbxFiltroArticulos.Text;
             string busqueda = tbxBuscadorArticulos.Text;
             if (busqueda.Length == 0) return;
-            lblBuscador.Visible = true;
+            lblBuscadorRespuesta.Visible = true;
 
             try
             {
                 List<Articulo> aux = articulos.buscar(busqueda, filtro);
                 if (aux.Count != 0)
                 {
-                    lblBuscador.ForeColor = Color.Green;
-                    lblBuscador.Text = "Coincidencias encontradas";
+                    lblBuscadorRespuesta.ForeColor = Color.Green;
+                    lblBuscadorRespuesta.Text = "Coincidencias encontradas";
                     dgvArticulos.DataSource = aux;
                 }
                 else
                 {
-                    lblBuscador.ForeColor = Color.Red;
-                    lblBuscador.Text = "No se han encontrado coincidencias";
+                    lblBuscadorRespuesta.ForeColor = Color.Red;
+                    lblBuscadorRespuesta.Text = "No se han encontrado coincidencias";
                     return;
                 }
             }
@@ -105,7 +118,7 @@ namespace GestionComercio
 
         private void btnResetArticulos_Click(object sender, EventArgs e)
         {
-            lblBuscador.Visible = false;
+            lblBuscadorRespuesta.Visible = false;
             tbxBuscadorArticulos.Text = "";
             cbxFiltroArticulos.Text = "Sin Filtro";
             try
@@ -141,16 +154,22 @@ namespace GestionComercio
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             VentanaArticuloDetalle detalleArticulo = new VentanaArticuloDetalle(seleccionado);
             detalleArticulo.ShowDialog();
-            Panel_Load(sender, e);
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             countPic = 0;
-            lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
             if(seleccionado.Imagen.Count != 0)
+            {
                 cargarImagen(seleccionado.Imagen.First().UrlImagen);
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+            }
+            else 
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -190,24 +209,94 @@ namespace GestionComercio
         private void btnFotoDer_Click(object sender, EventArgs e)
         {
             int cantImagenes = seleccionado.Imagen.Count;
-            if (countPic < cantImagenes - 1)
+            if (cantImagenes > 0)
+            {
+                if (countPic < cantImagenes - 1)
                 countPic++;
-            else
-                countPic = 0;
+                else
+                    countPic = 0;
 
-            lblFotos.Text = "Foto " + (countPic+1) + " / " + seleccionado.Imagen.Count;
-            cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+                if (seleccionado.Imagen.Count > 0)
+                    cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
         }
 
         private void btnFotoIzq_Click(object sender, EventArgs e)
         {
-            if (countPic > 0)
-                countPic--;
-            else if(countPic == 0)
-                countPic = seleccionado.Imagen.Count -1;
+            int cantImagenes = seleccionado.Imagen.Count;
+            if (cantImagenes > 0)
+            {
+                if (countPic > 0) countPic--;
+                else if (countPic == 0)
+                    countPic = cantImagenes - 1;
 
-            lblFotos.Text = "Foto " + (countPic+1) + " / " + seleccionado.Imagen.Count;
-            cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+                cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
+            
+        }
+
+
+        private void chbxFiltroRapido_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chbxFiltroRapido.Checked)
+            {
+                lblBuscadorRapido.Visible = true;
+                tbxBuscadorRapido.Visible = true;
+
+                lblBuscador.Visible = false;
+                lblFiltrarPor.Visible = false;
+                tbxBuscadorArticulos.Visible = false;
+                cbxFiltroArticulos.Visible = false;
+                btnBuscarArticulo.Visible = false;
+                btnResetArticulos.Visible = false;
+            }
+            else
+            {
+                lblBuscadorRapido.Visible = false;
+                tbxBuscadorRapido.Visible = false;
+
+                lblBuscador.Visible = true;
+                lblFiltrarPor.Visible = true;
+                tbxBuscadorArticulos.Visible = true;
+                cbxFiltroArticulos.Visible = true;
+                btnBuscarArticulo.Visible = true;
+                btnResetArticulos.Visible = true;
+            }
+        }
+
+        private void tbxBuscadorRapido_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada = new List<Articulo>();
+            string busqueda = tbxBuscadorRapido.Text;
+            if(busqueda.Length >= 3)
+            {
+                listaFiltrada = listaArticulos.FindAll(art => 
+                    art.Nombre.ToUpper().Contains(busqueda.ToUpper()) || 
+                    art.Descripcion.ToUpper().Contains(busqueda.ToUpper()) ||
+                    art.Codigo.ToUpper().Contains(busqueda.ToUpper()) ||
+                    art.Categoria.Descripcion.ToUpper().Contains(busqueda.ToUpper()) ||
+                    art.Marca.Descripcion.ToUpper().Contains(busqueda.ToUpper())
+                );
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
         }
     }
 }
