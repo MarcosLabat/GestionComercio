@@ -182,6 +182,7 @@
             // 
             // btnCargar
             // 
+            this.btnCargar.AutoSize = true;
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Location = new System.Drawing.Point(471, 422);
             this.btnCargar.Name = "btnCargar";
@@ -258,7 +259,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.RichTextBox txtbDescripcion;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblPrecio;
@@ -272,5 +272,6 @@
         private System.Windows.Forms.Label lblUrlImagen;
         private System.Windows.Forms.TextBox txtUrlImagen;
         private System.Windows.Forms.PictureBox pcbImagen;
+        public System.Windows.Forms.RichTextBox txtbDescripcion;
     }
 }

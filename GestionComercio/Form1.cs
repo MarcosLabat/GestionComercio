@@ -24,10 +24,6 @@ namespace GestionComercio
             listadoArticulos.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            CargaArticulo ventanaArticulo = new CargaArticulo();
-            ventanaArticulo.ShowDialog();
-        }
+    
     }
 }
