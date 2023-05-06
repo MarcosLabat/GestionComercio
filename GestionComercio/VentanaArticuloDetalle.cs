@@ -23,10 +23,10 @@ namespace GestionComercio
 
         private void VentanaArticuloDetalle_Load(object sender, EventArgs e)
         {
-            cargarImagen(articulo.Imagen[0].UrlImagen);
-
-            lblDetalleArticulo.Text = "DETALLE ARTICULO # " + articulo.Codigo;
-            lblTitulo.Text = articulo.Nombre;
+            if (articulo.Imagen.Count > 0)
+                cargarImagen(articulo.Imagen.First().UrlImagen);
+            else
+                cargarImagen("asd");
             
             lblCodigo.Text = articulo.Codigo;
             lblNombre.Text = articulo.Nombre;

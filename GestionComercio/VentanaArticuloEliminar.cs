@@ -29,8 +29,7 @@ namespace GestionComercio
 
         private void VentanaArticuloEliminar_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text = "Se eliminara el articulo #" + articulo.Codigo;
-            lblAdvertencia.Text = articulo.Nombre + " " + articulo.Descripcion;
+            lblTitulo.Text = "ATENCION: Se eliminara el articulo #" + articulo.Codigo;
             lblNombre.Text = articulo.Nombre;
             lblCodigo.Text = articulo.Codigo;
             lblDescripcion.Text = articulo.Descripcion;

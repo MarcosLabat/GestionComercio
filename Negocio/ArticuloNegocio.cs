@@ -220,43 +220,49 @@ namespace Negocio
         public List<Articulo> buscar(string busqueda, string filtro)
         {
             List<Articulo> lista = new List<Articulo>();
-            ConexionDB datos = new ConexionDB();
+            ConexionDB db = new ConexionDB();
             string query;
             if (filtro == "Sin Filtro" || filtro == "")
-                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.Codigo = '{busqueda}' OR A.Nombre = '{busqueda}' OR A.Descripcion = '{busqueda}' OR M.Descripcion = '{busqueda}' OR C.Descripcion = '{busqueda}'";
+                query = $"SELECT A.*, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE A.Codigo = '{busqueda}' OR A.Nombre = '{busqueda}' OR A.Descripcion = '{busqueda}' OR M.Descripcion = '{busqueda}' OR C.Descripcion = '{busqueda}'";
             else if (filtro == "Marca")
-                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE M.Descripcion = '{busqueda}'";
+                query = $"SELECT A.*, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE M.Descripcion = '{busqueda}'";
             else if (filtro == "Categoria")
-                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE C.Descripcion = '{busqueda}'";
+                query = $"SELECT A.*, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE C.Descripcion = '{busqueda}'";
             else
-                query = $"SELECT A.*, M.Descripcion AS Desc_Marca, C.Descripcion AS Desc_Categoria, I.ImagenUrl AS ImagenUrl, I.Id AS IdImagen FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id INNER JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE A.{filtro} = '{busqueda}'";
+                query = $"SELECT A.*, M.Descripcion AS Marca, C.Descripcion AS Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE A.{filtro} = '{busqueda}'";
             
             try
             {
-                datos.SetearQuery(query);
-                datos.leer();
-                while (datos.Reader.Read())
+                db.SetearQuery(query);
+                db.leer();
+                while (db.Reader.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Marca = new Marca();
-                    aux.Categoria = new Categoria();
-                    aux.Imagen[0] = new Imagen();
+                    int idArticulo = (int)db.Reader["Id"];
+                    aux.Id = idArticulo;
+                    if (!(db.Reader["Codigo"] is DBNull)) aux.Codigo = (string)db.Reader["Codigo"];
+                    if (!(db.Reader["Nombre"] is DBNull)) aux.Nombre = (string)db.Reader["Nombre"];
+                    if (!(db.Reader["Descripcion"] is DBNull)) aux.Descripcion = (string)db.Reader["Descripcion"];
+                    if (!(db.Reader["Precio"] is DBNull)) aux.Precio = (decimal)db.Reader["Precio"];
 
-                    aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
-                    aux.Marca.Id = (int)datos.Reader["IdMarca"];
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    aux.Imagen = imagenNegocio.imagenesArticulo(idArticulo);
 
-                    aux.Categoria.Descripcion = (string)datos.Reader["Desc_Categoria"];
-                    aux.Categoria.Id = (int)datos.Reader["IdCategoria"];
 
-                    aux.Imagen[0].Id = (int)datos.Reader["IdImagen"];
-                    aux.Imagen[0].UrlImagen = (string)datos.Reader["ImagenUrl"];
-                    aux.Imagen[0].IdArticulo = (int)datos.Reader["Id"];
+                    if (!(db.Reader["IdMarca"] is DBNull))
+                    {
+                        aux.Marca = new Marca();
+                        aux.Marca.Descripcion = (string)db.Reader["Marca"];
+                        aux.Marca.Id = (int)db.Reader["IdMarca"];
 
-                    aux.Id = (int)datos.Reader["Id"];
-                    aux.Codigo = (string)datos.Reader["Codigo"];
-                    aux.Nombre = (string)datos.Reader["Nombre"];
-                    aux.Descripcion = (string)datos.Reader["Descripcion"];
-                    aux.Precio = (decimal)datos.Reader["Precio"];
+                    }
+
+                    if (!(db.Reader["IdCategoria"] is DBNull))
+                    {
+                        aux.Categoria = new Categoria();
+                        aux.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                        aux.Categoria.Id = (int)db.Reader["IdCategoria"];
+                    }
 
                     lista.Add(aux);
                 }
@@ -269,7 +275,7 @@ namespace Negocio
             }
             finally
             {
-                datos.cerrar();
+                db.cerrar();
             }
         }
 

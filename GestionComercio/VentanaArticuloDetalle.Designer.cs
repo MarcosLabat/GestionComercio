@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDetalleArticulo = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,23 +42,12 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.pbxArt = new System.Windows.Forms.PictureBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArt)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblDetalleArticulo
-            // 
-            this.lblDetalleArticulo.AutoSize = true;
-            this.lblDetalleArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleArticulo.Location = new System.Drawing.Point(12, 9);
-            this.lblDetalleArticulo.Name = "lblDetalleArticulo";
-            this.lblDetalleArticulo.Size = new System.Drawing.Size(50, 16);
-            this.lblDetalleArticulo.TabIndex = 1;
-            this.lblDetalleArticulo.Text = "label1";
-            // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(105, 421);
+            this.btnAceptar.Location = new System.Drawing.Point(110, 381);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 2;
@@ -70,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 86);
+            this.label1.Location = new System.Drawing.Point(29, 278);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 3;
@@ -79,7 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 64);
+            this.label2.Location = new System.Drawing.Point(29, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 4;
@@ -88,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 42);
+            this.label3.Location = new System.Drawing.Point(29, 234);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 5;
@@ -97,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 130);
+            this.label4.Location = new System.Drawing.Point(29, 322);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 6;
@@ -106,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 108);
+            this.label5.Location = new System.Drawing.Point(29, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 7;
@@ -115,7 +103,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 152);
+            this.label6.Location = new System.Drawing.Point(29, 344);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 8;
@@ -124,88 +112,83 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(88, 42);
+            this.lblCodigo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblCodigo.Location = new System.Drawing.Point(107, 233);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(50, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(54, 14);
             this.lblCodigo.TabIndex = 9;
             this.lblCodigo.Text = "Codigo:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(88, 64);
+            this.lblNombre.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblNombre.Location = new System.Drawing.Point(107, 255);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(50, 13);
+            this.lblNombre.Size = new System.Drawing.Size(54, 14);
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Codigo:";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(88, 86);
+            this.lblDescripcion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblDescripcion.Location = new System.Drawing.Point(107, 277);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(50, 13);
+            this.lblDescripcion.Size = new System.Drawing.Size(54, 14);
             this.lblDescripcion.TabIndex = 11;
             this.lblDescripcion.Text = "Codigo:";
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.Location = new System.Drawing.Point(88, 108);
+            this.lblCategoria.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblCategoria.Location = new System.Drawing.Point(107, 299);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(50, 13);
+            this.lblCategoria.Size = new System.Drawing.Size(54, 14);
             this.lblCategoria.TabIndex = 12;
             this.lblCategoria.Text = "Codigo:";
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.Location = new System.Drawing.Point(88, 130);
+            this.lblMarca.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblMarca.Location = new System.Drawing.Point(107, 321);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(50, 13);
+            this.lblMarca.Size = new System.Drawing.Size(54, 14);
             this.lblMarca.TabIndex = 13;
             this.lblMarca.Text = "Codigo:";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(88, 152);
+            this.lblPrecio.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblPrecio.Location = new System.Drawing.Point(107, 343);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(50, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(54, 14);
             this.lblPrecio.TabIndex = 14;
             this.lblPrecio.Text = "Codigo:";
             // 
             // pbxArt
             // 
-            this.pbxArt.Location = new System.Drawing.Point(38, 206);
+            this.pbxArt.Location = new System.Drawing.Point(42, 12);
             this.pbxArt.Name = "pbxArt";
             this.pbxArt.Size = new System.Drawing.Size(200, 200);
             this.pbxArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArt.TabIndex = 15;
             this.pbxArt.TabStop = false;
             // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(50, 188);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(47, 15);
-            this.lblTitulo.TabIndex = 16;
-            this.lblTitulo.Text = "label1";
-            // 
             // VentanaArticuloDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 465);
-            this.Controls.Add(this.lblTitulo);
+            this.ClientSize = new System.Drawing.Size(293, 425);
             this.Controls.Add(this.pbxArt);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblMarca);
@@ -220,9 +203,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblDetalleArticulo);
-            this.MinimumSize = new System.Drawing.Size(319, 504);
+            this.MaximumSize = new System.Drawing.Size(309, 464);
+            this.MinimumSize = new System.Drawing.Size(309, 464);
             this.Name = "VentanaArticuloDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaArticuloDetalle";
             this.Load += new System.EventHandler(this.VentanaArticuloDetalle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxArt)).EndInit();
@@ -232,7 +216,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblDetalleArticulo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -247,6 +230,5 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.PictureBox pbxArt;
-        private System.Windows.Forms.Label lblTitulo;
     }
 }
