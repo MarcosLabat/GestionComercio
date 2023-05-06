@@ -62,7 +62,7 @@
             // 
             // btnActualizarArticulos
             // 
-            this.btnActualizarArticulos.BackColor = System.Drawing.Color.MediumPurple;
+            this.btnActualizarArticulos.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnActualizarArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizarArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarArticulos.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -80,7 +80,7 @@
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvArticulos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvArticulos.Cursor = System.Windows.Forms.Cursors.Cross;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(12, 129);
             this.dgvArticulos.MaximumSize = new System.Drawing.Size(753, 325);
@@ -176,6 +176,7 @@
             // 
             // btnResetArticulos
             // 
+            this.btnResetArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResetArticulos.Location = new System.Drawing.Point(566, 45);
             this.btnResetArticulos.Name = "btnResetArticulos";
             this.btnResetArticulos.Size = new System.Drawing.Size(75, 23);
@@ -186,6 +187,7 @@
             // 
             // btnBuscarArticulo
             // 
+            this.btnBuscarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscarArticulo.Location = new System.Drawing.Point(485, 45);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
             this.btnBuscarArticulo.Size = new System.Drawing.Size(75, 23);
@@ -225,10 +227,11 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnModificar.Location = new System.Drawing.Point(876, 127);
+            this.btnModificar.Location = new System.Drawing.Point(885, 127);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(82, 23);
             this.btnModificar.TabIndex = 24;
@@ -284,22 +287,30 @@
             // 
             // btnFotoIzq
             // 
-            this.btnFotoIzq.Location = new System.Drawing.Point(771, 166);
+            this.btnFotoIzq.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFotoIzq.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFotoIzq.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFotoIzq.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFotoIzq.Location = new System.Drawing.Point(780, 166);
             this.btnFotoIzq.Name = "btnFotoIzq";
             this.btnFotoIzq.Size = new System.Drawing.Size(27, 19);
             this.btnFotoIzq.TabIndex = 28;
             this.btnFotoIzq.Text = "<<";
-            this.btnFotoIzq.UseVisualStyleBackColor = true;
+            this.btnFotoIzq.UseVisualStyleBackColor = false;
             this.btnFotoIzq.Click += new System.EventHandler(this.btnFotoIzq_Click);
             // 
             // btnFotoDer
             // 
-            this.btnFotoDer.Location = new System.Drawing.Point(944, 166);
+            this.btnFotoDer.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFotoDer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFotoDer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFotoDer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFotoDer.Location = new System.Drawing.Point(940, 166);
             this.btnFotoDer.Name = "btnFotoDer";
             this.btnFotoDer.Size = new System.Drawing.Size(27, 19);
             this.btnFotoDer.TabIndex = 29;
             this.btnFotoDer.Text = ">>";
-            this.btnFotoDer.UseVisualStyleBackColor = true;
+            this.btnFotoDer.UseVisualStyleBackColor = false;
             this.btnFotoDer.Click += new System.EventHandler(this.btnFotoDer_Click);
             // 
             // lblFotos
@@ -314,10 +325,10 @@
             // chbxFiltroRapido
             // 
             this.chbxFiltroRapido.AutoSize = true;
-            this.chbxFiltroRapido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbxFiltroRapido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbxFiltroRapido.Location = new System.Drawing.Point(485, 82);
             this.chbxFiltroRapido.Name = "chbxFiltroRapido";
-            this.chbxFiltroRapido.Size = new System.Drawing.Size(98, 17);
+            this.chbxFiltroRapido.Size = new System.Drawing.Size(85, 17);
             this.chbxFiltroRapido.TabIndex = 32;
             this.chbxFiltroRapido.Text = "Filtro Rapido";
             this.chbxFiltroRapido.UseVisualStyleBackColor = true;

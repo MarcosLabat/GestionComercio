@@ -39,6 +39,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(100, 138);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -49,6 +50,7 @@
             // 
             // btnAgregarCategoria
             // 
+            this.btnAgregarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarCategoria.Location = new System.Drawing.Point(197, 72);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
@@ -105,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(275, 164);
+            this.ClientSize = new System.Drawing.Size(284, 169);
             this.Controls.Add(this.lblCategoriaTitulo);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAgregarCategoria);
@@ -113,9 +115,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxNombreCategoria);
-            this.MaximumSize = new System.Drawing.Size(291, 203);
-            this.MinimumSize = new System.Drawing.Size(291, 203);
+            this.MinimumSize = new System.Drawing.Size(300, 208);
             this.Name = "VentanaCategoriaModificar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaCategoriaModificar";
             this.Load += new System.EventHandler(this.VentanaCategoriaModificar_Load);
             this.ResumeLayout(false);

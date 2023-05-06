@@ -49,6 +49,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(95, 135);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -59,6 +60,7 @@
             // 
             // btnAgregarMarca
             // 
+            this.btnAgregarMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarMarca.Location = new System.Drawing.Point(192, 69);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(75, 23);
@@ -116,6 +118,7 @@
             this.MaximumSize = new System.Drawing.Size(291, 203);
             this.MinimumSize = new System.Drawing.Size(291, 203);
             this.Name = "VentanaMarcaModificar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaMarcaModificar";
             this.Load += new System.EventHandler(this.VentanaMarcaModificar_Load);
             this.ResumeLayout(false);

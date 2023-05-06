@@ -38,6 +38,7 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAceptar.Location = new System.Drawing.Point(87, 144);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
@@ -105,9 +106,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDetalleCategoria);
-            this.MaximumSize = new System.Drawing.Size(267, 230);
             this.MinimumSize = new System.Drawing.Size(267, 230);
             this.Name = "VentanaCategoriaDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaCategoriaDetalle";
             this.Load += new System.EventHandler(this.VentanaCategoriaDetalle_Load);
             this.ResumeLayout(false);

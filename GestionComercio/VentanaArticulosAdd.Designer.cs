@@ -209,6 +209,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
@@ -218,10 +219,12 @@
             this.btnCancelar.TabIndex = 75;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAgregarArticulo
             // 
             this.btnAgregarArticulo.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarArticulo.ForeColor = System.Drawing.SystemColors.Info;
@@ -237,7 +240,7 @@
             this.btnVisualizarArticulo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnVisualizarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVisualizarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizarArticulo.ForeColor = System.Drawing.SystemColors.Info;
             this.btnVisualizarArticulo.Location = new System.Drawing.Point(36, 340);
             this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
@@ -273,6 +276,7 @@
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(556, 516);
             this.Name = "VentanaArticulosAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AgregarArticulo";
             this.Load += new System.EventHandler(this.AgregarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();

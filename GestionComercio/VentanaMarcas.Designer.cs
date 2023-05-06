@@ -106,6 +106,7 @@
             // 
             // dgvMarcas
             // 
+            this.dgvMarcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMarcas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMarcas.Location = new System.Drawing.Point(31, 118);
@@ -123,7 +124,7 @@
             this.agregarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(384, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(400, 24);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -167,49 +168,69 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.Info;
             this.btnModificar.Location = new System.Drawing.Point(307, 156);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(65, 23);
+            this.btnModificar.Size = new System.Drawing.Size(81, 23);
             this.btnModificar.TabIndex = 27;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnDetalle
             // 
+            this.btnDetalle.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDetalle.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalle.ForeColor = System.Drawing.SystemColors.Info;
             this.btnDetalle.Location = new System.Drawing.Point(307, 118);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(65, 23);
+            this.btnDetalle.Size = new System.Drawing.Size(81, 23);
             this.btnDetalle.TabIndex = 28;
             this.btnDetalle.Text = "Ver detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // btnNueva
             // 
-            this.btnNueva.Location = new System.Drawing.Point(289, 34);
+            this.btnNueva.BackColor = System.Drawing.Color.Green;
+            this.btnNueva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNueva.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNueva.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNueva.ForeColor = System.Drawing.SystemColors.Info;
+            this.btnNueva.Location = new System.Drawing.Point(305, 27);
             this.btnNueva.Name = "btnNueva";
-            this.btnNueva.Size = new System.Drawing.Size(83, 23);
+            this.btnNueva.Size = new System.Drawing.Size(83, 42);
             this.btnNueva.TabIndex = 32;
             this.btnNueva.Text = "Nueva Marca";
-            this.btnNueva.UseVisualStyleBackColor = true;
+            this.btnNueva.UseVisualStyleBackColor = false;
             this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
             // btnEliminar
             // 
+            this.btnEliminar.BackColor = System.Drawing.Color.IndianRed;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.Info;
             this.btnEliminar.Location = new System.Drawing.Point(307, 225);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(65, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(81, 23);
             this.btnEliminar.TabIndex = 33;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // VentanaMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 441);
+            this.ClientSize = new System.Drawing.Size(400, 441);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.btnDetalle);
@@ -223,8 +244,6 @@
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(400, 480);
-            this.MinimumSize = new System.Drawing.Size(400, 480);
             this.Name = "VentanaMarcas";
             this.Text = "VentanaMarcas";
             this.Load += new System.EventHandler(this.VentanaMarcas_Load);

@@ -38,7 +38,7 @@
             // 
             // tbxNombreMarca
             // 
-            this.tbxNombreMarca.Location = new System.Drawing.Point(75, 50);
+            this.tbxNombreMarca.Location = new System.Drawing.Point(75, 64);
             this.tbxNombreMarca.Name = "tbxNombreMarca";
             this.tbxNombreMarca.Size = new System.Drawing.Size(100, 20);
             this.tbxNombreMarca.TabIndex = 0;
@@ -46,7 +46,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 53);
+            this.label1.Location = new System.Drawing.Point(22, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 1;
@@ -72,7 +72,8 @@
             // 
             // btnAgregarMarca
             // 
-            this.btnAgregarMarca.Location = new System.Drawing.Point(188, 48);
+            this.btnAgregarMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarMarca.Location = new System.Drawing.Point(188, 62);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
             this.btnAgregarMarca.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarMarca.TabIndex = 1;
@@ -82,6 +83,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(100, 129);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);

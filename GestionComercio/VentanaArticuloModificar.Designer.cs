@@ -90,7 +90,7 @@
             this.btnVisualizarArticulo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnVisualizarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVisualizarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizarArticulo.ForeColor = System.Drawing.SystemColors.Info;
             this.btnVisualizarArticulo.Location = new System.Drawing.Point(31, 352);
             this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
@@ -225,6 +225,7 @@
             // btnAgregarArticulo
             // 
             this.btnAgregarArticulo.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarArticulo.ForeColor = System.Drawing.SystemColors.Info;
@@ -319,6 +320,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
@@ -374,6 +376,7 @@
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(549, 516);
             this.Name = "VentanaArticuloModificar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaArticuloModificar";
             this.Load += new System.EventHandler(this.VentanaArticuloModificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();

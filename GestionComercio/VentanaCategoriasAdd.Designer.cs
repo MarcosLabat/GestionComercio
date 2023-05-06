@@ -38,6 +38,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Location = new System.Drawing.Point(100, 129);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
@@ -48,7 +49,8 @@
             // 
             // btnAgregarCategoria
             // 
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(188, 48);
+            this.btnAgregarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(188, 64);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarCategoria.TabIndex = 1;
@@ -77,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 53);
+            this.label1.Location = new System.Drawing.Point(22, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 7;
@@ -85,7 +87,7 @@
             // 
             // tbxNombreCategoria
             // 
-            this.tbxNombreCategoria.Location = new System.Drawing.Point(75, 50);
+            this.tbxNombreCategoria.Location = new System.Drawing.Point(75, 66);
             this.tbxNombreCategoria.Name = "tbxNombreCategoria";
             this.tbxNombreCategoria.Size = new System.Drawing.Size(100, 20);
             this.tbxNombreCategoria.TabIndex = 0;
@@ -104,6 +106,7 @@
             this.MaximumSize = new System.Drawing.Size(291, 203);
             this.MinimumSize = new System.Drawing.Size(291, 203);
             this.Name = "VentanaCategoriasAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaCategoriasAdd";
             this.ResumeLayout(false);
             this.PerformLayout();
