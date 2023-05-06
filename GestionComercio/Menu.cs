@@ -18,35 +18,29 @@ namespace GestionComercio
         }
 
 
-        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsbtnArticulos_Click_1(object sender, EventArgs e)
         {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(VentanaMarcas))
-                {
-                    return;
-                }
-            }
-            VentanaMarcas marcas = new VentanaMarcas();
-            marcas.MdiParent = this;
-            marcas.Show();
+            verArticulosToolStripMenuItem_Click(sender, e);
         }
 
-        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void tsbtnMarcas_Click(object sender, EventArgs e)
         {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(VentanaCategorias))
-                {
-                    return;
-                }
-            }
-            VentanaCategorias categorias = new VentanaCategorias();
-            categorias.MdiParent = this;
-            categorias.Show();
+            verMarcasToolStripMenuItem_Click(sender, e);
         }
 
-        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void tsbtnCategorias_Click(object sender, EventArgs e)
+        {
+            verCategoríasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void verArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (var item in Application.OpenForms)
             {
@@ -60,34 +54,47 @@ namespace GestionComercio
             articulos.Show();
         }
 
-        private void tsbtnArticulos_Click_1(object sender, EventArgs e)
+        private void verMarcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            articulosToolStripMenuItem_Click(sender, e);
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(VentanaMarcas))
+                {
+                    return;
+                }
+            }
+            VentanaMarcas marcas = new VentanaMarcas();
+            marcas.MdiParent = this;
+            marcas.Show();
         }
 
-        private void tsbtnNuevoArticulo_Click(object sender, EventArgs e)
+        private void verCategoríasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(VentanaCategorias))
+                {
+                    return;
+                }
+            }
+            VentanaCategorias categorias = new VentanaCategorias();
+            categorias.MdiParent = this;
+            categorias.Show();
+        }
+
+        private void nuevoArtículoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaArticulosAdd nuevoArticulo = new VentanaArticulosAdd();
             nuevoArticulo.ShowDialog();
         }
 
-        private void tsbtnMarcas_Click(object sender, EventArgs e)
-        {
-            marcasToolStripMenuItem_Click(sender, e);
-        }
-
-        private void tsbtnNuevaMarca_Click(object sender, EventArgs e)
+        private void nuevaMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaMarcasAdd nuevaMarca = new VentanaMarcasAdd();
             nuevaMarca.ShowDialog();
         }
 
-        private void tsbtnCategorias_Click(object sender, EventArgs e)
-        {
-            categoriasToolStripMenuItem_Click(sender, e);
-        }
-
-        private void tsbtnNuevaCategoria_Click(object sender, EventArgs e)
+        private void nuevaCategoríaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaCategoriasAdd nuevaCategoria = new VentanaCategoriasAdd();
             nuevaCategoria.ShowDialog();

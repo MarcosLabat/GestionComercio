@@ -106,6 +106,7 @@
             this.MaximumSize = new System.Drawing.Size(291, 203);
             this.MinimumSize = new System.Drawing.Size(291, 203);
             this.Name = "VentanaMarcasAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaMarcasAdd";
             this.ResumeLayout(false);
             this.PerformLayout();
