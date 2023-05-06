@@ -114,5 +114,28 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public int eliminar(int idMarca)
+        {
+            ConexionDB db = new ConexionDB();
+
+            string query = "DELETE FROM MARCAS WHERE Id = @idMarca";
+            int rowsAffected = 0;
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@idMarca", idMarca);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar(); 
+            }
+        }
     }
 }

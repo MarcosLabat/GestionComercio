@@ -148,5 +148,27 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public int eliminar(int idCategoria)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = "DELETE FROM CATEGORIAS WHERE Id = @idCategoria";
+            int rowsAffected = 0;
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@idCategoria", idCategoria);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            { 
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+        }
     }
 }

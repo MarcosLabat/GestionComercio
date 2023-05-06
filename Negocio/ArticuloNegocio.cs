@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dominio;
 using DB;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace Negocio
 {
@@ -104,6 +105,116 @@ namespace Negocio
                 db.cerrar();
             }
 
+        }
+
+        public List<Articulo> listarPorMarca(int idMarca)
+        {
+            ConexionDB db = new ConexionDB();
+            List<Articulo> lista = new List<Articulo> ();
+            string query = "SELECT A.Id as Id, A.Codigo as Codigo, A.Precio as Precio, A.Nombre as Nombre, A.Descripcion as Descripcion, A.IdMarca as IdMarca, M.Descripcion as Marca, A.IdCategoria as IdCategoria, C.Descripcion as Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE A.IdMarca = @idMarca";
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@idMarca", idMarca);
+                db.leer();
+                while (db.Reader.Read())
+                {
+                    Articulo aux = new Articulo();
+
+                    int idArticulo = (int)db.Reader["Id"];
+                    aux.Id = idArticulo;
+                    if (!(db.Reader["Codigo"] is DBNull)) aux.Codigo = (string)db.Reader["Codigo"];
+                    if (!(db.Reader["Nombre"] is DBNull)) aux.Nombre = (string)db.Reader["Nombre"];
+                    if (!(db.Reader["Descripcion"] is DBNull)) aux.Descripcion = (string)db.Reader["Descripcion"];
+                    if (!(db.Reader["Precio"] is DBNull)) aux.Precio = (decimal)db.Reader["Precio"];
+
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    aux.Imagen = imagenNegocio.imagenesArticulo(idArticulo);
+
+
+                    if (!(db.Reader["IdMarca"] is DBNull))
+                    {
+                        aux.Marca = new Marca();
+                        aux.Marca.Descripcion = (string)db.Reader["Marca"];
+                        aux.Marca.Id = (int)db.Reader["IdMarca"];
+
+                    }
+
+                    if (!(db.Reader["IdCategoria"] is DBNull))
+                    {
+                        aux.Categoria = new Categoria();
+                        aux.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                        aux.Categoria.Id = (int)db.Reader["IdCategoria"];
+                    }
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+        }
+
+        public List<Articulo> listarPorCategoria(int idCategoria)
+        {
+            ConexionDB db = new ConexionDB();
+            List<Articulo> lista = new List<Articulo>();
+            string query = "SELECT A.Id as Id, A.Codigo as Codigo, A.Precio as Precio A.Nombre as Nombre, A.Descripcion as Descripcion, A.IdMarca as IdMarca, M.Descripcion as Marca, A.IdCategoria as IdCategoria, C.Descripcion as Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE A.IdCategoria = @idCategoria";
+            try
+            {
+                db.SetearQuery(query);
+                db.setearParametro("@idCategoria", idCategoria);
+                db.leer();
+                while (db.Reader.Read())
+                {
+                    Articulo aux = new Articulo();
+
+                    int idArticulo = (int)db.Reader["Id"];
+                    aux.Id = idArticulo;
+                    if (!(db.Reader["Codigo"] is DBNull)) aux.Codigo = (string)db.Reader["Codigo"];
+                    if (!(db.Reader["Nombre"] is DBNull)) aux.Nombre = (string)db.Reader["Nombre"];
+                    if (!(db.Reader["Descripcion"] is DBNull)) aux.Descripcion = (string)db.Reader["Descripcion"];
+                    if (!(db.Reader["Precio"] is DBNull)) aux.Precio = (decimal)db.Reader["Precio"];
+
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    aux.Imagen = imagenNegocio.imagenesArticulo(idArticulo);
+
+
+                    if (!(db.Reader["IdMarca"] is DBNull))
+                    {
+                        aux.Marca = new Marca();
+                        aux.Marca.Descripcion = (string)db.Reader["Marca"];
+                        aux.Marca.Id = (int)db.Reader["IdMarca"];
+
+                    }
+
+                    if (!(db.Reader["IdCategoria"] is DBNull))
+                    {
+                        aux.Categoria = new Categoria();
+                        aux.Categoria.Descripcion = (string)db.Reader["Categoria"];
+                        aux.Categoria.Id = (int)db.Reader["IdCategoria"];
+                    }
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrar();
+            }
         }
 
         public List<Articulo> buscar(string busqueda, string filtro)

@@ -44,6 +44,7 @@
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNueva = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -194,11 +195,22 @@
             this.btnNueva.UseVisualStyleBackColor = true;
             this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(307, 222);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(65, 23);
+            this.btnEliminar.TabIndex = 32;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // VentanaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 441);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnModificar);
@@ -242,5 +254,6 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNueva;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

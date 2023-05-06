@@ -114,5 +114,33 @@ namespace GestionComercio
         {
             nuevaCategoriaToolStripMenuItem_Click(sender, e);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            try
+            {
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                List<Articulo> lista = articuloNegocio.listarPorCategoria(categoria.Id);
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("No se puede eliminar la categoria " + categoria.Descripcion + ". Existen " + lista.Count + " articulos cargados con esa categoria.");
+                    return;
+                }
+
+                if (MessageBox.Show("¿Seguro desea eliminar la categoria " + categoria.Descripcion + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int rowsAffected = categorias.eliminar(categoria.Id);
+                    if (rowsAffected == 1)
+                        MessageBox.Show("Eliminado correctamente.");
+                    else
+                        MessageBox.Show("No se pudo eliminar..");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

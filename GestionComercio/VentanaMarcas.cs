@@ -114,5 +114,33 @@ namespace GestionComercio
         {
             modificarToolStripMenuItem_Click(sender, e);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            try
+            {
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                List <Articulo> lista = articuloNegocio.listarPorMarca(marca.Id);
+                if(lista.Count > 0)
+                {
+                    MessageBox.Show("No se puede eliminar la marca " + marca.Descripcion + ". Existen " + lista.Count + " articulos cargados con esa marca.");
+                    return;
+                }
+
+                if (MessageBox.Show("¿Seguro desea eliminar la marca " + marca.Descripcion + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int rowsAffected = marcas.eliminar(marca.Id);
+                    if(rowsAffected == 1)
+                        MessageBox.Show("Eliminado correctamente.");
+                    else
+                        MessageBox.Show("No se pudo eliminar..");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
