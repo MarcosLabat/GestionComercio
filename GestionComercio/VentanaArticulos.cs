@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +55,9 @@ namespace GestionComercio
             cbxFiltroArticulos.Items.Add("Codigo");
             cbxFiltroArticulos.Items.Add("Marca");
             cbxFiltroArticulos.Items.Add("Categoria");
+
+            dgvArticulos.Columns["Precio"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("en-US");
+            dgvArticulos.Columns["Precio"].DefaultCellStyle.Format = "C2";
         }
 
         private void btnActualizarArticulos_Click(object sender, EventArgs e)

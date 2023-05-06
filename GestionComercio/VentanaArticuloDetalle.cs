@@ -14,11 +14,14 @@ namespace GestionComercio
     public partial class VentanaArticuloDetalle : Form
     {
         private Articulo articulo;
+        private int countPic;
+
         public VentanaArticuloDetalle(Articulo articulo)
         {
             InitializeComponent();
             this.articulo = articulo;
             Text = "Detalle Articulo #" + this.articulo.Codigo;
+            this.countPic = 0;
         }
 
         private void VentanaArticuloDetalle_Load(object sender, EventArgs e)
@@ -27,7 +30,8 @@ namespace GestionComercio
                 cargarImagen(articulo.Imagen.First().UrlImagen);
             else
                 cargarImagen("asd");
-            
+
+            lblFotos.Text = "Foto " + (countPic + 1) + " / " + articulo.Imagen.Count;
             lblCodigo.Text = articulo.Codigo;
             lblNombre.Text = articulo.Nombre;
             lblDescripcion.Text = articulo.Descripcion;
@@ -53,6 +57,46 @@ namespace GestionComercio
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnFotoIzq_Click(object sender, EventArgs e)
+        {
+            int cantImagenes = articulo.Imagen.Count;
+            if (cantImagenes > 0)
+            {
+                if (countPic > 0) countPic--;
+                else if (countPic == 0)
+                    countPic = cantImagenes - 1;
+
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + articulo.Imagen.Count;
+                cargarImagen(articulo.Imagen[countPic].UrlImagen);
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
+        }
+
+        private void btnFotoDer_Click(object sender, EventArgs e)
+        {
+            int cantImagenes = articulo.Imagen.Count;
+            if (cantImagenes > 0)
+            {
+                if (countPic < cantImagenes - 1)
+                    countPic++;
+                else
+                    countPic = 0;
+
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + articulo.Imagen.Count;
+                if (articulo.Imagen.Count > 0)
+                    cargarImagen(articulo.Imagen[countPic].UrlImagen);
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
         }
     }
 }
