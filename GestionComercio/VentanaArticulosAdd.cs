@@ -126,7 +126,10 @@ namespace GestionComercio
                 string inCategoria = cbxCategoria.Text;
                 string inUrlImagen = tbxUrlImagen.Text;
 
-
+                if(inUrlImagen == ""){
+                    MessageBox.Show("No se puede cargar un articulo sin una imagen");
+                    return;
+                }
                 MarcaNegocio marcaNegocio = new MarcaNegocio();
                 Marca marca = marcaNegocio.buscarPorDescripcion(inMarca);
                 if (marca == null)

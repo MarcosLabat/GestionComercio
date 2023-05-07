@@ -35,19 +35,24 @@ namespace GestionComercio
                     return;
                 }
 
-                int ok = marcaNegocio.guardar(descripcion);
-                if (ok == -1)
-                {
-                    lblNuevaMarca.Text = $"No se pudo guardar la marca '{descripcion}'";
-                    MessageBox.Show("No se pudo guardar la marca!");
-                    lblNuevaMarca.ForeColor = Color.Red;
-                    return;
+
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Marca vacía");
+                }else{
+                    int ok = marcaNegocio.guardar(descripcion);
+                    if (ok == -1){
+                        lblNuevaMarca.Text = $"No se pudo guardar la marca '{descripcion}'";
+                        MessageBox.Show("No se pudo guardar la marca!");
+                        lblNuevaMarca.ForeColor = Color.Red;
+                        return;
+                    }
+                    lblNuevaMarca.ForeColor = Color.Green;
+                    lblNuevaMarca.Text = "Marca guardada correctamente!";
+                    MessageBox.Show("Marca guardada correctamente!");
+                    this.Close();
                 }
 
-                lblNuevaMarca.ForeColor = Color.Green;
-                lblNuevaMarca.Text = "Marca guardada correctamente!";
-                MessageBox.Show("Marca guardada correctamente!");
-                this.Close();
+                
             }
             catch (Exception)
             {

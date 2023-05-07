@@ -36,15 +36,19 @@ namespace GestionComercio
             {
                 string descripcion = tbxNombreMarca.Text;
                 int idMarca = marca.Id;
-                int rowsAffected = marcaNegocio.modificar(descripcion, idMarca);
-                if (rowsAffected != 1)
-                {
-                    MessageBox.Show("Algo paso al intentar modificar la marca");
-                    return;
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Marca vacía");
+                }else{
+                    int rowsAffected = marcaNegocio.modificar(descripcion, idMarca);
+                    if (rowsAffected != 1){
+                        MessageBox.Show("Algo paso al intentar modificar la marca");
+                        return;
+                    }
+                    MessageBox.Show("Categoria modificada correctamente");
+                    this.Close();
                 }
-
-                MessageBox.Show("Marca modificada correctamente");
-                this.Close();
+                
+                
             }
             catch (Exception ex)
             {

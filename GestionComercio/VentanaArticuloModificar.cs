@@ -176,9 +176,13 @@ namespace GestionComercio
         private void btnVisualizarArticulo_Click_1(object sender, EventArgs e)
         {
             lvPrevisualizacion.Clear();
-            previsualizado = true;
             string codigo, nombre, descripcion, marca, categoria, precio;
-
+            previsualizado = true;
+            if (tbxCodigo.Text == "" || tbxNombre.Text == "" || rtbxDescripcion.Text == "" || tbxPrecio.Text == "")
+            {
+                MessageBox.Show("No se puede visualizar un Articulo con CAMPOS VACIOS");
+                return;
+            }
             if (chbxCodigo.Checked) codigo = "Codigo: " + tbxCodigo.Text;
             else codigo = "Codigo: " + articulo.Codigo;
 
@@ -245,27 +249,39 @@ namespace GestionComercio
                     articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 }
 
-                if (chbxImagen.Checked)
+                if (chbxImagen.Checked || !chbxImagen.Checked)
                 {
                     Imagen imagen = new Imagen();
                     imagen.IdArticulo = articulo.Id;
                     imagen.UrlImagen = tbxUrlImagen.Text;
-                    int idImagen = imagenNegocio.guardar(imagen);
-                    imagen.Id = idImagen;
-                    articulo.Imagen.Add(imagen);
+                    if(imagen.UrlImagen == ""){
+                        MessageBox.Show("No se puede modificar sin una imagen");
+                        return;
+                    }
+                    else{
+                        int idImagen = imagenNegocio.guardar(imagen);
+                        imagen.Id = idImagen;
+                        articulo.Imagen.Add(imagen);
+                    }
                 }
 
-
-                int modificado = articuloNegocio.modificar(articulo);
-                if (modificado != 1)
-                {
-                    MessageBox.Show("No se pudo modificar el articulo");
+                if ( articulo.Codigo == "" || articulo.Nombre == "" || articulo.Descripcion == "" ){
+                    MessageBox.Show("No pueden ir campos vacios");
                     return;
+                }else{
+                    int modificado = articuloNegocio.modificar(articulo);
+                    if (modificado != 1)
+                    {
+                        MessageBox.Show("No se pudo modificar el articulo");
+                        return;
+                    }
+
+                    MessageBox.Show("Articulo modificado correctamente!");
+                    previsualizado = false;
+                    this.Close();
                 }
 
-                MessageBox.Show("Articulo modificado correctamente!");
-                previsualizado = false;
-                this.Close();
+               
 
             }
             catch (Exception ex)

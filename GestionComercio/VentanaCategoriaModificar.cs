@@ -42,15 +42,21 @@ namespace GestionComercio
             {
                 string descripcion = tbxNombreCategoria.Text;
                 int idCategoria = categoria.Id;
-                int rowsAffected = categoriaNegocio.modificar(descripcion, idCategoria);
-                if (rowsAffected != 1)
-                {
-                    MessageBox.Show("Algo paso al intentar modificar la categoria");
-                    return;
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Categoria vacía");
+                }else{
+                    int rowsAffected = categoriaNegocio.modificar(descripcion, idCategoria);
+                    if (rowsAffected != 1)
+                    {
+                        MessageBox.Show("Algo paso al intentar modificar la categoria");
+                        return;
+                    }
+                    MessageBox.Show("Categoria modificada correctamente");
+                    this.Close();
                 }
-
-                MessageBox.Show("Categoria modificada correctamente");
-                this.Close();
+                
+                
+                
             }
             catch (Exception ex)
             {

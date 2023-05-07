@@ -32,20 +32,25 @@ namespace GestionComercio
                     lblNuevaMarca.ForeColor = Color.Red;
                     return;
                 }
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Categoria vacía");
+                }else{
+                    int ok = categoriaNegocio.guardar(descripcion);
+                    if (ok == -1)
+                    {
+                        lblNuevaMarca.Text = $"No se pudo guardar la categoria '{descripcion}'";
+                        lblNuevaMarca.ForeColor = Color.Red;
+                        MessageBox.Show("No se pudo guardar la categoria!");
+                        return;
+                    }
 
-                int ok = categoriaNegocio.guardar(descripcion);
-                if (ok == -1)
-                {
-                    lblNuevaMarca.Text = $"No se pudo guardar la categoria '{descripcion}'";
-                    lblNuevaMarca.ForeColor = Color.Red;
-                    MessageBox.Show("No se pudo guardar la categoria!");
-                    return;
+                    lblNuevaMarca.ForeColor = Color.Green;
+                    lblNuevaMarca.Text = "Categoria guardada correctamente!";
+                    MessageBox.Show("Categoria guardada correctamente!");
+                    this.Close();
                 }
 
-                lblNuevaMarca.ForeColor = Color.Green;
-                lblNuevaMarca.Text = "Categoria guardada correctamente!";
-                MessageBox.Show("Categoria guardada correctamente!");
-                this.Close();
+               
             }
             catch (Exception ex)
             {
