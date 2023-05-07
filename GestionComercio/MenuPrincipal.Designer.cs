@@ -37,8 +37,8 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
-            this.iconTitulo = new FontAwesome.Sharp.IconPictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.iconTitulo = new FontAwesome.Sharp.IconPictureBox();
             this.panelSombra = new System.Windows.Forms.Panel();
             this.panelEscritorio = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
@@ -68,7 +68,7 @@
             this.iconButton6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.iconButton6.FlatAppearance.BorderSize = 0;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton6.ForeColor = System.Drawing.Color.White;
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.iconButton6.IconColor = System.Drawing.Color.White;
@@ -91,7 +91,7 @@
             this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCategorias.FlatAppearance.BorderSize = 0;
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorias.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategorias.ForeColor = System.Drawing.Color.White;
             this.btnCategorias.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.btnCategorias.IconColor = System.Drawing.Color.White;
@@ -114,7 +114,7 @@
             this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMarcas.FlatAppearance.BorderSize = 0;
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcas.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.ForeColor = System.Drawing.Color.White;
             this.btnMarcas.IconChar = FontAwesome.Sharp.IconChar.Registered;
             this.btnMarcas.IconColor = System.Drawing.Color.White;
@@ -137,7 +137,7 @@
             this.btnArticulos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArticulos.FlatAppearance.BorderSize = 0;
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArticulos.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.ForeColor = System.Drawing.Color.White;
             this.btnArticulos.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.btnArticulos.IconColor = System.Drawing.Color.White;
@@ -160,7 +160,7 @@
             this.btnMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMenuPrincipal.FlatAppearance.BorderSize = 0;
             this.btnMenuPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPrincipal.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPrincipal.ForeColor = System.Drawing.Color.White;
             this.btnMenuPrincipal.IconChar = FontAwesome.Sharp.IconChar.Navicon;
             this.btnMenuPrincipal.IconColor = System.Drawing.Color.White;
@@ -208,6 +208,17 @@
             this.panelTitulo.TabIndex = 1;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
+            this.lblTitulo.Location = new System.Drawing.Point(51, 18);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(57, 20);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "label1";
+            // 
             // iconTitulo
             // 
             this.iconTitulo.BackColor = System.Drawing.SystemColors.Highlight;
@@ -220,17 +231,6 @@
             this.iconTitulo.Size = new System.Drawing.Size(39, 41);
             this.iconTitulo.TabIndex = 0;
             this.iconTitulo.TabStop = false;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(51, 18);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(53, 19);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "label1";
             // 
             // panelSombra
             // 
@@ -263,6 +263,7 @@
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "MenuPrincipal";
             this.Text = "MenuPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();

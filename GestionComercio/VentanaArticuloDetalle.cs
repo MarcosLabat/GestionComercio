@@ -31,6 +31,15 @@ namespace GestionComercio
             else
                 cargarImagen("asd");
 
+            if (articulo.Imagen.Count > 1){
+                btnFotoIzq.Visible = true;
+                btnFotoDer.Visible = true;
+            }
+            else
+            {
+                btnFotoDer.Visible =false;
+                btnFotoIzq.Visible =false;
+            }
             lblFotos.Text = "Foto " + (countPic + 1) + " / " + articulo.Imagen.Count;
             lblCodigo.Text = articulo.Codigo;
             lblNombre.Text = articulo.Nombre;

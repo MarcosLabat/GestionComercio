@@ -38,6 +38,7 @@
             this.ClientSize = new System.Drawing.Size(772, 632);
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
