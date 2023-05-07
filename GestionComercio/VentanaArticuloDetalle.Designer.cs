@@ -62,6 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(25, 290);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -71,6 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(25, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
@@ -80,6 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(25, 246);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
@@ -89,6 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(25, 334);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
@@ -98,6 +102,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(25, 312);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
@@ -107,6 +112,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(25, 356);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
@@ -117,7 +123,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblCodigo.ForeColor = System.Drawing.Color.Black;
             this.lblCodigo.Location = new System.Drawing.Point(103, 245);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(54, 14);
@@ -128,7 +134,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblNombre.ForeColor = System.Drawing.Color.Black;
             this.lblNombre.Location = new System.Drawing.Point(103, 267);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(54, 14);
@@ -139,7 +145,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblDescripcion.ForeColor = System.Drawing.Color.Black;
             this.lblDescripcion.Location = new System.Drawing.Point(103, 289);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(54, 14);
@@ -150,7 +156,7 @@
             // 
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblCategoria.ForeColor = System.Drawing.Color.Black;
             this.lblCategoria.Location = new System.Drawing.Point(103, 311);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(54, 14);
@@ -161,7 +167,7 @@
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblMarca.ForeColor = System.Drawing.Color.Black;
             this.lblMarca.Location = new System.Drawing.Point(103, 333);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(54, 14);
@@ -172,7 +178,7 @@
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblPrecio.ForeColor = System.Drawing.Color.Black;
             this.lblPrecio.Location = new System.Drawing.Point(103, 355);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(54, 14);
@@ -199,7 +205,7 @@
             // 
             // btnFotoDer
             // 
-            this.btnFotoDer.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFotoDer.BackColor = System.Drawing.Color.White;
             this.btnFotoDer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFotoDer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFotoDer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -213,7 +219,7 @@
             // 
             // btnFotoIzq
             // 
-            this.btnFotoIzq.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnFotoIzq.BackColor = System.Drawing.Color.White;
             this.btnFotoIzq.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFotoIzq.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFotoIzq.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -229,7 +235,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 425);
+            this.BackColor = System.Drawing.Color.LightGreen;
+            this.ClientSize = new System.Drawing.Size(293, 448);
             this.ControlBox = false;
             this.Controls.Add(this.lblFotos);
             this.Controls.Add(this.btnFotoDer);
