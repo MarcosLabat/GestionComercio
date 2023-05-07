@@ -37,19 +37,60 @@ namespace GestionComercio
             }
         }
 
-        private void btnResetCategoria_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
+            VentanaCategoriasAdd agregarCategoria = new VentanaCategoriasAdd();
+            agregarCategoria.ShowDialog();
             VentanaCategorias_Load(sender, e);
-            lblBusqueda.Visible = false;
         }
 
-        private void btnActualizarCategoria_Click(object sender, EventArgs e)
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
+            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            VentanaCategoriaModificar modificarCategoria = new VentanaCategoriaModificar(categoria);
+            modificarCategoria.ShowDialog();
             VentanaCategorias_Load(sender, e);
-            lblBusqueda.Visible = false;
         }
 
-        private void btnBuscarCategoria_Click(object sender, EventArgs e)
+        private void btnDetalle_Click_1(object sender, EventArgs e)
+        {
+            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            VentanaCategoriaDetalle detalleCategoria = new VentanaCategoriaDetalle(categoria);
+            detalleCategoria.ShowDialog();
+            VentanaCategorias_Load(sender, e);
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+            try
+            {
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                List<Articulo> lista = articuloNegocio.listarPorCategoria(categoria.Id);
+                if (lista.Count > 0)
+                {
+                    MessageBox.Show("No se puede eliminar la categoria " + categoria.Descripcion + ". Existen " + lista.Count + " articulos cargados con esa categoria.");
+                    return;
+                }
+
+                if (MessageBox.Show("¿Seguro desea eliminar la categoria " + categoria.Descripcion + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int rowsAffected = categorias.eliminar(categoria.Id);
+                    if (rowsAffected == 1)
+                        MessageBox.Show("Eliminado correctamente.");
+                    else
+                        MessageBox.Show("No se pudo eliminar..");
+                }
+                VentanaCategorias_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return;
+            }
+        }
+
+        private void btnBuscarCategoria_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -77,70 +118,17 @@ namespace GestionComercio
             }
         }
 
-        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnResetCategoria_Click_1(object sender, EventArgs e)
         {
-            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-            VentanaCategoriaModificar modificarCategoria = new VentanaCategoriaModificar(categoria);
-            modificarCategoria.ShowDialog();
             VentanaCategorias_Load(sender, e);
+            lblBusqueda.Visible = false;
+
         }
 
-        private void verDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnActualizarCategoria_Click_1(object sender, EventArgs e)
         {
-            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-            VentanaCategoriaDetalle detalleCategoria = new VentanaCategoriaDetalle(categoria);
-            detalleCategoria.ShowDialog();
             VentanaCategorias_Load(sender, e);
-        }
-
-        private void nuevaCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            VentanaCategoriasAdd agregarCategoria = new VentanaCategoriasAdd();
-            agregarCategoria.ShowDialog();
-            VentanaCategorias_Load(sender, e);
-        }
-
-        private void btnDetalle_Click(object sender, EventArgs e)
-        {
-            verDetalleToolStripMenuItem_Click(sender, e);
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            modificarToolStripMenuItem_Click(sender, e);
-        }
-
-        private void btnNueva_Click(object sender, EventArgs e)
-        {
-            nuevaCategoriaToolStripMenuItem_Click(sender, e);
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Categoria categoria = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
-            try
-            {
-                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-                List<Articulo> lista = articuloNegocio.listarPorCategoria(categoria.Id);
-                if (lista.Count > 0)
-                {
-                    MessageBox.Show("No se puede eliminar la categoria " + categoria.Descripcion + ". Existen " + lista.Count + " articulos cargados con esa categoria.");
-                    return;
-                }
-
-                if (MessageBox.Show("¿Seguro desea eliminar la categoria " + categoria.Descripcion + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    int rowsAffected = categorias.eliminar(categoria.Id);
-                    if (rowsAffected == 1)
-                        MessageBox.Show("Eliminado correctamente.");
-                    else
-                        MessageBox.Show("No se pudo eliminar..");
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            lblBusqueda.Visible = false;
         }
     }
 }

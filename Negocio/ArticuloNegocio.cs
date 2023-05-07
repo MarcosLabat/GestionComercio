@@ -166,7 +166,7 @@ namespace Negocio
         {
             ConexionDB db = new ConexionDB();
             List<Articulo> lista = new List<Articulo>();
-            string query = "SELECT A.Id as Id, A.Codigo as Codigo, A.Precio as Precio A.Nombre as Nombre, A.Descripcion as Descripcion, A.IdMarca as IdMarca, M.Descripcion as Marca, A.IdCategoria as IdCategoria, C.Descripcion as Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE A.IdCategoria = @idCategoria";
+            string query = "SELECT A.Id as Id, A.Codigo as Codigo, A.Precio as Precio, A.Nombre as Nombre, A.Descripcion as Descripcion, A.IdMarca as IdMarca, M.Descripcion as Marca, A.IdCategoria as IdCategoria, C.Descripcion as Categoria FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id WHERE A.IdCategoria = @idCategoria";
             try
             {
                 db.SetearQuery(query);
