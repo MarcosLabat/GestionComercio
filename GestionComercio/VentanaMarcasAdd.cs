@@ -21,7 +21,7 @@ namespace GestionComercio
             Text = "Agregar Marca";
         }
 
-        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        private void btnAgregarMarca_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace GestionComercio
             }
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

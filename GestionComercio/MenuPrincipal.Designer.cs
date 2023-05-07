@@ -215,9 +215,8 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(51, 18);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(57, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(0, 20);
             this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "label1";
             // 
             // iconTitulo
             // 

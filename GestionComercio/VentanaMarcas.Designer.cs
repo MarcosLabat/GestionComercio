@@ -77,33 +77,41 @@
             // btnResetMarca
             // 
             this.btnResetMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResetMarca.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnResetMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResetMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetMarca.ForeColor = System.Drawing.Color.White;
             this.btnResetMarca.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.btnResetMarca.IconColor = System.Drawing.Color.Black;
+            this.btnResetMarca.IconColor = System.Drawing.Color.White;
             this.btnResetMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnResetMarca.IconSize = 20;
-            this.btnResetMarca.Location = new System.Drawing.Point(484, 52);
+            this.btnResetMarca.Location = new System.Drawing.Point(495, 52);
             this.btnResetMarca.Name = "btnResetMarca";
-            this.btnResetMarca.Size = new System.Drawing.Size(63, 30);
+            this.btnResetMarca.Size = new System.Drawing.Size(80, 30);
             this.btnResetMarca.TabIndex = 53;
             this.btnResetMarca.Text = "Reset";
             this.btnResetMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResetMarca.UseVisualStyleBackColor = true;
+            this.btnResetMarca.UseVisualStyleBackColor = false;
             this.btnResetMarca.Click += new System.EventHandler(this.btnResetMarca_Click_1);
             // 
             // btnBuscarMarca
             // 
             this.btnBuscarMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarMarca.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBuscarMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarMarca.ForeColor = System.Drawing.Color.White;
             this.btnBuscarMarca.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarMarca.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarMarca.IconColor = System.Drawing.Color.White;
             this.btnBuscarMarca.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarMarca.IconSize = 20;
             this.btnBuscarMarca.Location = new System.Drawing.Point(409, 52);
             this.btnBuscarMarca.Name = "btnBuscarMarca";
-            this.btnBuscarMarca.Size = new System.Drawing.Size(69, 30);
+            this.btnBuscarMarca.Size = new System.Drawing.Size(80, 30);
             this.btnBuscarMarca.TabIndex = 52;
             this.btnBuscarMarca.Text = "Buscar";
             this.btnBuscarMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarMarca.UseVisualStyleBackColor = true;
+            this.btnBuscarMarca.UseVisualStyleBackColor = false;
             this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click_1);
             // 
             // btnNueva
@@ -176,7 +184,7 @@
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnDetalle.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDetalle.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             this.btnDetalle.IconColor = System.Drawing.Color.White;
             this.btnDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDetalle.IconSize = 18;

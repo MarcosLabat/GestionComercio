@@ -40,7 +40,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(106, 95);
+            this.lblDescripcion.Location = new System.Drawing.Point(130, 95);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(50, 13);
             this.lblDescripcion.TabIndex = 15;
@@ -50,7 +50,7 @@
             // 
             this.lblIdMarca.AutoSize = true;
             this.lblIdMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdMarca.Location = new System.Drawing.Point(106, 73);
+            this.lblIdMarca.Location = new System.Drawing.Point(130, 73);
             this.lblIdMarca.Name = "lblIdMarca";
             this.lblIdMarca.Size = new System.Drawing.Size(50, 13);
             this.lblIdMarca.TabIndex = 14;
@@ -59,7 +59,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 73);
+            this.label3.Location = new System.Drawing.Point(59, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 13;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 95);
+            this.label2.Location = new System.Drawing.Point(58, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 12;
@@ -78,7 +78,7 @@
             // 
             this.lblDetalleMarca.AutoSize = true;
             this.lblDetalleMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleMarca.Location = new System.Drawing.Point(18, 24);
+            this.lblDetalleMarca.Location = new System.Drawing.Point(33, 22);
             this.lblDetalleMarca.Name = "lblDetalleMarca";
             this.lblDetalleMarca.Size = new System.Drawing.Size(50, 16);
             this.lblDetalleMarca.TabIndex = 11;
@@ -86,13 +86,16 @@
             // 
             // btnAceptar
             // 
+            this.btnAceptar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAceptar.Location = new System.Drawing.Point(91, 146);
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(62, 144);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 16;
+            this.btnAceptar.Size = new System.Drawing.Size(118, 35);
+            this.btnAceptar.TabIndex = 17;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // VentanaMarcaDetalle

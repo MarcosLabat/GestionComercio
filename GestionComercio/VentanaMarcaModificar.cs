@@ -25,12 +25,12 @@ namespace GestionComercio
             this.marcaNegocio = new MarcaNegocio();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void VentanaMarcaModificar_Load(object sender, EventArgs e)
         {
-            this.Close();
+            lblMarcaTitulo.Text = "ID " + marca.Id + " " + marca.Descripcion;
         }
 
-        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        private void btnAgregarMarca_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -53,9 +53,9 @@ namespace GestionComercio
             }
         }
 
-        private void VentanaMarcaModificar_Load(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
-            lblMarcaTitulo.Text = "ID " + marca.Id + " " + marca.Descripcion;
+            this.Close();
         }
     }
 }

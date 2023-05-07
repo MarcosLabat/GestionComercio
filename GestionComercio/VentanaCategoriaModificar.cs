@@ -26,12 +26,17 @@ namespace GestionComercio
             this.categoriaNegocio = new CategoriaNegocio();
         }
 
+        private void VentanaCategoriaModificar_Load(object sender, EventArgs e)
+        {
+            lblCategoriaTitulo.Text = "ID " + categoria.Id + " " + categoria.Descripcion;
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -52,11 +57,6 @@ namespace GestionComercio
                 MessageBox.Show("Error: " + ex.Message);
                 return;
             }
-        }
-
-        private void VentanaCategoriaModificar_Load(object sender, EventArgs e)
-        {
-            lblCategoriaTitulo.Text = "ID " + categoria.Id + " " + categoria.Descripcion;
         }
     }
 }

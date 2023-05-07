@@ -69,7 +69,32 @@ namespace GestionComercio
             }
         }
 
-        private void btnVisualizarArticulo_Click(object sender, EventArgs e)
+        private void tbxUrlImagen_Leave(object sender, EventArgs e)
+        {
+            string url = tbxUrlImagen.Text;
+            cargarImagen(url);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbImagen.Load(imagen);
+
+            }
+            catch (Exception)
+            {
+
+                pbImagen.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnVisualizarArticulo_Click_1(object sender, EventArgs e)
         {
             lvPrevisualizacion.Clear();
             string codigo = tbxCodigo.Text;
@@ -144,32 +169,6 @@ namespace GestionComercio
                 MessageBox.Show("Error: " + ex.Message);
                 return;
             }
-            
-        }
-
-        private void tbxUrlImagen_Leave(object sender, EventArgs e)
-        {
-            string url = tbxUrlImagen.Text;
-            cargarImagen(url);
-        }
-
-        private void cargarImagen(string imagen)
-        {
-            try
-            {
-                pbImagen.Load(imagen);
-
-            }
-            catch (Exception)
-            {
-
-                pbImagen.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

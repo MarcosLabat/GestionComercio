@@ -46,8 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAgregarArticulo = new System.Windows.Forms.Button();
-            this.btnVisualizarArticulo = new System.Windows.Forms.Button();
+            this.btnVisualizarArticulo = new FontAwesome.Sharp.IconButton();
+            this.btnAgregarArticulo = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,7 +213,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(204, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(195, 428);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 31);
             this.btnCancelar.TabIndex = 75;
@@ -221,43 +221,55 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnAgregarArticulo
-            // 
-            this.btnAgregarArticulo.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarArticulo.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(348, 340);
-            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
-            this.btnAgregarArticulo.Size = new System.Drawing.Size(167, 46);
-            this.btnAgregarArticulo.TabIndex = 74;
-            this.btnAgregarArticulo.Text = "Agregar Articulo";
-            this.btnAgregarArticulo.UseVisualStyleBackColor = false;
-            // 
             // btnVisualizarArticulo
             // 
             this.btnVisualizarArticulo.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnVisualizarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVisualizarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizarArticulo.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnVisualizarArticulo.Location = new System.Drawing.Point(36, 340);
+            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnVisualizarArticulo.ForeColor = System.Drawing.Color.White;
+            this.btnVisualizarArticulo.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnVisualizarArticulo.IconColor = System.Drawing.Color.White;
+            this.btnVisualizarArticulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVisualizarArticulo.IconSize = 18;
+            this.btnVisualizarArticulo.Location = new System.Drawing.Point(25, 340);
             this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
             this.btnVisualizarArticulo.Size = new System.Drawing.Size(153, 46);
-            this.btnVisualizarArticulo.TabIndex = 73;
+            this.btnVisualizarArticulo.TabIndex = 76;
             this.btnVisualizarArticulo.Text = "Visualizar Articulo";
+            this.btnVisualizarArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVisualizarArticulo.UseVisualStyleBackColor = false;
+            this.btnVisualizarArticulo.Click += new System.EventHandler(this.btnVisualizarArticulo_Click_1);
+            // 
+            // btnAgregarArticulo
+            // 
+            this.btnAgregarArticulo.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarArticulo.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAgregarArticulo.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnAgregarArticulo.IconColor = System.Drawing.Color.White;
+            this.btnAgregarArticulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarArticulo.IconSize = 18;
+            this.btnAgregarArticulo.Location = new System.Drawing.Point(348, 340);
+            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
+            this.btnAgregarArticulo.Size = new System.Drawing.Size(159, 49);
+            this.btnAgregarArticulo.TabIndex = 77;
+            this.btnAgregarArticulo.Text = "Agregar Articulo";
+            this.btnAgregarArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarArticulo.UseVisualStyleBackColor = false;
+            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
             // 
             // VentanaArticulosAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 477);
+            this.ClientSize = new System.Drawing.Size(540, 500);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.btnVisualizarArticulo);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.tbxPrecio);
             this.Controls.Add(this.tbxUrlImagen);
@@ -306,7 +318,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAgregarArticulo;
-        private System.Windows.Forms.Button btnVisualizarArticulo;
+        private FontAwesome.Sharp.IconButton btnVisualizarArticulo;
+        private FontAwesome.Sharp.IconButton btnAgregarArticulo;
     }
 }

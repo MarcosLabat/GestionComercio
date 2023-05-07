@@ -68,7 +68,7 @@ namespace GestionComercio
             this.Close();
         }
 
-        private void btnFotoIzq_Click(object sender, EventArgs e)
+        private void btnFotoIzq_Click_1(object sender, EventArgs e)
         {
             int cantImagenes = articulo.Imagen.Count;
             if (cantImagenes > 0)
