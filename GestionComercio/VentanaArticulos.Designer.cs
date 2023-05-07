@@ -188,55 +188,67 @@
             // btnBuscarArticulo
             // 
             this.btnBuscarArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarArticulo.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBuscarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarArticulo.ForeColor = System.Drawing.Color.White;
             this.btnBuscarArticulo.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarArticulo.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarArticulo.IconColor = System.Drawing.Color.White;
             this.btnBuscarArticulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarArticulo.IconSize = 20;
             this.btnBuscarArticulo.Location = new System.Drawing.Point(390, 31);
             this.btnBuscarArticulo.Name = "btnBuscarArticulo";
-            this.btnBuscarArticulo.Size = new System.Drawing.Size(69, 30);
+            this.btnBuscarArticulo.Size = new System.Drawing.Size(80, 30);
             this.btnBuscarArticulo.TabIndex = 37;
             this.btnBuscarArticulo.Text = "Buscar";
             this.btnBuscarArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarArticulo.UseVisualStyleBackColor = true;
+            this.btnBuscarArticulo.UseVisualStyleBackColor = false;
             this.btnBuscarArticulo.Click += new System.EventHandler(this.btnBuscarArticulo_Click_1);
             // 
             // btnResetArticulos
             // 
             this.btnResetArticulos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResetArticulos.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnResetArticulos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResetArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetArticulos.ForeColor = System.Drawing.Color.White;
             this.btnResetArticulos.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.btnResetArticulos.IconColor = System.Drawing.Color.Black;
+            this.btnResetArticulos.IconColor = System.Drawing.Color.White;
             this.btnResetArticulos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnResetArticulos.IconSize = 20;
-            this.btnResetArticulos.Location = new System.Drawing.Point(477, 31);
+            this.btnResetArticulos.Location = new System.Drawing.Point(487, 31);
             this.btnResetArticulos.Name = "btnResetArticulos";
-            this.btnResetArticulos.Size = new System.Drawing.Size(63, 30);
+            this.btnResetArticulos.Size = new System.Drawing.Size(80, 30);
             this.btnResetArticulos.TabIndex = 38;
             this.btnResetArticulos.Text = "Reset";
             this.btnResetArticulos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResetArticulos.UseVisualStyleBackColor = true;
+            this.btnResetArticulos.UseVisualStyleBackColor = false;
             this.btnResetArticulos.Click += new System.EventHandler(this.btnResetArticulos_Click_1);
             // 
             // btnFotoDer
             // 
             this.btnFotoDer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFotoDer.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFotoDer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFotoDer.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
-            this.btnFotoDer.IconColor = System.Drawing.Color.Black;
+            this.btnFotoDer.IconColor = System.Drawing.Color.White;
             this.btnFotoDer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFotoDer.IconSize = 18;
-            this.btnFotoDer.Location = new System.Drawing.Point(722, 240);
+            this.btnFotoDer.Location = new System.Drawing.Point(726, 239);
             this.btnFotoDer.Name = "btnFotoDer";
             this.btnFotoDer.Size = new System.Drawing.Size(26, 23);
             this.btnFotoDer.TabIndex = 39;
             this.btnFotoDer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFotoDer.UseVisualStyleBackColor = true;
+            this.btnFotoDer.UseVisualStyleBackColor = false;
             this.btnFotoDer.Click += new System.EventHandler(this.btnFotoDer_Click_1);
             // 
             // btnFotoIzq
             // 
             this.btnFotoIzq.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFotoIzq.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnFotoIzq.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFotoIzq.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            this.btnFotoIzq.IconColor = System.Drawing.Color.Black;
+            this.btnFotoIzq.IconColor = System.Drawing.Color.White;
             this.btnFotoIzq.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFotoIzq.IconSize = 18;
             this.btnFotoIzq.Location = new System.Drawing.Point(640, 239);
@@ -244,7 +256,7 @@
             this.btnFotoIzq.Size = new System.Drawing.Size(26, 23);
             this.btnFotoIzq.TabIndex = 40;
             this.btnFotoIzq.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFotoIzq.UseVisualStyleBackColor = true;
+            this.btnFotoIzq.UseVisualStyleBackColor = false;
             this.btnFotoIzq.Click += new System.EventHandler(this.btnFotoIzq_Click_1);
             // 
             // btnEliminar
@@ -276,7 +288,7 @@
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnDetalle.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDetalle.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             this.btnDetalle.IconColor = System.Drawing.Color.White;
             this.btnDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDetalle.IconSize = 18;

@@ -31,7 +31,6 @@
             this.tbxPrecio = new System.Windows.Forms.TextBox();
             this.tbxUrlImagen = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnVisualizarArticulo = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.rtbxDescripcion = new System.Windows.Forms.RichTextBox();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
@@ -45,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lvPrevisualizacion = new System.Windows.Forms.ListView();
-            this.btnAgregarArticulo = new System.Windows.Forms.Button();
             this.chbxCodigo = new System.Windows.Forms.CheckBox();
             this.chbxNombre = new System.Windows.Forms.CheckBox();
             this.chbxDescripcion = new System.Windows.Forms.CheckBox();
@@ -56,6 +54,15 @@
             this.lblCodigoArt = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.btnVisualizarArticulo = new FontAwesome.Sharp.IconButton();
+            this.btnModificarArticulo = new FontAwesome.Sharp.IconButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblAgregarImg = new System.Windows.Forms.Label();
+            this.lblModificarImg = new System.Windows.Forms.Label();
+            this.chbxAgregarImg = new System.Windows.Forms.CheckBox();
+            this.chbxModificarImg = new System.Windows.Forms.CheckBox();
+            this.lblNImagen = new System.Windows.Forms.Label();
+            this.txtNImagen = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +76,7 @@
             // 
             // tbxUrlImagen
             // 
-            this.tbxUrlImagen.Location = new System.Drawing.Point(124, 236);
+            this.tbxUrlImagen.Location = new System.Drawing.Point(124, 293);
             this.tbxUrlImagen.Name = "tbxUrlImagen";
             this.tbxUrlImagen.Size = new System.Drawing.Size(188, 20);
             this.tbxUrlImagen.TabIndex = 5;
@@ -79,26 +86,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 237);
+            this.label9.Location = new System.Drawing.Point(12, 293);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 16);
             this.label9.TabIndex = 56;
             this.label9.Text = "UrlImagen:";
-            // 
-            // btnVisualizarArticulo
-            // 
-            this.btnVisualizarArticulo.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnVisualizarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisualizarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizarArticulo.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnVisualizarArticulo.Location = new System.Drawing.Point(31, 352);
-            this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
-            this.btnVisualizarArticulo.Size = new System.Drawing.Size(153, 46);
-            this.btnVisualizarArticulo.TabIndex = 7;
-            this.btnVisualizarArticulo.Text = "Visualizar Articulo";
-            this.btnVisualizarArticulo.UseVisualStyleBackColor = false;
-            this.btnVisualizarArticulo.Click += new System.EventHandler(this.btnVisualizarArticulo_Click);
             // 
             // label6
             // 
@@ -112,7 +104,7 @@
             // 
             // rtbxDescripcion
             // 
-            this.rtbxDescripcion.Location = new System.Drawing.Point(124, 274);
+            this.rtbxDescripcion.Location = new System.Drawing.Point(124, 227);
             this.rtbxDescripcion.Name = "rtbxDescripcion";
             this.rtbxDescripcion.Size = new System.Drawing.Size(188, 50);
             this.rtbxDescripcion.TabIndex = 6;
@@ -174,7 +166,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 275);
+            this.label3.Location = new System.Drawing.Point(10, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 16);
             this.label3.TabIndex = 45;
@@ -222,21 +214,6 @@
             this.lvPrevisualizacion.UseCompatibleStateImageBehavior = false;
             this.lvPrevisualizacion.View = System.Windows.Forms.View.List;
             // 
-            // btnAgregarArticulo
-            // 
-            this.btnAgregarArticulo.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnAgregarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarArticulo.ForeColor = System.Drawing.SystemColors.Info;
-            this.btnAgregarArticulo.Location = new System.Drawing.Point(338, 352);
-            this.btnAgregarArticulo.Name = "btnAgregarArticulo";
-            this.btnAgregarArticulo.Size = new System.Drawing.Size(167, 46);
-            this.btnAgregarArticulo.TabIndex = 8;
-            this.btnAgregarArticulo.Text = "Agregar Articulo";
-            this.btnAgregarArticulo.UseVisualStyleBackColor = false;
-            this.btnAgregarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click);
-            // 
             // chbxCodigo
             // 
             this.chbxCodigo.AutoSize = true;
@@ -260,7 +237,7 @@
             // chbxDescripcion
             // 
             this.chbxDescripcion.AutoSize = true;
-            this.chbxDescripcion.Location = new System.Drawing.Point(98, 277);
+            this.chbxDescripcion.Location = new System.Drawing.Point(98, 242);
             this.chbxDescripcion.Name = "chbxDescripcion";
             this.chbxDescripcion.Size = new System.Drawing.Size(15, 14);
             this.chbxDescripcion.TabIndex = 64;
@@ -300,7 +277,7 @@
             // chbxImagen
             // 
             this.chbxImagen.AutoSize = true;
-            this.chbxImagen.Location = new System.Drawing.Point(98, 240);
+            this.chbxImagen.Location = new System.Drawing.Point(98, 295);
             this.chbxImagen.Name = "chbxImagen";
             this.chbxImagen.Size = new System.Drawing.Size(15, 14);
             this.chbxImagen.TabIndex = 68;
@@ -324,7 +301,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Red;
-            this.btnCancelar.Location = new System.Drawing.Point(199, 427);
+            this.btnCancelar.Location = new System.Drawing.Point(201, 525);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 31);
             this.btnCancelar.TabIndex = 9;
@@ -341,13 +318,135 @@
             this.pbImagen.TabIndex = 73;
             this.pbImagen.TabStop = false;
             // 
+            // btnVisualizarArticulo
+            // 
+            this.btnVisualizarArticulo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnVisualizarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVisualizarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnVisualizarArticulo.ForeColor = System.Drawing.Color.White;
+            this.btnVisualizarArticulo.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnVisualizarArticulo.IconColor = System.Drawing.Color.White;
+            this.btnVisualizarArticulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVisualizarArticulo.IconSize = 18;
+            this.btnVisualizarArticulo.Location = new System.Drawing.Point(15, 445);
+            this.btnVisualizarArticulo.Name = "btnVisualizarArticulo";
+            this.btnVisualizarArticulo.Size = new System.Drawing.Size(153, 46);
+            this.btnVisualizarArticulo.TabIndex = 77;
+            this.btnVisualizarArticulo.Text = "Visualizar Articulo";
+            this.btnVisualizarArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVisualizarArticulo.UseVisualStyleBackColor = false;
+            this.btnVisualizarArticulo.Click += new System.EventHandler(this.btnVisualizarArticulo_Click_1);
+            // 
+            // btnModificarArticulo
+            // 
+            this.btnModificarArticulo.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnModificarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarArticulo.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.btnModificarArticulo.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnModificarArticulo.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnModificarArticulo.IconColor = System.Drawing.Color.White;
+            this.btnModificarArticulo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificarArticulo.IconSize = 18;
+            this.btnModificarArticulo.Location = new System.Drawing.Point(346, 445);
+            this.btnModificarArticulo.Name = "btnModificarArticulo";
+            this.btnModificarArticulo.Size = new System.Drawing.Size(159, 49);
+            this.btnModificarArticulo.TabIndex = 78;
+            this.btnModificarArticulo.Text = "Modificar Articulo";
+            this.btnModificarArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificarArticulo.UseVisualStyleBackColor = false;
+            this.btnModificarArticulo.Click += new System.EventHandler(this.btnAgregarArticulo_Click_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.label8.Location = new System.Drawing.Point(12, 325);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 16);
+            this.label8.TabIndex = 79;
+            this.label8.Text = "Imagen:";
+            // 
+            // lblAgregarImg
+            // 
+            this.lblAgregarImg.AutoSize = true;
+            this.lblAgregarImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblAgregarImg.Location = new System.Drawing.Point(142, 325);
+            this.lblAgregarImg.Name = "lblAgregarImg";
+            this.lblAgregarImg.Size = new System.Drawing.Size(56, 16);
+            this.lblAgregarImg.TabIndex = 80;
+            this.lblAgregarImg.Text = "Agregar";
+            this.lblAgregarImg.Visible = false;
+            // 
+            // lblModificarImg
+            // 
+            this.lblModificarImg.AutoSize = true;
+            this.lblModificarImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblModificarImg.Location = new System.Drawing.Point(248, 325);
+            this.lblModificarImg.Name = "lblModificarImg";
+            this.lblModificarImg.Size = new System.Drawing.Size(62, 16);
+            this.lblModificarImg.TabIndex = 81;
+            this.lblModificarImg.Text = "Modificar";
+            this.lblModificarImg.Visible = false;
+            // 
+            // chbxAgregarImg
+            // 
+            this.chbxAgregarImg.AutoSize = true;
+            this.chbxAgregarImg.Location = new System.Drawing.Point(153, 350);
+            this.chbxAgregarImg.Name = "chbxAgregarImg";
+            this.chbxAgregarImg.Size = new System.Drawing.Size(15, 14);
+            this.chbxAgregarImg.TabIndex = 82;
+            this.chbxAgregarImg.UseVisualStyleBackColor = true;
+            this.chbxAgregarImg.Visible = false;
+            this.chbxAgregarImg.Click += new System.EventHandler(this.chbxAgregarImg_Click);
+            // 
+            // chbxModificarImg
+            // 
+            this.chbxModificarImg.AutoSize = true;
+            this.chbxModificarImg.Location = new System.Drawing.Point(269, 350);
+            this.chbxModificarImg.Name = "chbxModificarImg";
+            this.chbxModificarImg.Size = new System.Drawing.Size(15, 14);
+            this.chbxModificarImg.TabIndex = 83;
+            this.chbxModificarImg.UseVisualStyleBackColor = true;
+            this.chbxModificarImg.Visible = false;
+            this.chbxModificarImg.Click += new System.EventHandler(this.chbxModificarImg_Click);
+            // 
+            // lblNImagen
+            // 
+            this.lblNImagen.AutoSize = true;
+            this.lblNImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            this.lblNImagen.Location = new System.Drawing.Point(10, 371);
+            this.lblNImagen.Name = "lblNImagen";
+            this.lblNImagen.Size = new System.Drawing.Size(125, 16);
+            this.lblNImagen.TabIndex = 84;
+            this.lblNImagen.Text = "Numero de imagen:";
+            this.lblNImagen.Visible = false;
+            // 
+            // txtNImagen
+            // 
+            this.txtNImagen.Location = new System.Drawing.Point(141, 370);
+            this.txtNImagen.Name = "txtNImagen";
+            this.txtNImagen.Size = new System.Drawing.Size(169, 20);
+            this.txtNImagen.TabIndex = 85;
+            this.txtNImagen.Visible = false;
+            // 
             // VentanaArticuloModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(533, 500);
+            this.ClientSize = new System.Drawing.Size(533, 583);
             this.ControlBox = false;
+            this.Controls.Add(this.txtNImagen);
+            this.Controls.Add(this.lblNImagen);
+            this.Controls.Add(this.chbxModificarImg);
+            this.Controls.Add(this.chbxAgregarImg);
+            this.Controls.Add(this.lblModificarImg);
+            this.Controls.Add(this.lblAgregarImg);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btnModificarArticulo);
+            this.Controls.Add(this.btnVisualizarArticulo);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblCodigoArt);
@@ -360,11 +459,9 @@
             this.Controls.Add(this.chbxCodigo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lvPrevisualizacion);
-            this.Controls.Add(this.btnAgregarArticulo);
             this.Controls.Add(this.tbxPrecio);
             this.Controls.Add(this.tbxUrlImagen);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.btnVisualizarArticulo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.rtbxDescripcion);
             this.Controls.Add(this.cbxMarca);
@@ -392,7 +489,6 @@
         private System.Windows.Forms.TextBox tbxPrecio;
         private System.Windows.Forms.TextBox tbxUrlImagen;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnVisualizarArticulo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtbxDescripcion;
         private System.Windows.Forms.ComboBox cbxMarca;
@@ -406,7 +502,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListView lvPrevisualizacion;
-        private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.CheckBox chbxCodigo;
         private System.Windows.Forms.CheckBox chbxNombre;
         private System.Windows.Forms.CheckBox chbxDescripcion;
@@ -417,5 +512,14 @@
         private System.Windows.Forms.Label lblCodigoArt;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pbImagen;
+        private FontAwesome.Sharp.IconButton btnVisualizarArticulo;
+        private FontAwesome.Sharp.IconButton btnModificarArticulo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblAgregarImg;
+        private System.Windows.Forms.Label lblModificarImg;
+        private System.Windows.Forms.CheckBox chbxAgregarImg;
+        private System.Windows.Forms.CheckBox chbxModificarImg;
+        private System.Windows.Forms.Label lblNImagen;
+        private System.Windows.Forms.TextBox txtNImagen;
     }
 }

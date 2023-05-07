@@ -38,6 +38,28 @@ namespace Negocio
                 db.cerrar();
             }
         }
+
+        public int modificar(int idImagen, string url)
+        {
+            ConexionDB db = new ConexionDB();
+            string query = $"UPDATE IMAGENES SET ImagenUrl = '{url}'  where Id = " + idImagen;
+            int rowsAffected = 0;
+            try
+            {
+                db.SetearQuery(query);
+                rowsAffected = db.ejecutarQuery();
+                return rowsAffected;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                db.cerrar();
+            }
+        }
         public int eliminar(int idArticuloImagen)
         {
             ConexionDB db = new ConexionDB();

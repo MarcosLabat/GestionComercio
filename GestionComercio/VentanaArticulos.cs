@@ -19,6 +19,7 @@ namespace GestionComercio
         ArticuloNegocio articulos = new ArticuloNegocio();
         Articulo seleccionado;
         private int countPic;
+        int cantidadImagenes;
 
         public VentanaArticulos()
         {
@@ -40,9 +41,17 @@ namespace GestionComercio
                 return;
             }
 
+            cantidadImagenes = seleccionado.Imagen.Count;
+            lblFotos.Text = "Foto " + (countPic + 1) + " / " + cantidadImagenes;
 
-            lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
-
+            if(cantidadImagenes > 1) {
+                btnFotoDer.Visible = true;
+                btnFotoIzq.Visible = true;
+            }
+            else{
+                btnFotoDer.Visible = false;
+                btnFotoIzq.Visible = false;
+            }
 
             lblBuscadorRespuesta.Visible = false;
             lblBuscadorRapido.Visible = false;
@@ -70,8 +79,20 @@ namespace GestionComercio
         {
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             countPic = 0;
-            if(seleccionado.Imagen.Count != 0)
+            cantidadImagenes = seleccionado.Imagen.Count;
+            if (seleccionado.Imagen.Count != 0)
             {
+
+                if (cantidadImagenes > 1)
+                {
+                    btnFotoDer.Visible = true;
+                    btnFotoIzq.Visible = true;
+                }
+                else
+                {
+                    btnFotoDer.Visible = false;
+                    btnFotoIzq.Visible = false;
+                }
                 cargarImagen(seleccionado.Imagen.First().UrlImagen);
                 lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
             }

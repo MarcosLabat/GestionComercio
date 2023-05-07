@@ -124,7 +124,7 @@
             this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnDetalle.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnDetalle.IconChar = FontAwesome.Sharp.IconChar.CircleInfo;
             this.btnDetalle.IconColor = System.Drawing.Color.White;
             this.btnDetalle.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDetalle.IconSize = 18;
@@ -161,33 +161,41 @@
             // btnResetCategoria
             // 
             this.btnResetCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResetCategoria.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnResetCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResetCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetCategoria.ForeColor = System.Drawing.Color.White;
             this.btnResetCategoria.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.btnResetCategoria.IconColor = System.Drawing.Color.Black;
+            this.btnResetCategoria.IconColor = System.Drawing.Color.White;
             this.btnResetCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnResetCategoria.IconSize = 20;
             this.btnResetCategoria.Location = new System.Drawing.Point(484, 52);
             this.btnResetCategoria.Name = "btnResetCategoria";
-            this.btnResetCategoria.Size = new System.Drawing.Size(63, 30);
+            this.btnResetCategoria.Size = new System.Drawing.Size(80, 30);
             this.btnResetCategoria.TabIndex = 50;
             this.btnResetCategoria.Text = "Reset";
             this.btnResetCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResetCategoria.UseVisualStyleBackColor = true;
+            this.btnResetCategoria.UseVisualStyleBackColor = false;
             this.btnResetCategoria.Click += new System.EventHandler(this.btnResetCategoria_Click_1);
             // 
             // btnBuscarCategoria
             // 
             this.btnBuscarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscarCategoria.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnBuscarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCategoria.ForeColor = System.Drawing.Color.White;
             this.btnBuscarCategoria.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnBuscarCategoria.IconColor = System.Drawing.Color.Black;
+            this.btnBuscarCategoria.IconColor = System.Drawing.Color.White;
             this.btnBuscarCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarCategoria.IconSize = 20;
             this.btnBuscarCategoria.Location = new System.Drawing.Point(397, 52);
             this.btnBuscarCategoria.Name = "btnBuscarCategoria";
-            this.btnBuscarCategoria.Size = new System.Drawing.Size(69, 30);
+            this.btnBuscarCategoria.Size = new System.Drawing.Size(80, 30);
             this.btnBuscarCategoria.TabIndex = 49;
             this.btnBuscarCategoria.Text = "Buscar";
             this.btnBuscarCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarCategoria.UseVisualStyleBackColor = true;
+            this.btnBuscarCategoria.UseVisualStyleBackColor = false;
             this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click_1);
             // 
             // btnActualizarCategoria

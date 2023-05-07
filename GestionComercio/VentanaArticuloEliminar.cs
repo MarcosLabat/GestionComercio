@@ -39,9 +39,14 @@ namespace GestionComercio
             
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Seguro desea eliminar el articulo #" + articulo.Codigo + " " + articulo.Nombre + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro desea eliminar el articulo #" + articulo.Codigo + " " + articulo.Nombre + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -70,12 +75,6 @@ namespace GestionComercio
                 this.Close();
                 return;
             }
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

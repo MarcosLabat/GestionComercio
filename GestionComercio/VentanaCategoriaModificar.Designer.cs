@@ -28,36 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnAgregarCategoria = new System.Windows.Forms.Button();
             this.lblNuevaMarca = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxNombreCategoria = new System.Windows.Forms.TextBox();
             this.lblCategoriaTitulo = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Location = new System.Drawing.Point(100, 138);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 2;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(197, 72);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregarCategoria.TabIndex = 1;
-            this.btnAgregarCategoria.Text = "Aceptar";
-            this.btnAgregarCategoria.UseVisualStyleBackColor = true;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // lblNuevaMarca
             // 
@@ -103,20 +81,48 @@
             this.lblCategoriaTitulo.TabIndex = 12;
             this.lblCategoriaTitulo.Text = "ID CATEGORIA";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.Red;
+            this.btnCerrar.Location = new System.Drawing.Point(84, 153);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(100, 26);
+            this.btnCerrar.TabIndex = 22;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(190, 71);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(94, 24);
+            this.btnAceptar.TabIndex = 23;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // VentanaCategoriaModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 169);
+            this.ClientSize = new System.Drawing.Size(294, 214);
             this.ControlBox = false;
-            this.Controls.Add(this.lblCategoriaTitulo);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnAgregarCategoria);
+            this.Controls.Add(this.lblCategoriaTitulo);
             this.Controls.Add(this.lblNuevaMarca);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbxNombreCategoria);
-            this.MinimumSize = new System.Drawing.Size(300, 208);
+            this.MinimumSize = new System.Drawing.Size(310, 230);
             this.Name = "VentanaCategoriaModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VentanaCategoriaModificar";
@@ -127,13 +133,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnAgregarCategoria;
         private System.Windows.Forms.Label lblNuevaMarca;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxNombreCategoria;
         private System.Windows.Forms.Label lblCategoriaTitulo;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

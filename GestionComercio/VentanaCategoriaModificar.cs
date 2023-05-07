@@ -26,37 +26,43 @@ namespace GestionComercio
             this.categoriaNegocio = new CategoriaNegocio();
         }
 
+        private void VentanaCategoriaModificar_Load(object sender, EventArgs e)
+        {
+            lblCategoriaTitulo.Text = "ID " + categoria.Id + " " + categoria.Descripcion;
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
             {
                 string descripcion = tbxNombreCategoria.Text;
                 int idCategoria = categoria.Id;
-                int rowsAffected = categoriaNegocio.modificar(descripcion, idCategoria);
-                if (rowsAffected != 1)
-                {
-                    MessageBox.Show("Algo paso al intentar modificar la categoria");
-                    return;
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Categoria vacía");
+                }else{
+                    int rowsAffected = categoriaNegocio.modificar(descripcion, idCategoria);
+                    if (rowsAffected != 1)
+                    {
+                        MessageBox.Show("Algo paso al intentar modificar la categoria");
+                        return;
+                    }
+                    MessageBox.Show("Categoria modificada correctamente");
+                    this.Close();
                 }
-
-                MessageBox.Show("Categoria modificada correctamente");
-                this.Close();
+                
+                
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
                 return;
             }
-        }
-
-        private void VentanaCategoriaModificar_Load(object sender, EventArgs e)
-        {
-            lblCategoriaTitulo.Text = "ID " + categoria.Id + " " + categoria.Descripcion;
         }
     }
 }

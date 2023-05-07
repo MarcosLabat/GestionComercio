@@ -25,26 +25,30 @@ namespace GestionComercio
             this.marcaNegocio = new MarcaNegocio();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void VentanaMarcaModificar_Load(object sender, EventArgs e)
         {
-            this.Close();
+            lblMarcaTitulo.Text = "ID " + marca.Id + " " + marca.Descripcion;
         }
 
-        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        private void btnAgregarMarca_Click_1(object sender, EventArgs e)
         {
             try
             {
                 string descripcion = tbxNombreMarca.Text;
                 int idMarca = marca.Id;
-                int rowsAffected = marcaNegocio.modificar(descripcion, idMarca);
-                if (rowsAffected != 1)
-                {
-                    MessageBox.Show("Algo paso al intentar modificar la marca");
-                    return;
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Marca vacía");
+                }else{
+                    int rowsAffected = marcaNegocio.modificar(descripcion, idMarca);
+                    if (rowsAffected != 1){
+                        MessageBox.Show("Algo paso al intentar modificar la marca");
+                        return;
+                    }
+                    MessageBox.Show("Categoria modificada correctamente");
+                    this.Close();
                 }
-
-                MessageBox.Show("Marca modificada correctamente");
-                this.Close();
+                
+                
             }
             catch (Exception ex)
             {
@@ -53,9 +57,9 @@ namespace GestionComercio
             }
         }
 
-        private void VentanaMarcaModificar_Load(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
-            lblMarcaTitulo.Text = "ID " + marca.Id + " " + marca.Descripcion;
+            this.Close();
         }
     }
 }

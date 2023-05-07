@@ -19,8 +19,7 @@ namespace GestionComercio
             InitializeComponent();
             Text = "Agregar Categoria";
         }
-
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        private void btnAgregarCategoria_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -33,20 +32,25 @@ namespace GestionComercio
                     lblNuevaMarca.ForeColor = Color.Red;
                     return;
                 }
+                if (descripcion == ""){
+                    MessageBox.Show("No se puede guardar una Categoria vacía");
+                }else{
+                    int ok = categoriaNegocio.guardar(descripcion);
+                    if (ok == -1)
+                    {
+                        lblNuevaMarca.Text = $"No se pudo guardar la categoria '{descripcion}'";
+                        lblNuevaMarca.ForeColor = Color.Red;
+                        MessageBox.Show("No se pudo guardar la categoria!");
+                        return;
+                    }
 
-                int ok = categoriaNegocio.guardar(descripcion);
-                if (ok == -1)
-                {
-                    lblNuevaMarca.Text = $"No se pudo guardar la categoria '{descripcion}'";
-                    lblNuevaMarca.ForeColor = Color.Red;
-                    MessageBox.Show("No se pudo guardar la categoria!");
-                    return;
+                    lblNuevaMarca.ForeColor = Color.Green;
+                    lblNuevaMarca.Text = "Categoria guardada correctamente!";
+                    MessageBox.Show("Categoria guardada correctamente!");
+                    this.Close();
                 }
 
-                lblNuevaMarca.ForeColor = Color.Green;
-                lblNuevaMarca.Text = "Categoria guardada correctamente!";
-                MessageBox.Show("Categoria guardada correctamente!");
-                this.Close();
+               
             }
             catch (Exception ex)
             {
@@ -55,7 +59,7 @@ namespace GestionComercio
             }
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
