@@ -113,8 +113,21 @@ namespace GestionComercio
 
         private void chbxImagen_CheckedChanged(object sender, EventArgs e)
         {
-            if(chbxImagen.Checked) tbxUrlImagen.Visible = true;
-            else tbxUrlImagen .Visible = false;
+            if (chbxImagen.Checked){
+                tbxUrlImagen.Visible = true;
+                lblAgregarImg.Visible = true;
+                lblModificarImg.Visible = true;
+                chbxModificarImg.Visible = true;
+                chbxAgregarImg.Visible = true;
+            }
+            else
+            {
+                tbxUrlImagen.Visible = false;
+                lblAgregarImg.Visible = false;
+                lblModificarImg.Visible = false;
+                chbxModificarImg.Visible = false;
+                chbxAgregarImg.Visible = false;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -249,20 +262,43 @@ namespace GestionComercio
                     articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 }
 
-                if (chbxImagen.Checked || !chbxImagen.Checked)
+                if (chbxImagen.Checked)
                 {
                     Imagen imagen = new Imagen();
                     imagen.IdArticulo = articulo.Id;
                     imagen.UrlImagen = tbxUrlImagen.Text;
-                    if(imagen.UrlImagen == ""){
+                    if (imagen.UrlImagen == ""){
                         MessageBox.Show("No se puede modificar sin una imagen");
                         return;
                     }
-                    else{
-                        int idImagen = imagenNegocio.guardar(imagen);
-                        imagen.Id = idImagen;
-                        articulo.Imagen.Add(imagen);
+                    foreach (var item in articulo.Imagen)
+                    {
+                        if (item.ToString() == imagen.UrlImagen)
+                        {
+                            MessageBox.Show("No se puede modificar o agregar un ARTICULO con la misma IMAGEN");
+                            return;
+                        }
                     }
+                    if (chbxModificarImg.Checked){
+                        int posicion = int.Parse(txtNImagen.Text);
+                        if(posicion > articulo.Imagen.Count) {
+                            MessageBox.Show("La cantidad de imagenes es de " + articulo.Imagen.Count + " seleccione un numero menor a este.");
+                            return;
+                        }
+                        articulo.Imagen[posicion - 1].UrlImagen = imagen.UrlImagen;
+                        int modificado = imagenNegocio.modificar(articulo.Imagen[posicion - 1].Id, articulo.Imagen[posicion - 1].UrlImagen);
+                        if (modificado != 1){
+                            MessageBox.Show("No se pudo modificar el articulo");
+                            return;
+                        }
+                        MessageBox.Show("Articulo modificado correctamente!");
+                        return;
+                    }
+
+                    int idImagen = imagenNegocio.guardar(imagen);
+                    imagen.Id = idImagen;
+                    articulo.Imagen.Add(imagen);
+                    return;
                 }
 
                 if ( articulo.Codigo == "" || articulo.Nombre == "" || articulo.Descripcion == "" ){
@@ -288,6 +324,31 @@ namespace GestionComercio
             {
                 MessageBox.Show(ex.Message);
                 return;
+            }
+        }
+
+        private void chbxModificarImg_Click(object sender, EventArgs e)
+        {
+            chbxModificarImg.Checked = true;
+            lblNImagen.Visible = true;
+            txtNImagen.Visible = true;
+            if (chbxAgregarImg.Checked)
+            {
+                chbxAgregarImg.Checked = false;
+                return;
+            }
+        }
+
+        private void chbxAgregarImg_Click(object sender, EventArgs e)
+        {
+            chbxAgregarImg.Checked = true;
+            if (chbxModificarImg.Checked)
+            {
+                chbxModificarImg.Checked = false;
+                lblNImagen.Visible = false;
+                txtNImagen.Visible = false;
+                return;
+
             }
         }
     }
