@@ -35,13 +35,11 @@ namespace Negocio
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
                     aux.Imagen = imagenNegocio.imagenesArticulo(idArticulo);
 
-
                     if (!(datos.Reader["IdMarca"] is DBNull))
                     {
                         aux.Marca = new Marca();
                         aux.Marca.Descripcion = (string)datos.Reader["Desc_Marca"];
                         aux.Marca.Id = (int)datos.Reader["IdMarca"];
-
                     }
 
                     if(!(datos.Reader["IdCategoria"] is DBNull))
@@ -305,7 +303,6 @@ namespace Negocio
             {
                 db.cerrar();
             }
-
         }
 
         public int eliminar(int idArticulo)

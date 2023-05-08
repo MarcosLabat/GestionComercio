@@ -44,10 +44,11 @@ namespace Negocio
         {
             Marca marca = null;
             ConexionDB db = new ConexionDB();
-            string query = $"SELECT Id, Descripcion FROM MARCAS WHERE Descripcion = '{descripcion}'";
+            string query = $"SELECT Id, Descripcion FROM MARCAS WHERE Descripcion = @descripcion";
             try
             {
                 db.SetearQuery(query);
+                db.setearParametro("@descripcion", descripcion);
                 db.leer();
                 if (db.Reader.Read())
                 {

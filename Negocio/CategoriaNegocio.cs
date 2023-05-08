@@ -36,7 +36,6 @@ namespace Negocio
                 datos.cerrar();
             }
 
-
             return listaCategorias;
         }
 
@@ -127,7 +126,6 @@ namespace Negocio
             {
                 db.cerrar();
             }
-
         }
 
         public int modificar(string descripcion, int idCategoria)
@@ -146,6 +144,10 @@ namespace Negocio
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                db.cerrar();
             }
         }
 
