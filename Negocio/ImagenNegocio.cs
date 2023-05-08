@@ -15,11 +15,13 @@ namespace Negocio
             int idImagen = -1;
             int idArticulo = imagen.IdArticulo;
             string urlImagen = imagen.UrlImagen;
-            string query = $"INSERT INTO IMAGENES(IdArticulo, ImagenUrl) VALUES('{idArticulo}', '{urlImagen}'); SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID";
+            string query = "INSERT INTO IMAGENES(IdArticulo, ImagenUrl) VALUES(@idArticulo, @urlImagen); SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID";
             ConexionDB db = new ConexionDB();
             try
             {
                 db.SetearQuery(query);
+                db.setearParametro("@idArticulo", idArticulo);
+                db.setearParametro("@urlImagen", urlImagen);
                 db.leer();
 
                 if (db.Reader.Read())
@@ -42,11 +44,13 @@ namespace Negocio
         public int modificar(int idImagen, string url)
         {
             ConexionDB db = new ConexionDB();
-            string query = $"UPDATE IMAGENES SET ImagenUrl = '{url}'  where Id = " + idImagen;
+            string query = "UPDATE IMAGENES SET ImagenUrl = @url  where Id = @idImagen";
             int rowsAffected = 0;
             try
             {
                 db.SetearQuery(query);
+                db.setearParametro("@url", url);
+                db.setearParametro("@idImagen", idImagen);
                 rowsAffected = db.ejecutarQuery();
                 return rowsAffected;
             }
@@ -60,6 +64,7 @@ namespace Negocio
                 db.cerrar();
             }
         }
+
         public int eliminar(int idArticuloImagen)
         {
             ConexionDB db = new ConexionDB();
@@ -77,6 +82,7 @@ namespace Negocio
                 throw ex;
             }
         }
+
         public List<Imagen> imagenesArticulo(int idArticulo)
         {
             ConexionDB db = new ConexionDB();

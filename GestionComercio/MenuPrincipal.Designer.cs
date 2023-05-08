@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.btnCategorias = new FontAwesome.Sharp.IconButton();
@@ -98,7 +99,7 @@
             this.btnCategorias.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCategorias.IconSize = 40;
             this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 238);
+            this.btnCategorias.Location = new System.Drawing.Point(0, 280);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnCategorias.Size = new System.Drawing.Size(220, 60);
@@ -121,7 +122,7 @@
             this.btnMarcas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarcas.IconSize = 40;
             this.btnMarcas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 178);
+            this.btnMarcas.Location = new System.Drawing.Point(0, 220);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMarcas.Size = new System.Drawing.Size(220, 60);
@@ -144,7 +145,7 @@
             this.btnArticulos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnArticulos.IconSize = 40;
             this.btnArticulos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArticulos.Location = new System.Drawing.Point(0, 118);
+            this.btnArticulos.Location = new System.Drawing.Point(0, 160);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnArticulos.Size = new System.Drawing.Size(220, 60);
@@ -167,7 +168,7 @@
             this.btnMenuPrincipal.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenuPrincipal.IconSize = 40;
             this.btnMenuPrincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 58);
+            this.btnMenuPrincipal.Location = new System.Drawing.Point(0, 100);
             this.btnMenuPrincipal.Name = "btnMenuPrincipal";
             this.btnMenuPrincipal.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnMenuPrincipal.Size = new System.Drawing.Size(220, 60);
@@ -184,17 +185,18 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 58);
+            this.panelLogo.Size = new System.Drawing.Size(220, 100);
             this.panelLogo.TabIndex = 0;
             // 
             // pbxLogo
             // 
-            this.pbxLogo.Location = new System.Drawing.Point(56, 3);
+            this.pbxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbxLogo.Image")));
+            this.pbxLogo.Location = new System.Drawing.Point(63, 4);
             this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(100, 50);
+            this.pbxLogo.Size = new System.Drawing.Size(90, 90);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxLogo.TabIndex = 0;
             this.pbxLogo.TabStop = false;
-            this.pbxLogo.Click += new System.EventHandler(this.pbxLogo_Click);
             // 
             // panelTitulo
             // 

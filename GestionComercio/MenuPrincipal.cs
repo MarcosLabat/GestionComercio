@@ -28,6 +28,7 @@ namespace GestionComercio
             this.Text = string.Empty;
             this.DoubleBuffered = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.formularioActual = new Inicio();
         }
 
         private void ActivarBoton(object senderBtn)
@@ -113,12 +114,6 @@ namespace GestionComercio
         {
             ActivarBoton(sender);
             this.Close();
-        }
-
-        private void pbxLogo_Click(object sender, EventArgs e)
-        {
-            formularioActual.Close();
-            ResetBotones();
         }
 
         private void ResetBotones()
