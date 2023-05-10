@@ -56,7 +56,7 @@ namespace GestionComercio
             dgvListadoArticulos.DataSource = articulos;
             dgvListadoArticulos.Columns[6].Visible = false; //oculto la columna url imagen
             dgvListadoArticulos.Columns[0].Visible = false; //oculto la columna id articulo
-            pbxUrlImagen.Load(articulos[0].Imagen.UrlImagen); //muestro la primera imagen de la lista
+            //pbxUrlImagen.Load(articulos[0].Imagen.UrlImagen); //muestro la primera imagen de la lista
         }
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
@@ -73,6 +73,27 @@ namespace GestionComercio
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Estas seguro de eliminar?","Eliminar",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+                    articuloNegocio.eliminar(seleccionado.Id);
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

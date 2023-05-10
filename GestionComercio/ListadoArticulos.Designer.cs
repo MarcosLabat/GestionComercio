@@ -95,10 +95,11 @@
             // 
             this.btnEliminarArticulo.Location = new System.Drawing.Point(321, 504);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
-            this.btnEliminarArticulo.Size = new System.Drawing.Size(148, 40);
+            this.btnEliminarArticulo.Size = new System.Drawing.Size(156, 40);
             this.btnEliminarArticulo.TabIndex = 5;
             this.btnEliminarArticulo.Text = "Eliminar Articulo";
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
+            this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
             // 
             // ListadoArticulos
             // 
