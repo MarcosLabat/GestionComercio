@@ -34,6 +34,9 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnModificarArticulo = new System.Windows.Forms.Button();
             this.btnEliminarArticulo = new System.Windows.Forms.Button();
+            this.lblFiltro = new System.Windows.Forms.Label();
+            this.txtFiltroRapido = new System.Windows.Forms.TextBox();
+            this.btnBuscarRapido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).BeginInit();
             this.SuspendLayout();
@@ -42,21 +45,21 @@
             // 
             this.dgvListadoArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvListadoArticulos.Location = new System.Drawing.Point(12, 12);
+            this.dgvListadoArticulos.Location = new System.Drawing.Point(12, 92);
             this.dgvListadoArticulos.MultiSelect = false;
             this.dgvListadoArticulos.Name = "dgvListadoArticulos";
             this.dgvListadoArticulos.RowHeadersWidth = 51;
             this.dgvListadoArticulos.RowTemplate.Height = 24;
             this.dgvListadoArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoArticulos.Size = new System.Drawing.Size(634, 459);
+            this.dgvListadoArticulos.Size = new System.Drawing.Size(634, 379);
             this.dgvListadoArticulos.TabIndex = 0;
             this.dgvListadoArticulos.SelectionChanged += new System.EventHandler(this.dgvListadoArticulos_SelectionChanged);
             // 
             // pbxUrlImagen
             // 
-            this.pbxUrlImagen.Location = new System.Drawing.Point(652, 12);
+            this.pbxUrlImagen.Location = new System.Drawing.Point(652, 92);
             this.pbxUrlImagen.Name = "pbxUrlImagen";
-            this.pbxUrlImagen.Size = new System.Drawing.Size(359, 459);
+            this.pbxUrlImagen.Size = new System.Drawing.Size(359, 379);
             this.pbxUrlImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxUrlImagen.TabIndex = 1;
             this.pbxUrlImagen.TabStop = false;
@@ -101,11 +104,41 @@
             this.btnEliminarArticulo.UseVisualStyleBackColor = true;
             this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
             // 
+            // lblFiltro
+            // 
+            this.lblFiltro.AutoSize = true;
+            this.lblFiltro.Location = new System.Drawing.Point(12, 63);
+            this.lblFiltro.Name = "lblFiltro";
+            this.lblFiltro.Size = new System.Drawing.Size(81, 16);
+            this.lblFiltro.TabIndex = 6;
+            this.lblFiltro.Text = "Filtro rápido:";
+            // 
+            // txtFiltroRapido
+            // 
+            this.txtFiltroRapido.Location = new System.Drawing.Point(99, 60);
+            this.txtFiltroRapido.Name = "txtFiltroRapido";
+            this.txtFiltroRapido.Size = new System.Drawing.Size(100, 22);
+            this.txtFiltroRapido.TabIndex = 7;
+            this.txtFiltroRapido.TextChanged += new System.EventHandler(this.txtFiltroRapido_TextChanged);
+            // 
+            // btnBuscarRapido
+            // 
+            this.btnBuscarRapido.Location = new System.Drawing.Point(205, 60);
+            this.btnBuscarRapido.Name = "btnBuscarRapido";
+            this.btnBuscarRapido.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarRapido.TabIndex = 8;
+            this.btnBuscarRapido.Text = "Buscar";
+            this.btnBuscarRapido.UseVisualStyleBackColor = true;
+            this.btnBuscarRapido.Click += new System.EventHandler(this.btnBuscarRapido_Click);
+            // 
             // ListadoArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 573);
+            this.Controls.Add(this.btnBuscarRapido);
+            this.Controls.Add(this.txtFiltroRapido);
+            this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.btnEliminarArticulo);
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.btnSalir);
@@ -119,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUrlImagen)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,5 +164,8 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnModificarArticulo;
         private System.Windows.Forms.Button btnEliminarArticulo;
+        private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.TextBox txtFiltroRapido;
+        private System.Windows.Forms.Button btnBuscarRapido;
     }
 }

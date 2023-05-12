@@ -26,8 +26,11 @@ namespace GestionComercio
 
         private void dgvListadoArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen.UrlImagen);
+            if(dgvListadoArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvListadoArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.Imagen.UrlImagen);
+            }
         }
 
         public void cargarImagen(string url)
@@ -54,9 +57,14 @@ namespace GestionComercio
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             articulos = articuloNegocio.listarArticulos();
             dgvListadoArticulos.DataSource = articulos;
-            dgvListadoArticulos.Columns[6].Visible = false; //oculto la columna url imagen
-            dgvListadoArticulos.Columns[0].Visible = false; //oculto la columna id articulo
+            ocultarColumnas();
             //pbxUrlImagen.Load(articulos[0].Imagen.UrlImagen); //muestro la primera imagen de la lista
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvListadoArticulos.Columns["Imagen"].Visible = false; //oculto la columna url imagen
+            dgvListadoArticulos.Columns[0].Visible = false; //oculto la columna id articulo
         }
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
@@ -94,6 +102,48 @@ namespace GestionComercio
 
                 throw ex;
             }
+        }
+
+
+        //este filtro es mas detallado
+        private void btnBuscarRapido_Click(object sender, EventArgs e)
+        {
+            //List<Articulo> listaFiltrada;
+
+            //string filtro = txtFiltroRapido.Text;
+
+            //if (filtro == "")
+            //{
+            //    listaFiltrada = articulos;
+            //}
+            //else
+            //{
+            //    listaFiltrada = articulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Codigo.ToUpper().Contains(filtro.ToUpper()));
+            //}
+            //dgvListadoArticulos.DataSource = null;
+            //dgvListadoArticulos.DataSource = listaFiltrada;
+            //ocultarColumnas();
+
+
+        }
+
+        private void txtFiltroRapido_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+
+            string filtro = txtFiltroRapido.Text;
+
+            if (filtro.Length >= 3)
+            {
+                listaFiltrada = articulos;
+            }
+            else
+            {
+                listaFiltrada = articulos.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Codigo.ToUpper().Contains(filtro.ToUpper()));
+            }
+            dgvListadoArticulos.DataSource = null;
+            dgvListadoArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }
