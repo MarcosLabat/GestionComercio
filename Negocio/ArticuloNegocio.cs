@@ -146,5 +146,103 @@ namespace Negocio
             }
         }
 
+        public List<Articulo> Filtrar(string campo,string criterio,string filtro)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            List<Articulo> articulos = new List<Articulo>();   
+
+            try
+            {
+                string consulta = "select A.Id as idArticulo,A.Codigo,A.Nombre,A.Descripcion as AD,A.Precio,M.Descripcion as MD,M.Id as IdMarca,C.Id as IdCategoria ,C.Descripcion as CD, I.ImagenUrl as UrlImagen from ARTICULOS A inner JOIN MARCAS M on A.IdMarca=M.Id INNER join CATEGORIAS C on C.Id = A.IdCategoria inner join IMAGENES I on I.IdArticulo = A.Id Where ";
+                if(campo == "Precio")
+                {
+                    switch (criterio)
+                    {
+                        case "Mayor a":
+                            consulta += " A.Precio > " + filtro; 
+                            break;
+                        case "Menor a":
+                            consulta += " A.Precio < " + filtro;
+                            break;
+                        case "Igual a":
+                            consulta += " A.Precio = " + filtro;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else if(campo == "Nombre")
+                {
+                    switch (criterio)
+                    {
+                        case "Empieza con":
+                            consulta += "A.Nombre like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "A.Nombre like '%" + filtro + "'";
+                            break;
+                        case "Contiene":
+                            consulta += "A.Nombre like '%" + filtro + "%'";
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                else
+                {
+                    switch (criterio)
+                    {
+                        case "Empieza con":
+                            consulta += "A.Codigo like '" + filtro + "%'";
+                            break;
+                        case "Termina con":
+                            consulta += "A.Codigo like '%" + filtro + "'";
+                            break;
+                        case "Contiene":
+                            consulta += "A.Codigo like '%" + filtro + "%'";
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+
+
+
+                accesoDatos.setearQuery(consulta);
+                accesoDatos.ejecutarLectura();
+
+                while (accesoDatos.Lector.Read())
+                {
+                    Articulo auxarticulo = new Articulo();
+                    auxarticulo.Marca = new Marca();
+                    auxarticulo.Categoria = new Categoria();
+                    auxarticulo.Imagen = new Imagen();
+
+                    auxarticulo.Id = (int)accesoDatos.Lector["idArticulo"];
+                    auxarticulo.Codigo = (string)accesoDatos.Lector["Codigo"];
+                    auxarticulo.Nombre = (string)accesoDatos.Lector["Nombre"];
+                    auxarticulo.Descripcion = (string)accesoDatos.Lector["AD"];
+                    auxarticulo.Precio = (float)accesoDatos.Lector.GetDecimal(4);
+                    auxarticulo.Marca.IdMarca = (int)accesoDatos.Lector["IdMarca"];
+                    auxarticulo.Marca.Descripcion = (string)accesoDatos.Lector["MD"];
+                    auxarticulo.Categoria.IdCategoria = (int)accesoDatos.Lector["IdCategoria"];
+                    auxarticulo.Categoria.Descripcion = (string)accesoDatos.Lector["CD"];
+                    auxarticulo.Imagen.UrlImagen = (string)accesoDatos.Lector["UrlImagen"];
+                    articulos.Add(auxarticulo);
+                }
+
+
+                return articulos;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { accesoDatos.cerrarConexion();}
+        }
     }
 }
